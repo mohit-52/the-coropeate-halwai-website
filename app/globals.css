@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Playfair Display", Georgia, Times, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-halwai-green-950: #061910;
+  --color-halwai-green-900: #09261a;
+  --color-halwai-green-800: #0e3d2a;
+  --color-halwai-green-700: #145a3e;
+  --color-halwai-gold-600: #ac843b;
+  --color-halwai-gold-500: #c5a059;
+  --color-halwai-gold-400: #d6b46e;
+  --color-halwai-gold-300: #e7c987;
+  --color-halwai-gold-200: #f4dda9;
+  --color-halwai-cream-50: #faf9f6;
+  --color-halwai-cream-100: #f4ede0;
+  --color-halwai-cream-200: #eadecd;
+  --color-halwai-charcoal-900: #1a1e1b;
+  --color-halwai-charcoal-950: #0f1210;
+}
+
+body {
+  background-color: var(--color-halwai-cream-50);
+  color: var(--color-halwai-charcoal-900);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-halwai-cream-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-halwai-gold-500);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-halwai-gold-600);
+}

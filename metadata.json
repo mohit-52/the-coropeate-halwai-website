@@ -1,0 +1,6 @@
+{
+  "name": "The Corporate Halwai",
+  "description": "Premium Indian corporate catering with scalable professional meals, live cooking, and custom corporate plan estimators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
