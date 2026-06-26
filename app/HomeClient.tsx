@@ -13,7 +13,7 @@ import {
   ArrowRight, ArrowDown, ShieldCheck, Timer, Award, Scale, RefreshCw, Layers, Sparkles, 
   ThumbsUp, CalendarClock, ChevronDown, ChefHat, Phone, Mail, MapPin, Search, 
   Expand, PlusCircle, Check, HelpCircle, X, Utensils, Building2, Clock,
-  Briefcase, Crown, Star
+  Briefcase, Crown, Star, MessageCircle, Globe, Leaf, Flame
 } from "lucide-react";
 
 export default function HomeClient() {
@@ -201,6 +201,33 @@ export default function HomeClient() {
               id="home-hero-billboard"
               className="relative min-h-[85vh] flex items-center justify-center bg-[#FAF9F6] overflow-hidden pt-16 md:pt-24 pb-16 px-4 md:px-8 border-b border-[#e5dfd3]/60"
             >
+              {/* Mandala corner decorations — top-left */}
+              <svg className="absolute top-0 left-0 w-52 h-52 pointer-events-none select-none opacity-[0.07]" viewBox="0 0 200 200" fill="none">
+                <circle cx="0" cy="0" r="80" stroke="#b89547" strokeWidth="0.8" />
+                <circle cx="0" cy="0" r="60" stroke="#b89547" strokeWidth="0.8" />
+                <circle cx="0" cy="0" r="40" stroke="#b89547" strokeWidth="0.6" />
+                {[0,30,60,90,120,150,180,210,240,270,300,330].map((deg) => (
+                  <line key={deg} x1="0" y1="0" x2={(80 * Math.cos(deg*Math.PI/180)).toFixed(4)} y2={(80 * Math.sin(deg*Math.PI/180)).toFixed(4)} stroke="#b89547" strokeWidth="0.5" />
+                ))}
+                {[0,45,90,135,180,225,270,315].map((deg) => {
+                  const cx = (55 * Math.cos(deg*Math.PI/180)).toFixed(4);
+                  const cy = (55 * Math.sin(deg*Math.PI/180)).toFixed(4);
+                  return (
+                    <ellipse key={deg} cx={cx} cy={cy} rx="8" ry="4" stroke="#b89547" strokeWidth="0.5" transform={`rotate(${deg} ${cx} ${cy})`} />
+                  );
+                })}
+              </svg>
+
+              {/* Leaf motif — top right */}
+              <svg className="absolute top-6 right-6 w-28 h-28 pointer-events-none select-none opacity-[0.08]" viewBox="0 0 120 120" fill="none">
+                <path d="M60 10 C90 10 110 40 110 70 C110 100 90 110 60 110 C30 110 10 100 10 70 C10 40 30 10 60 10 Z" stroke="#052316" strokeWidth="1" />
+                <path d="M60 10 L60 110" stroke="#052316" strokeWidth="0.8" />
+                <path d="M60 30 C75 35 85 45 85 60" stroke="#052316" strokeWidth="0.6" />
+                <path d="M60 50 C75 55 82 62 80 75" stroke="#052316" strokeWidth="0.6" />
+                <path d="M60 30 C45 35 35 45 35 60" stroke="#052316" strokeWidth="0.6" />
+                <path d="M60 50 C45 55 38 62 40 75" stroke="#052316" strokeWidth="0.6" />
+              </svg>
+
               {/* Outer decorative accents */}
               <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-[#b89547]/5 rounded-full filter blur-3xl pointer-events-none" />
               <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#052316]/5 rounded-full filter blur-3xl pointer-events-none" />
@@ -223,35 +250,73 @@ export default function HomeClient() {
                   
                   {/* Left Column: Premium Brand Messaging */}
                   <div className="space-y-6 text-left max-w-xl">
-                    <motion.span 
+                    {/* Service category eyebrow */}
+                    <motion.div
                       variants={{
                         hidden: { opacity: 0, y: 15 },
                         visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } }
                       }}
-                      className="text-xs font-mono font-bold tracking-[0.25em] text-[#b89547] uppercase block"
+                      className="flex flex-wrap items-center gap-2"
                     >
-                      Excellence in Hospitality
-                    </motion.span>
-                    
-                    <motion.h2 
+                      <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#b89547] uppercase">Premium Corporate Catering</span>
+                      <span className="text-[#b89547]/40">·</span>
+                      <div className="flex items-center gap-2 text-[10px] font-mono font-semibold text-[#052316]/50 uppercase tracking-widest">
+                        <span>Office Meals</span>
+                        <span className="text-[#b89547]/50">|</span>
+                        <span>Events</span>
+                        <span className="text-[#b89547]/50">|</span>
+                        <span>Cafeteria Services</span>
+                      </div>
+                    </motion.div>
+
+                    {/* Main tagline — THE brand headline from brochure */}
+                    <motion.div
                       variants={{
                         hidden: { opacity: 0, y: 20 },
                         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
                       }}
-                      className="text-4xl sm:text-5xl md:text-6xl font-serif font-black text-[#052316] leading-[1.1] tracking-tight"
                     >
-                      Premium Corporate Catering for <span className="text-[#b89547] italic font-medium font-serif block sm:inline">Modern Workplaces</span>
-                    </motion.h2>
-                    
-                    <motion.p 
+                      <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-black text-[#052316] leading-[1.05] tracking-tight">
+                        Desi Flavours.
+                      </h2>
+                      <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-black text-[#b89547] italic leading-[1.05] tracking-tight">
+                        Corporate Standards.
+                      </h2>
+                      <p className="mt-3 text-sm font-mono font-bold tracking-[0.2em] text-[#052316]/55 uppercase">
+                        Great food. Seamless service.
+                      </p>
+                    </motion.div>
+
+                    {/* Olive Oil USP badge */}
+                    <motion.div
                       variants={{
                         hidden: { opacity: 0, y: 15 },
                         visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }
                       }}
-                      className="text-sm md:text-base text-gray-600/95 leading-relaxed font-sans"
+                      className="inline-flex items-center gap-3 bg-[#052316] text-white px-4 py-2.5 rounded-full shadow-md border border-[#b89547]/30"
                     >
-                      Authentic Indian flavours delivered with hygiene, professionalism and corporate-grade service standards across Gurugram and Delhi NCR.
-                    </motion.p>
+                      <div className="w-7 h-7 rounded-full bg-[#b89547]/20 border border-[#b89547]/40 flex items-center justify-center shrink-0">
+                        <span className="text-sm">🫒</span>
+                      </div>
+                      <div className="text-left">
+                        <span className="text-[9px] font-mono font-bold text-[#b89547] uppercase tracking-widest block">India's First</span>
+                        <span className="text-[11px] font-bold leading-tight">Corporate Caterer to Cook in Olive Oil</span>
+                      </div>
+                    </motion.div>
+
+                    {/* Serving Since 2015 chip */}
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, y: 15 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } }
+                      }}
+                      className="flex items-center gap-3"
+                    >
+                      <div className="flex items-center gap-2 px-4 py-2 bg-[#b89547]/10 border border-[#b89547]/25 rounded-full">
+                        <CalendarClock className="w-4 h-4 text-[#b89547]" />
+                        <span className="text-xs font-mono font-black text-[#b89547] tracking-widest uppercase">→→ Serving Since 2015 ←←</span>
+                      </div>
+                    </motion.div>
 
                     {/* CTAs */}
                     <motion.div 
@@ -259,27 +324,32 @@ export default function HomeClient() {
                         hidden: { opacity: 0, y: 15 },
                         visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }
                       }}
-                      className="flex flex-col sm:flex-row items-center gap-4 pt-4"
+                      className="space-y-3 pt-2"
                     >
-                      <button
-                        id="hero-book-tasting-btn"
-                        onClick={() => setIsBookingOpen(true)}
-                        className="w-full sm:w-auto px-8 py-3.5 bg-[#052316] hover:bg-[#0b3c27] text-white font-bold text-xs tracking-wider uppercase rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center space-x-2"
-                      >
-                        <span>Book a Tasting Session</span>
-                        <ArrowRight className="w-4 h-4 text-white stroke-[2.5]" />
-                      </button>
-                      
-                      <button
-                        id="hero-view-pricing-btn"
-                        onClick={() => {
-                          setActiveTab(AppTab.PRICING);
-                          window.scrollTo({ top: 350, behavior: "smooth" });
-                        }}
-                        className="w-full sm:w-auto px-8 py-3.5 bg-white hover:bg-gray-50 border border-[#e5dfd3] text-[#052316] font-bold text-xs tracking-wider uppercase rounded-full transition-all"
-                      >
-                        <span>Get Custom Quote</span>
-                      </button>
+                      <div className="flex flex-col sm:flex-row items-center gap-4">
+                        <button
+                          id="hero-book-tasting-btn"
+                          onClick={() => setIsBookingOpen(true)}
+                          className="w-full sm:w-auto px-8 py-3.5 bg-[#052316] hover:bg-[#0b3c27] text-white font-bold text-xs tracking-wider uppercase rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center space-x-2"
+                        >
+                          <span>Book a Tasting Session</span>
+                          <ArrowRight className="w-4 h-4 text-white stroke-[2.5]" />
+                        </button>
+                        
+                        <a
+                          href="https://wa.me/919289030016?text=Hi%20The%20Corporate%20Halwai%2C%20I%27d%20like%20to%20book%20a%20tasting%20session."
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full sm:w-auto px-8 py-3.5 bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/40 text-[#128C7E] font-bold text-xs tracking-wider uppercase rounded-full transition-all flex items-center justify-center space-x-2"
+                        >
+                          <MessageCircle className="w-4 h-4" />
+                          <span>WhatsApp Us</span>
+                        </a>
+                      </div>
+                      {/* CTA sub-text from brochure */}
+                      <p className="text-[11px] text-[#052316]/45 font-sans italic text-center sm:text-left">
+                        Let us serve your team the experience they deserve.
+                      </p>
                     </motion.div>
                   </div>
 
@@ -314,40 +384,40 @@ export default function HomeClient() {
                           <source src="https://videos.pexels.com/video-files/3015488/3015488-sd_640_360_24fps.mp4" type="video/mp4" />
                           <source src="https://videos.pexels.com/video-files/3015488/3015488-hd_1280_720_24fps.mp4" type="video/mp4" />
                           <source src="https://videos.pexels.com/video-files/3015488/3015488-hd_1920_1080_24fps.mp4" type="video/mp4" />
-                          <source src="https://www.pexels.com/download/video/3015488/" type="video/mp4" />
                         </video>
+
+                        {/* Mission quote overlay at bottom */}
+                        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#052316]/90 via-[#052316]/50 to-transparent">
+                          <p className="text-white text-[11px] font-serif italic leading-snug">
+                            "Bringing the richness of Indian flavours to the modern workplace."
+                          </p>
+                        </div>
                       </div>
 
-                      {/* Overlaid Levitating Badge with glowing elements */}
+                      {/* Olive Oil floating badge on video */}
+                      <motion.div
+                        id="hero-olive-oil-badge"
+                        animate={{ y: [0, -7, 0] }}
+                        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                        className="absolute top-6 right-6 flex items-center space-x-2 bg-white border border-[#e5dfd3] rounded-full px-3 py-1.5 shadow-lg z-20"
+                      >
+                        <span className="text-sm">🫒</span>
+                        <span className="text-[9px] font-mono font-black text-[#052316] uppercase tracking-wider">Olive Oil Cooking</span>
+                      </motion.div>
+
+                      {/* Retention badge */}
                       <motion.div
                         id="hero-client-retention-badge"
-                        animate={{
-                          y: [0, -7, 0],
-                        }}
-                        transition={{
-                          duration: 4.5,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }}
+                        animate={{ y: [0, -7, 0] }}
+                        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
                         className="absolute bottom-6 left-6 flex items-center space-x-2.5 bg-[#FAF9F6] border border-[#e5dfd3] rounded-full px-4 py-2 shadow-lg z-20 cursor-default"
                       >
-                        <motion.div
-                          animate={{
-                            scale: [1, 1.15, 1],
-                            rotate: [0, 5, -5, 0],
-                          }}
-                          transition={{
-                            duration: 4,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                          }}
-                          className="w-8 h-8 rounded-full bg-[#052316] flex items-center justify-center text-[#ebd2a0] shadow-sm shrink-0"
-                        >
+                        <div className="w-8 h-8 rounded-full bg-[#052316] flex items-center justify-center text-[#ebd2a0] shadow-sm shrink-0">
                           <span className="text-xs">★</span>
-                        </motion.div>
+                        </div>
                         <div className="text-left font-sans">
-                          <span className="block text-xs font-black text-[#052316] leading-none">98%</span>
-                          <span className="block text-[9px] font-mono font-bold uppercase text-gray-500 tracking-wider">Client Retention</span>
+                          <span className="block text-xs font-black text-[#052316] leading-none">Since 2015</span>
+                          <span className="block text-[9px] font-mono font-bold uppercase text-gray-500 tracking-wider">Trusted Caterer</span>
                         </div>
                       </motion.div>
                     </div>
@@ -358,18 +428,99 @@ export default function HomeClient() {
             </section>
 
             {/* 2. VALUE TRUST TICKER BAR */}
-            <section id="trust-ticker-strip" className="bg-[#052316] py-3.5 border-y border-[#b89547]/20">
-              <div className="max-w-7xl mx-auto px-4">
-                <div className="flex justify-between items-center space-x-8 text-center text-[10px] sm:text-xs text-[#ebf3ea] font-mono font-bold uppercase tracking-widest overflow-x-auto whitespace-nowrap py-1 scrollbar-none">
-                  <span className="flex items-center gap-2"><CalendarClock className="w-3.5 h-3.5 text-[#b89547]" /> Serving Since 2015</span>
-                  <span className="flex items-center gap-2"><ShieldCheck className="w-3.5 h-3.5 text-[#b89547]" /> Hygiene & Food Safety</span>
-                  <span className="flex items-center gap-2"><ChefHat className="w-3.5 h-3.5 text-[#b89547]" /> Experienced Professionals</span>
-                  <span className="flex items-center gap-2"><Timer className="w-3.5 h-3.5 text-[#b89547]" /> On-Time Every Time</span>
-                  <span className="flex items-center gap-2"><Layers className="w-3.5 h-3.5 text-[#b89547]" /> Customized Menus</span>
-                  <span className="flex items-center gap-2"><Sparkles className="w-3.5 h-3.5 text-[#b89547]" /> Authentic Indian Flavours</span>
+            <section id="trust-ticker-strip" className="bg-[#052316] py-4 border-y border-[#b89547]/20 overflow-hidden relative">
+              <div className="flex w-max animate-marquee">
+                <div className="flex items-center gap-12 px-6 text-xs sm:text-sm md:text-base text-[#ebf3ea] font-mono font-bold uppercase tracking-widest whitespace-nowrap">
+                  <span className="flex items-center gap-2.5"><CalendarClock className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> Serving Since 2015</span>
+                  <span className="flex items-center gap-2.5"><ShieldCheck className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> Hygiene & Food Safety</span>
+                  <span className="flex items-center gap-2.5"><ChefHat className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> Experienced Professionals</span>
+                  <span className="flex items-center gap-2.5"><Timer className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> On-Time Every Time</span>
+                  <span className="flex items-center gap-2.5"><Layers className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> Customized Menus</span>
+                  <span className="flex items-center gap-2.5"><Sparkles className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> Authentic Indian Flavours</span>
+                </div>
+                <div className="flex items-center gap-12 px-6 text-xs sm:text-sm md:text-base text-[#ebf3ea] font-mono font-bold uppercase tracking-widest whitespace-nowrap" aria-hidden="true">
+                  <span className="flex items-center gap-2.5"><CalendarClock className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> Serving Since 2015</span>
+                  <span className="flex items-center gap-2.5"><ShieldCheck className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> Hygiene & Food Safety</span>
+                  <span className="flex items-center gap-2.5"><ChefHat className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> Experienced Professionals</span>
+                  <span className="flex items-center gap-2.5"><Timer className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> On-Time Every Time</span>
+                  <span className="flex items-center gap-2.5"><Layers className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> Customized Menus</span>
+                  <span className="flex items-center gap-2.5"><Sparkles className="w-4 h-4 sm:w-5 h-5 text-[#b89547] shrink-0" /> Authentic Indian Flavours</span>
                 </div>
               </div>
             </section>
+
+            {/* NEW: CURATED FOR MODERN WORKPLACES */}
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              id="curated-for-modern-workplaces"
+              className="py-16 bg-[#FAF9F6] border-b border-[#e5dfd3]/40"
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center max-w-2xl mx-auto mb-12">
+                  <h3 className="text-3xl font-serif font-black text-[#052316] tracking-tight">
+                    Curated for Modern Workplaces
+                  </h3>
+                  <div className="w-12 h-[1.5px] bg-[#b89547] mx-auto mt-3" />
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {/* Item 1: Balanced & Nutritious Meals */}
+                  <div className="bg-white p-6 rounded-[2rem] border border-[#e5dfd3]/50 shadow-[0_8px_24px_rgba(5,35,22,0.02)] flex flex-col items-center text-center space-y-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#b89547]/30">
+                    <div className="w-12 h-12 rounded-full bg-[#052316]/5 flex items-center justify-center text-[#b89547]">
+                      <Leaf className="w-6 h-6 stroke-[1.5]" />
+                    </div>
+                    <h4 className="font-serif font-bold text-sm text-[#052316] text-center">
+                      Balanced & Nutritious Meals
+                    </h4>
+                    <p className="text-xs text-gray-500 font-medium">
+                      Healthy, low-oil options to keep your team light, focused, and energised.
+                    </p>
+                  </div>
+
+                  {/* Item 2: Employee Satisfaction Focused */}
+                  <div className="bg-white p-6 rounded-[2rem] border border-[#e5dfd3]/50 shadow-[0_8px_24px_rgba(5,35,22,0.02)] flex flex-col items-center text-center space-y-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#b89547]/30">
+                    <div className="w-12 h-12 rounded-full bg-[#052316]/5 flex items-center justify-center text-[#b89547]">
+                      <Utensils className="w-6 h-6 stroke-[1.5]" />
+                    </div>
+                    <h4 className="font-serif font-bold text-sm text-[#052316] text-center">
+                      Employee Satisfaction Focused
+                    </h4>
+                    <p className="text-xs text-gray-500 font-medium">
+                      Authentic desi taste that boosts workplace morale and dining satisfaction.
+                    </p>
+                  </div>
+
+                  {/* Item 3: Flexible Plans for Teams of All Sizes */}
+                  <div className="bg-white p-6 rounded-[2rem] border border-[#e5dfd3]/50 shadow-[0_8px_24px_rgba(5,35,22,0.02)] flex flex-col items-center text-center space-y-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#b89547]/30">
+                    <div className="w-12 h-12 rounded-full bg-[#052316]/5 flex items-center justify-center text-[#b89547]">
+                      <Layers className="w-6 h-6 stroke-[1.5]" />
+                    </div>
+                    <h4 className="font-serif font-bold text-sm text-[#052316] text-center">
+                      Flexible Plans for Teams of All Sizes
+                    </h4>
+                    <p className="text-xs text-gray-500 font-medium">
+                      Tailored options scaling from 10 individuals to large corporate gatherings.
+                    </p>
+                  </div>
+
+                  {/* Item 4: Reliable Partner for Growing Businesses */}
+                  <div className="bg-white p-6 rounded-[2rem] border border-[#e5dfd3]/50 shadow-[0_8px_24px_rgba(5,35,22,0.02)] flex flex-col items-center text-center space-y-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#b89547]/30">
+                    <div className="w-12 h-12 rounded-full bg-[#052316]/5 flex items-center justify-center text-[#b89547]">
+                      <Building2 className="w-6 h-6 stroke-[1.5]" />
+                    </div>
+                    <h4 className="font-serif font-bold text-sm text-[#052316] text-center">
+                      Reliable Partner for Growing Businesses
+                    </h4>
+                    <p className="text-xs text-gray-500 font-medium">
+                      Punctual delivery and consistent quality you can trust day after day.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.section>
 
             {/* 3. STRATEGIC SOLUTIONS (Catering services slider) */}
             <motion.section
@@ -382,23 +533,25 @@ export default function HomeClient() {
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                {/* Intro titles */}
+                {/* Ornamental gold divider */}
+                <div className="flex items-center justify-center gap-4 mb-12">
+                  <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent to-[#b89547]/30" />
+                  <svg className="w-6 h-6 text-[#b89547]/60" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l2 4 4.5 0.5-3.5 3 1 4.5L12 12l-4 2 1-4.5-3.5-3L10 6z" />
+                  </svg>
+                  <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent to-[#b89547]/30" />
+                </div>
+
+                {/* Dark green banner header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                  <div className="flex items-center justify-center space-x-2.5 text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#b89547]">
-                    <div className="w-5 h-[1.5px] bg-[#b89547]/55" />
-                    <span>STRATEGIC SYSTEM</span>
-                    <div className="w-5 h-[1.5px] bg-[#b89547]/55" />
+                  <div className="inline-block bg-[#052316] px-8 py-3 rounded-full border border-[#b89547]/30 shadow-sm mb-4">
+                    <span className="text-xs font-mono font-bold tracking-[0.3em] text-[#b89547] uppercase">OUR SERVICES</span>
                   </div>
-                  <h3 className="text-4xl md:text-5.5xl font-serif text-[#052316] tracking-tight leading-none select-none">
-                    Strategic <span className="font-serif font-black italic text-[#d99a1f]">Catering</span> Solutions
+                  <h3 className="text-4xl md:text-5xl font-serif text-[#052316] tracking-tight leading-none select-none">
+                    Thoughtfully <span className="font-serif font-black italic text-[#d99a1f]">crafted</span> catering solutions
                   </h3>
-                  <div className="flex justify-center items-center py-1 text-[#b89547]/50">
-                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M12 3c-1.5 3-4.5 4.5-8 4.5M12 3c1.5 3 4.5 4.5 8 4.5M12 3v18" strokeLinecap="round" />
-                    </svg>
-                  </div>
                   <p className="text-sm md:text-base text-[#052316]/70 font-sans max-w-2xl mx-auto tracking-wide leading-relaxed font-medium">
-                    Scalable culinary programs designed for the dynamic, high-performance needs of modern enterprise environments.
+                    Designed for every corporate need — office meals, events, and cafeteria services.
                   </p>
                 </div>
 
@@ -409,35 +562,32 @@ export default function HomeClient() {
                     
                     {(() => {
                       const cateringCards = [
-                        {
+                      {
                           id: 0,
-                          title: "TCH Box",
-                          subtitle: "PREMIUM INDIVIDUAL MEAL BOX",
-                          description: "Premium individual meal boxes designed for corporate efficiency without compromising on taste. Beautifully packaged with high thermal hot-steam retention properties. Designed for single-sitting modern workplaces.",
+                          title: "The Corporate Halwai Box (TCH Box)",
+                          subtitle: "MINIMUM 10 PERSONS",
+                          description: "A premium food box that brings great taste and convenience to your corporate meetings, events and celebrations. Perfect for Corporate Meetings, Birthday Parties, Family Functions & Get Together.",
                           imageUrl: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
                           actionText: "Explore Menu",
-                          capacity: "10 - 2,000 pax",
-                          leadTime: "12 Hours Notice"
+                          benefits: ["Complete multi-course food experience", "Hygienically packed & delivered", "Each box covers one dish of your choice", "Customisation available"]
                         },
                         {
                           id: 1,
-                          title: "TCH Box • Live",
-                          subtitle: "CONVENIENCE MEETS LIVE THEATRE",
-                          description: "The complete sheer convenience of individual portion-controlled premium meal boxes, seamlessly paired with the culinary theatre of sizzling hot live-cooking stations inside your corporate courtyards.",
+                          title: "TCH Box + Live",
+                          subtitle: "MEALS + LIVE COOKING STATIONS",
+                          description: "Food boxes combined with live cooking stations — the perfect blend of convenience and culinary theatre. Custom menu selection for your event, with professional service staff.",
                           imageUrl: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=600",
                           actionText: "Learn More",
-                          capacity: "50 - 5,000 pax",
-                          leadTime: "24 Hours Notice"
+                          benefits: ["Live food stations for hot & fresh food", "Premium presentation", "Custom menu selection", "Professional service staff", "Scalable for any event size"]
                         },
                         {
                           id: 2,
-                          title: "Corporate Thali",
-                          subtitle: "CLASSIC BALANCED PLATTERS",
-                          description: "A complete, perfectly micro-balanced authentic culinary tour served in an elegant, eco-friendly custom single-serving thali tray with pristine compartmentalized Indian craft dining presentation.",
+                          title: "Corporate Thali (Meal Box)",
+                          subtitle: "SINGLE-SERVE COMPLETE MEALS",
+                          description: "A complete single-serve meal solution for daily office meals, training programs, conferences and employee dining. Fresh, hygienic and easy to distribute.",
                           imageUrl: "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&q=80&w=600",
                           actionText: "View Details",
-                          capacity: "15 - 1,500 pax",
-                          leadTime: "18 Hours Notice"
+                          benefits: ["Complete balanced meal in one box", "Fresh & hygienic preparation", "Single-serve for easy distribution", "Daily meal programs available"]
                         }
                       ];
 
@@ -493,9 +643,9 @@ export default function HomeClient() {
                                   
                                   <div className="w-full md:w-1/2 p-8 sm:p-11 text-left bg-gradient-to-b md:bg-gradient-to-r from-white to-[#FAF9F6]/30 flex flex-col justify-between space-y-6">
                                     <div className="space-y-4">
-                                      <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[#052316]/5 rounded-full text-[9px] font-mono uppercase font-bold text-[#b89547]">
-                                        <Sparkles className="w-3.5 h-3.5 text-[#b89547]" />
-                                        <span>Verified Corporate Standard</span>
+                                      <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[#052316] rounded-full text-[9px] font-mono uppercase font-bold text-[#b89547] border border-[#b89547]/30">
+                                        <Utensils className="w-3.5 h-3.5 text-[#b89547]" />
+                                        <span>Deals in Bulk Orders Only</span>
                                       </div>
                                       <h4 className="text-3xl sm:text-4xl font-serif text-[#052316] tracking-tight leading-none flex items-center justify-between font-black">
                                         <span>{card.title}</span>
@@ -508,26 +658,15 @@ export default function HomeClient() {
                                         {card.description}
                                       </p>
 
-                                      <div className="grid grid-cols-2 gap-4 pt-2">
-                                        <div className="p-4 bg-white rounded-2xl border border-[#f2ece0] flex items-center space-x-3.5 shadow-sm hover:border-[#ebd2a0]/30 transition-colors">
-                                          <div className="w-10 h-10 rounded-xl bg-[#052316]/5 flex items-center justify-center text-[#b89547] shrink-0">
-                                            <Utensils className="w-5 h-5 stroke-[1.5]" />
-                                          </div>
-                                          <div className="min-w-0">
-                                            <span className="block text-[8px] font-mono text-gray-400 uppercase tracking-widest leading-none mb-1">Serving Capacity</span>
-                                            <span className="text-xs sm:text-sm font-serif font-black text-[#052316] truncate block">{card.capacity}</span>
-                                          </div>
-                                        </div>
-                                        <div className="p-4 bg-white rounded-2xl border border-[#f2ece0] flex items-center space-x-3.5 shadow-sm hover:border-[#ebd2a0]/30 transition-colors">
-                                          <div className="w-10 h-10 rounded-xl bg-[#052316]/5 flex items-center justify-center text-[#b89547] shrink-0">
-                                            <Clock className="w-5 h-5 stroke-[1.5]" />
-                                          </div>
-                                          <div className="min-w-0">
-                                            <span className="block text-[8px] font-mono text-gray-400 uppercase tracking-widest leading-none mb-1">Required Notice</span>
-                                            <span className="text-xs sm:text-sm font-serif font-black text-[#052316] truncate block">{card.leadTime}</span>
-                                          </div>
-                                        </div>
-                                      </div>
+                                      {/* Benefits list */}
+                                      <ul className="space-y-2 pt-1">
+                                        {card.benefits.map((b, bi) => (
+                                          <li key={bi} className="flex items-center gap-2 text-xs text-[#052316]/70 font-sans">
+                                            <Check className="w-3.5 h-3.5 text-[#b89547] shrink-0" />
+                                            <span>{b}</span>
+                                          </li>
+                                        ))}
+                                      </ul>
                                     </div>
                                     
                                     <div className="flex items-center justify-between pt-6 border-t border-dashed border-[#e6dfd1]">
@@ -612,6 +751,108 @@ export default function HomeClient() {
                   </div>
                 </div>
 
+              </div>
+            </motion.section>
+
+            {/* NEW: QUALITY PROMISE & TRUSTED INGREDIENTS */}
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              id="quality-and-ingredients"
+              className="py-24 bg-[#052316] text-white border-y border-[#b89547]/20 relative overflow-hidden"
+            >
+              {/* Corner Mandala */}
+              <svg className="absolute -bottom-10 -left-10 w-48 h-48 pointer-events-none select-none opacity-10" viewBox="0 0 200 200" fill="none">
+                <circle cx="100" cy="100" r="80" stroke="#b89547" strokeWidth="0.8" />
+                <circle cx="100" cy="100" r="60" stroke="#b89547" strokeWidth="0.8" />
+                {[0,30,60,90,120,150,180,210,240,270,300,330].map((deg) => (
+                  <line key={deg} x1="100" y1="100" x2={(100 + 80 * Math.cos(deg*Math.PI/180)).toFixed(4)} y2={(100 + 80 * Math.sin(deg*Math.PI/180)).toFixed(4)} stroke="#b89547" strokeWidth="0.5" />
+                ))}
+              </svg>
+
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                  
+                  {/* Left Column: Quality Promise Badge (4 cols) */}
+                  <div className="lg:col-span-4 flex flex-col items-center text-center p-6 border border-[#b89547]/25 rounded-[2.5rem] bg-[#03140d]/40 relative">
+                    <div className="absolute -top-4 bg-[#b89547] text-white text-[9px] font-mono font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                      Catering Partner
+                    </div>
+                    {/* Badge UI */}
+                    <div className="w-36 h-36 rounded-full border-4 border-double border-[#b89547]/45 flex items-center justify-center p-2 relative my-6">
+                      <div className="w-full h-full rounded-full bg-[#b89547]/10 flex flex-col items-center justify-center text-center p-3">
+                        <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-[#b89547]">Our Promise</span>
+                        <div className="w-12 h-[1px] bg-[#b89547]/30 my-1" />
+                        <span className="text-xs font-serif font-black text-white leading-tight">Your Confidence</span>
+                        <div className="w-12 h-[1px] bg-[#b89547]/30 my-1" />
+                        <span className="text-[8px] font-bold text-gray-300 uppercase tracking-tight">Quality • Hygiene • Taste</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-300 font-medium">
+                      Our Promise, Your Confidence. The hallmark of premium corporate standards in every serving.
+                    </p>
+                  </div>
+
+                  {/* Right Column: Trusted Ingredients (8 cols) */}
+                  <div className="lg:col-span-8 space-y-8 text-left">
+                    <div className="space-y-3">
+                      <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#b89547] uppercase block">INGREDIENTS WE TRUST</span>
+                      <h3 className="text-3xl md:text-4.5xl font-serif text-white tracking-tight leading-none font-black">
+                        Quality You Taste
+                      </h3>
+                      <p className="text-sm text-gray-300 max-w-xl font-sans">
+                        We believe that exceptional food begins with exceptional ingredients. We never compromise on standard brands and fresh procurement.
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-2">
+                      {/* Ingredient 1: Cooking Oil */}
+                      <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
+                        <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">01. Cooking Oil</span>
+                        <h5 className="font-serif font-bold text-sm text-white">Olive Oil & Fortune Oil</h5>
+                        <p className="text-[11px] text-gray-400">First corporate caterer cooking in healthy Olive Oil or premium Fortune Oil.</p>
+                      </div>
+
+                      {/* Ingredient 2: Flour */}
+                      <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
+                        <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">02. Fresh Flour</span>
+                        <h5 className="font-serif font-bold text-sm text-white">ITC Aashirvaad</h5>
+                        <p className="text-[11px] text-gray-400">Using 100% whole wheat high-fibre flour for soft, nutritious tawa chapatis.</p>
+                      </div>
+
+                      {/* Ingredient 3: Spices */}
+                      <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
+                        <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">03. Pure Spices</span>
+                        <h5 className="font-serif font-bold text-sm text-white">MDH Spices</h5>
+                        <p className="text-[11px] text-gray-400">Authentic recipes prepared using pure, certified raw spices from MDH.</p>
+                      </div>
+
+                      {/* Ingredient 4: Rice */}
+                      <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
+                        <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">04. Long Grain Rice</span>
+                        <h5 className="font-serif font-bold text-sm text-white">Premium Basmati</h5>
+                        <p className="text-[11px] text-gray-400">Long-grain, aromatic aged basmati rice for perfect texture and fragrance.</p>
+                      </div>
+
+                      {/* Ingredient 5: Vegetables */}
+                      <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
+                        <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">05. Vegetables</span>
+                        <h5 className="font-serif font-bold text-sm text-white">Seasonal Fresh</h5>
+                        <p className="text-[11px] text-gray-400">Sourced daily from local farmers, strictly washed and hygienically chopped.</p>
+                      </div>
+
+                      {/* Ingredient 6: Sweets */}
+                      <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
+                        <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">06. Desserts</span>
+                        <h5 className="font-serif font-bold text-sm text-white">Freshly Day-Prepared</h5>
+                        <p className="text-[11px] text-gray-400">Authentic sweets prepared fresh daily without artificial preservatives.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </motion.section>
 
@@ -783,221 +1024,185 @@ export default function HomeClient() {
               </div>
             </motion.section>
 
-            {/* 6. SELECT YOUR CATERING PLAN */}
+          </motion.div>
+        )}
+
+        {/* ==================== TAB 2: MENU SCREEN ==================== */}
+        {activeTab === AppTab.MENU && (
+          <motion.div
+            key="menu"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            id="menu-view-container"
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16"
+          >
+            {/* Header info */}
+            <div className="text-center max-w-3xl mx-auto space-y-6 pt-4 relative">
+              <div className="inline-flex items-center space-x-1 px-3.5 py-1 bg-[#ebd2a0]/20 border border-[#b89547]/20 rounded-full">
+                <span className="text-[9px] sm:text-[10px] font-mono font-bold tracking-[0.25em] uppercase text-[#ac843b]">
+                  GOURMET SELECTIONS
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-serif font-black text-halwai-green-950 tracking-tight leading-tight md:leading-[1.12]">
+                Our Menus,<br />
+                <span className="italic font-normal text-halwai-gold-600">Desi Flavours, Corporate Standards.</span>
+              </h2>
+              <p className="text-sm sm:text-base text-[#0e3d2a]/70 leading-relaxed max-w-2xl mx-auto">
+                Explore our premium meal options, traditional selections, and curated corporate dining boxes. Customization is always available for your team.
+              </p>
+            </div>
+
+            {/* TCH Box Menu explorer */}
             <motion.section
-              initial={{ opacity: 0, y: 35 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              id="select-your-catering-plan"
-              className="py-24 bg-[#FCFAF7]"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              id="tch-box-menu-explorer-tab"
+              className="py-12 bg-white border border-[#e5dfd3]/65 rounded-[2.5rem] shadow-sm relative"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                  <div className="flex items-center justify-center space-x-2.5 text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#b89547]">
-                    <div className="w-5 h-[1.5px] bg-[#b89547]/55" />
-                    <span>BUDGET CURATIONS</span>
-                    <div className="w-5 h-[1.5px] bg-[#b89547]/55" />
-                  </div>
-                  <h2 className="text-4xl md:text-5.5xl font-serif text-[#052316] tracking-tight leading-none select-none">
-                    Select <span className="font-serif font-black italic text-[#d99a1f] pr-1">Your</span> <span className="font-serif font-black">Plan</span>
-                  </h2>
-                  <div className="flex items-center justify-center space-x-3 text-[#b89547]/50 pt-1">
-                    <div className="w-10 h-[1.5px] bg-[#ebd2a0]/40" />
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M12 3c-1.5 3-4.5 4.5-8 4.5M12 3c1.5 3 4.5 4.5 8 4.5M12 3v18" strokeLinecap="round" />
-                    </svg>
-                    <div className="w-10 h-[1.5px] bg-[#ebd2a0]/40" />
-                  </div>
-                  <p className="text-sm md:text-base text-[#052316]/70 font-sans max-w-2xl mx-auto tracking-wide leading-relaxed font-medium">
-                    Gourmet meal programs designed for sustained productivity and employee satisfaction.
+                {/* Dark Green Banner Header */}
+                <div className="bg-[#052316] text-[#ebd2a0] py-6 px-8 rounded-3xl border border-[#b89547]/30 text-center shadow-lg mb-12 max-w-3xl mx-auto">
+                  <span className="text-[10px] font-mono font-bold tracking-[0.3em] text-[#b89547] uppercase block mb-1">Brochure Selection</span>
+                  <h3 className="text-3xl font-serif font-black text-white tracking-tight uppercase">
+                    TCH BOX MENU
+                  </h3>
+                  <div className="w-16 h-[1.5px] bg-[#b89547] mx-auto my-2" />
+                  <p className="text-xs text-gray-300 font-sans tracking-wide">
+                    Choose one option from each category to create your perfect corporate meal box.
                   </p>
                 </div>
 
-                {/* Grid of 3 plans */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-2">
-                  
-                  {/* Card 1: Silver Plan */}
-                  <div className="bg-white rounded-[2.5rem] border border-[#ebd2a0]/40 p-8 sm:p-10 flex flex-col justify-between shadow-[0_16px_40px_rgba(33,52,43,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(33,52,43,0.06)]">
-                    <div className="space-y-6 text-left">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-14 h-14 rounded-full bg-[#ebd2a0]/10 border border-[#ebd2a0]/25 flex items-center justify-center text-[#b89547] shrink-0">
-                          <Briefcase className="w-6 h-6 stroke-[1.5]" />
-                        </div>
-                        <div className="space-y-0.5 text-left">
-                          <span className="text-[10px] font-mono font-bold uppercase tracking-[0.15em] text-[#b89547]">
-                            Silver Plan
-                          </span>
-                          <h4 className="text-xl sm:text-2xl font-serif font-black text-[#052316] tracking-tight leading-tight">
-                            Essential Corporate
-                          </h4>
+                {/* 8 Categories Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {(() => {
+                    const categories = [
+                      {
+                        title: "1. Dal (Choice of One)",
+                        items: ["Dal Makhni", "Dal Tadka", "Special Tandoori Dal"]
+                      },
+                      {
+                        title: "2. Gravy Curries (Choice of One)",
+                        items: ["Kadhai Paneer", "Shahi Paneer", "Paneer Lababdar", "Palak Paneer", "Malai Kofta", "Rajma Masala", "Chhole Masala", "Kadhi Pakora", "Lauki Kofta", "Soya Chaap Masala"]
+                      },
+                      {
+                        title: "3. Vegetables (Choice of One)",
+                        items: ["Mix Veg", "Aloo Gobhi", "Jeera Aloo", "Cabbage Matar", "Capsicum Masala", "Mushroom Matar", "Bhindi Masala", "Chana Masala"]
+                      },
+                      {
+                        title: "4. Rice Selection",
+                        items: ["Plain Rice", "Jeera Rice", "Matar Pulao"]
+                      },
+                      {
+                        title: "5. Breads Selection",
+                        items: ["Tawa Roti", "Tandoori Roti", "Butter Naan", "Stuffed Garlic Naan", "Aloo Parantha", "Paneer Parantha", "Aloo Onion Parantha", "Lacha Parantha", "Plain Roti", "Butter Roti"]
+                      },
+                      {
+                        title: "6. Raita (Choice of One)",
+                        items: ["Plain Raita", "Mix Raita", "Boondi Raita"]
+                      },
+                      {
+                        title: "7. Dessert (Choice of One)",
+                        items: ["Halwa", "Kheer", "Rasgulla", "Gulab Jamun", "Rabri Jalebi", "Rasmalai", "Ice Cream"]
+                      },
+                      {
+                        title: "8. Salad & Chutney",
+                        items: ["Green Salad", "Onion Salad", "Fruit Salad", "Mexican Salad", "Russian Salad", "Green Chutney"]
+                      }
+                    ];
+
+                    return categories.map((cat, ci) => (
+                      <div key={ci} className="bg-white border border-[#e5dfd3]/60 rounded-3xl p-6 shadow-[0_8px_24px_rgba(5,35,22,0.02)] hover:border-[#b89547]/30 transition-all duration-300 text-left">
+                        <h4 className="font-serif font-black text-base text-[#052316] mb-4 flex items-center justify-between border-b border-[#e5dfd3]/40 pb-2">
+                          <span>{cat.title}</span>
+                          <span className="text-[10px] bg-[#b89547]/10 text-[#b89547] px-2 py-0.5 rounded-full font-mono uppercase">Select 1</span>
+                        </h4>
+                        <div className="flex flex-wrap gap-2 text-left">
+                          {cat.items.map((item, ii) => (
+                            <span
+                              key={ii}
+                              className="px-3.5 py-1.5 bg-[#FAF9F6] border border-[#e5dfd3]/50 text-xs font-sans text-[#052316]/80 rounded-full font-medium flex items-center gap-1.5 transition-all duration-200 hover:bg-[#052316]/5 hover:border-[#052316]/20"
+                            >
+                              <Check className="w-3 h-3 text-[#b89547]" />
+                              {item}
+                            </span>
+                          ))}
                         </div>
                       </div>
+                    ));
+                  })()}
+                </div>
 
-                      <div className="w-14 h-[2px] bg-[#b89547]/60" />
-
-                      <div className="pt-2 space-y-4">
-                        <ul className="space-y-4 text-xs sm:text-sm text-[#052316]/80 font-sans font-medium">
-                          <li className="flex items-center space-x-3 text-left">
-                            <div className="w-5 h-5 rounded-full border border-[#b89547] flex items-center justify-center shrink-0 bg-[#b89547]/5">
-                              <Check className="w-3.5 h-3.5 text-[#b89547] stroke-[2.5]" />
-                            </div>
-                            <span>1 Premium Gravy + 1 Dry Veg</span>
-                          </li>
-                          <li className="flex items-center space-x-3 text-left">
-                            <div className="w-5 h-5 rounded-full border border-[#b89547] flex items-center justify-center shrink-0 bg-[#b89547]/5">
-                              <Check className="w-3.5 h-3.5 text-[#b89547] stroke-[2.5]" />
-                            </div>
-                            <span>Dal Tadka & Steamed Rice</span>
-                          </li>
-                          <li className="flex items-center space-x-3 text-left">
-                            <div className="w-5 h-5 rounded-full border border-[#b89547] flex items-center justify-center shrink-0 bg-[#b89547]/5">
-                              <Check className="w-3.5 h-3.5 text-[#b89547] stroke-[2.5]" />
-                            </div>
-                            <span>Tawa Roti & Fresh Salad</span>
-                          </li>
-                        </ul>
-                      </div>
+                {/* Callout banners */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 max-w-3xl mx-auto">
+                  <div className="flex-1 bg-[#052316]/5 border border-[#b89547]/20 rounded-2xl p-4 flex items-center gap-3 text-left">
+                    <div className="w-10 h-10 rounded-full bg-[#b89547]/10 flex items-center justify-center text-[#b89547] shrink-0">
+                      <Sparkles className="w-5 h-5" />
                     </div>
-
-                    <button
-                      id="plan-configure-silver-btn"
-                      onClick={() => handleConfigurePlanBtn("Silver")}
-                      className="w-full py-4 mt-10 bg-transparent border-2 border-[#052316] text-[#052316] hover:bg-[#052316] hover:text-white font-sans font-black text-xs tracking-widest uppercase rounded-full transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer group/btn"
-                    >
-                      <span>GET QUOTE</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
+                    <div className="text-left">
+                      <span className="text-[10px] font-mono font-bold text-[#b89547] uppercase tracking-wider block">Customization</span>
+                      <span className="text-xs font-sans font-bold text-[#052316]">Menu Customization Available</span>
+                    </div>
                   </div>
 
-                  {/* Card 2: Platinum Plan (Highly Stylized, "MOST POPULAR") */}
-                  <div className="bg-[#052316] text-white rounded-[2.5rem] border-2 border-[#ebd2a0] p-8 sm:p-10 flex flex-col justify-between shadow-[0_24px_56px_rgba(5,35,22,0.14)] relative transform lg:-translate-y-2 hover:-translate-y-3 transition-all duration-300">
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#b89547] text-white text-[10px] font-mono font-bold uppercase tracking-widest px-5 py-2 rounded-full shadow-lg flex items-center space-x-1.5 border border-[#ebd2a0]/20 select-none">
-                      <Star className="w-3.5 h-3.5 fill-white text-white" />
-                      <span>MOST POPULAR</span>
+                  <div className="flex-1 bg-[#052316]/5 border border-[#b89547]/20 rounded-2xl p-4 flex items-center gap-3 text-left">
+                    <div className="w-10 h-10 rounded-full bg-[#b89547]/10 flex items-center justify-center text-[#b89547] shrink-0">
+                      <Building2 className="w-5 h-5" />
                     </div>
-
-                    <div className="space-y-6 pt-2 text-left">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-14 h-14 rounded-full bg-white/5 border border-white/12 flex items-center justify-center text-[#ebd2a0] shrink-0 shadow-inner">
-                          <Crown className="w-6 h-6 stroke-[1.5]" />
-                        </div>
-                        <div className="space-y-0.5 text-left">
-                          <span className="text-[10px] font-mono font-bold uppercase tracking-[0.15em] text-[#ebd2a0]">
-                            Platinum Plan
-                          </span>
-                          <h4 className="text-xl sm:text-2xl font-serif text-white tracking-tight leading-tight font-black">
-                            Executive Excellence
-                          </h4>
-                        </div>
-                      </div>
-
-                      <div className="w-14 h-[2px] bg-[#b89547]/60" />
-
-                      <div className="pt-2 space-y-4">
-                        <ul className="space-y-4 text-xs sm:text-sm text-white/95 font-sans font-medium">
-                          <li className="flex items-center space-x-3 text-left">
-                            <div className="w-5 h-5 rounded-full border border-[#ebd2a0]/50 flex items-center justify-center shrink-0 bg-white/5">
-                              <Check className="w-3.5 h-3.5 text-[#ebd2a0] stroke-[2.5]" />
-                            </div>
-                            <span>3 Main Gravies + 2 Dry Veg</span>
-                          </li>
-                          <li className="flex items-center space-x-3 text-left">
-                            <div className="w-5 h-5 rounded-full border border-[#ebd2a0]/50 flex items-center justify-center shrink-0 bg-white/5">
-                              <Check className="w-3.5 h-3.5 text-[#ebd2a0] stroke-[2.5]" />
-                            </div>
-                            <span>Premium Dal & Pulco</span>
-                          </li>
-                          <li className="flex items-center space-x-3 text-left">
-                            <div className="w-5 h-5 rounded-full border border-[#ebd2a0]/50 flex items-center justify-center shrink-0 bg-white/5">
-                              <Check className="w-3.5 h-3.5 text-[#ebd2a0] stroke-[2.5]" />
-                            </div>
-                            <span>Live Tawa Breads & Sides</span>
-                          </li>
-                          <li className="flex items-center space-x-3 text-left">
-                            <div className="w-5 h-5 rounded-full border border-[#ebd2a0]/50 flex items-center justify-center shrink-0 bg-white/5">
-                              <Check className="w-3.5 h-3.5 text-[#ebd2a0] stroke-[2.5]" />
-                            </div>
-                            <span>2 Desserts + Beverage</span>
-                          </li>
-                        </ul>
-                      </div>
+                    <div className="text-left">
+                      <span className="text-[10px] font-mono font-bold text-[#b89547] uppercase tracking-wider block">Bulk Orders</span>
+                      <span className="text-xs font-sans font-bold text-[#052316]">Deals in Bulk Orders Only</span>
                     </div>
-
-                    <button
-                      id="plan-configure-platinum-btn"
-                      onClick={() => handleConfigurePlanBtn("Platinum")}
-                      className="w-full py-4 mt-10 bg-[#f5ebd0] hover:bg-white text-[#052316] font-sans font-bold text-xs tracking-widest uppercase rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer group/btn"
-                    >
-                      <span>GET STARTED</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
                   </div>
-
-                  {/* Card 3: Gold Plan */}
-                  <div className="bg-white rounded-[2.5rem] border border-[#ebd2a0]/40 p-8 sm:p-10 flex flex-col justify-between shadow-[0_16px_40px_rgba(33,52,43,0.03)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(33,52,43,0.06)]">
-                    <div className="space-y-6 text-left">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-14 h-14 rounded-full bg-[#ebd2a0]/10 border border-[#ebd2a0]/25 flex items-center justify-center text-[#b89547] shrink-0">
-                          <Briefcase className="w-6 h-6 stroke-[1.5]" />
-                        </div>
-                        <div className="space-y-0.5 text-left">
-                          <span className="text-[10px] font-mono font-bold uppercase tracking-[0.15em] text-[#b89547]">
-                            Gold Plan
-                          </span>
-                          <h4 className="text-xl sm:text-2xl font-serif text-[#052316] tracking-tight leading-tight font-black">
-                            Standard Professional
-                          </h4>
-                        </div>
-                      </div>
-
-                      <div className="w-14 h-[2px] bg-[#b89547]/60" />
-
-                      <div className="pt-2 space-y-4">
-                        <ul className="space-y-4 text-xs sm:text-sm text-[#052316]/80 font-sans font-medium">
-                          <li className="flex items-center space-x-3 text-left">
-                            <div className="w-5 h-5 rounded-full border border-[#b89547] flex items-center justify-center shrink-0 bg-[#b89547]/5">
-                              <Check className="w-3.5 h-3.5 text-[#b89547] stroke-[2.5]" />
-                            </div>
-                            <span>2 Main Gravies + 1 Dry Veg</span>
-                          </li>
-                          <li className="flex items-center space-x-3 text-left">
-                            <div className="w-5 h-5 rounded-full border border-[#b89547] flex items-center justify-center shrink-0 bg-[#b89547]/5">
-                              <Check className="w-3.5 h-3.5 text-[#b89547] stroke-[2.5]" />
-                            </div>
-                            <span>Dal Makhni & Jeera Rice</span>
-                          </li>
-                          <li className="flex items-center space-x-3 text-left">
-                            <div className="w-5 h-5 rounded-full border border-[#b89547] flex items-center justify-center shrink-0 bg-[#b89547]/5">
-                              <Check className="w-3.5 h-3.5 text-[#b89547] stroke-[2.5]" />
-                            </div>
-                            <span>Assorted Breads & Raita</span>
-                          </li>
-                          <li className="flex items-center space-x-3 text-left">
-                            <div className="w-5 h-5 rounded-full border border-[#b89547] flex items-center justify-center shrink-0 bg-[#b89547]/5">
-                              <Check className="w-3.5 h-3.5 text-[#b89547] stroke-[2.5]" />
-                            </div>
-                            <span>1 Artisanal Dessert</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <button
-                      id="plan-configure-gold-btn"
-                      onClick={() => handleConfigurePlanBtn("Gold")}
-                      className="w-full py-4 mt-10 bg-transparent border-2 border-[#052316] text-[#052316] hover:bg-[#052316] hover:text-white font-sans font-black text-xs tracking-widest uppercase rounded-full transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer group/btn"
-                    >
-                      <span>GET QUOTE</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
-
                 </div>
 
               </div>
             </motion.section>
+
+            {/* Evening Snacks section */}
+            <div className="border-t border-[#e5dfd3]/60 pt-14">
+              <div className="text-center max-w-3xl mx-auto mb-10">
+                <span className="text-[10px] font-mono font-bold tracking-[0.3em] text-[#b89547] uppercase block mb-1">Light Delights</span>
+                <h3 className="text-3xl font-serif font-black text-[#052316] tracking-tight uppercase">
+                  Evening Snacks Menu
+                </h3>
+                <div className="w-16 h-[1.5px] bg-[#b89547] mx-auto my-2" />
+                <p className="text-xs text-gray-500 font-sans">
+                  Any 1 or 2 items combo served with fresh traditional beverages (Lassi, Buttermilk, or Fresh Lime Soda).
+                </p>
+                <div className="flex justify-center items-center gap-2 text-[10px] font-mono text-gray-400 mt-2">
+                  <span>GST exclusive</span>
+                  <span>•</span>
+                  <span>Bulk orders only</span>
+                </div>
+              </div>
+
+              {/* Evening Snacks Combos */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto pb-10 px-4">
+                {/* Silver Snacks Combo */}
+                <div className="bg-white border border-[#e5dfd3]/60 rounded-3xl p-6 text-center space-y-3 shadow-xs">
+                  <span className="text-[10px] font-mono font-bold text-[#b89547] uppercase tracking-wider block">Silver Snack Combo</span>
+                  <h4 className="font-serif font-bold text-sm text-[#052316]">Any 1 Item</h4>
+                  <p className="text-xs text-gray-500 font-sans">Choose any single item from our extensive evening snacks selections.</p>
+                </div>
+                {/* Gold Snacks Combo */}
+                <div className="bg-white border border-[#e5dfd3]/60 rounded-3xl p-6 text-center space-y-3 shadow-xs">
+                  <span className="text-[10px] font-mono font-bold text-[#b89547] uppercase tracking-wider block">Gold Snack Combo</span>
+                  <h4 className="font-serif font-bold text-sm text-[#052316]">Any 2 Items OR 1 Item + Beverage</h4>
+                  <p className="text-xs text-gray-500 font-sans">Choice of any 2 snacks, or 1 snack paired with fresh Lassi, Buttermilk, or Fresh Lime Soda.</p>
+                </div>
+                {/* Platinum Snacks Combo */}
+                <div className="bg-white border border-[#e5dfd3]/60 rounded-3xl p-6 text-center space-y-3 shadow-xs">
+                  <span className="text-[10px] font-mono font-bold text-[#b89547] uppercase tracking-wider block">Platinum Snack Combo</span>
+                  <h4 className="font-serif font-bold text-sm text-[#052316]">Any 2 Items + Beverage</h4>
+                  <p className="text-xs text-gray-500 font-sans">Choice of any 2 snack items paired with fresh Lassi, Buttermilk, or Fresh Lime Soda.</p>
+                </div>
+              </div>
+
+              <EveningSnacks />
+            </div>
 
           </motion.div>
         )}
@@ -1071,23 +1276,24 @@ export default function HomeClient() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-6xl mx-auto pt-4 items-stretch">
                 
                 {/* Card 1: Silver */}
-                <div className="bg-white rounded-[2rem] p-8 border border-[#e5dfd3]/60 shadow-[0_10px_30px_rgba(5,35,22,0.02)] flex flex-col justify-between relative transition-all duration-300 hover:shadow-md">
+                <div className="bg-white rounded-[2rem] p-8 border border-[#e5dfd3]/60 shadow-[0_10px_30px_rgba(5,35,22,0.02)] flex flex-col justify-between relative transition-all duration-300 hover:shadow-md text-left">
                   <div className="space-y-6">
                     <div className="border-b border-[#e5dfd3]/40 pb-5">
                       <h4 className="font-serif font-black text-[#052316] text-2xl leading-none">Silver Meal Thali</h4>
-                      <div className="flex items-baseline mt-2 space-x-1">
-                        <span className="text-xl font-serif font-black text-[#8b6b2a]">₹ 249</span>
-                        <span className="text-[10px] text-gray-400 font-sans">/starting person</span>
+                      <div className="flex items-baseline mt-2">
+                        <span className="text-sm font-sans font-black text-[#b89547] uppercase tracking-wide">Contact for Custom Quote</span>
                       </div>
                     </div>
 
-                    <ul className="space-y-3.5 text-xs sm:text-sm text-gray-600 font-sans">
+                    <ul className="space-y-3.5 text-xs sm:text-sm text-gray-600 font-sans text-left">
                       {[
-                        "1 Premium Gravy",
-                        "Dal Raita",
-                        "Steamed Rice",
-                        "Butter Chapati",
-                        "Salad, Jaggery, Pickle, Chutney"
+                        "1 Gravy Curry",
+                        "Dal Makhni / Raita",
+                        "Steam Rice",
+                        "Fresh Tawa Chapati",
+                        "Regular Salad, Jaggery Cubes, Pickle, Chutney",
+                        "Olive Oil upgrade (+₹20/person) available",
+                        "Taxes extra as applicable"
                       ].map((item, key) => (
                         <li key={key} className="flex items-start space-x-2.5">
                           <Check className="w-4 h-4 text-[#b89547] shrink-0 mt-0.5" />
@@ -1107,7 +1313,7 @@ export default function HomeClient() {
                 </div>
 
                 {/* Card 2: Gold (RECOMMENDED) */}
-                <div className="bg-white rounded-[2rem] p-8 border-2 border-[#b89547] shadow-[0_15px_45px_rgba(184,149,71,0.08)] flex flex-col justify-between relative transition-all duration-300 hover:shadow-lg">
+                <div className="bg-white rounded-[2rem] p-8 border-2 border-[#b89547] shadow-[0_15px_45px_rgba(184,149,71,0.08)] flex flex-col justify-between relative transition-all duration-300 hover:shadow-lg text-left">
                   {/* RECOMMENDED badge */}
                   <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[#8b6b2a] text-[#ebd2a0] text-[9px] font-mono tracking-[0.2em] uppercase font-extrabold px-5 py-1.5 rounded-full border border-[#ebd2a0]/40 shadow-sm z-10">
                     RECOMMENDED
@@ -1116,20 +1322,22 @@ export default function HomeClient() {
                   <div className="space-y-6">
                     <div className="border-b border-[#e5dfd3]/40 pb-5">
                       <h4 className="font-serif font-black text-[#052316] text-2xl leading-none">Gold Meal Thali</h4>
-                      <div className="flex items-baseline mt-2 space-x-1">
-                        <span className="text-xl font-serif font-black text-[#8b6b2a]">₹ 275</span>
-                        <span className="text-[10px] text-gray-400 font-sans">/starting person</span>
+                      <div className="flex items-baseline mt-2">
+                        <span className="text-sm font-sans font-black text-[#b89547] uppercase tracking-wide">Contact for Custom Quote</span>
                       </div>
                     </div>
 
-                    <ul className="space-y-3.5 text-xs sm:text-sm text-gray-700 font-sans">
+                    <ul className="space-y-3.5 text-xs sm:text-sm text-gray-700 font-sans text-left">
                       {[
                         "1 Premium Gravy",
                         "1 Dry Seasonal Veg",
-                        "Dal Tadka & Creamy Raita",
-                        "Steamed Rice",
-                        "Butter Chapati",
-                        "Green Salad, Jaggery, Pickle, Chutney"
+                        "Dal Makhni",
+                        "Boondi Raita / Veg Raita",
+                        "Jeera Rice",
+                        "Fresh Tawa Chapati",
+                        "Green Salad, Jaggery, Pickle, Chutney",
+                        "Olive Oil upgrade (+₹20/person) available",
+                        "Taxes extra as applicable"
                       ].map((item, key) => (
                         <li key={key} className="flex items-start space-x-2.5">
                           <Check className="w-4 h-4 text-[#b89547] shrink-0 mt-0.5" />
@@ -1149,27 +1357,32 @@ export default function HomeClient() {
                 </div>
 
                 {/* Card 3: Platinum */}
-                <div className="bg-white rounded-[2rem] p-8 border border-[#e5dfd3]/60 shadow-[0_10px_30px_rgba(5,35,22,0.02)] flex flex-col justify-between relative transition-all duration-300 hover:shadow-md">
+                <div className="bg-white rounded-[2rem] p-8 border border-[#e5dfd3]/60 shadow-[0_10px_30px_rgba(5,35,22,0.02)] flex flex-col justify-between relative transition-all duration-300 hover:shadow-md text-left">
                   <div className="space-y-6">
                     <div className="border-b border-[#e5dfd3]/40 pb-5">
                       <h4 className="font-serif font-black text-[#052316] text-2xl leading-none">Platinum Meal Thali</h4>
-                      <div className="flex items-baseline mt-2 space-x-1">
-                        <span className="text-xl font-serif font-black text-[#8b6b2a]">₹ 299</span>
-                        <span className="text-[10px] text-gray-400 font-sans">/starting person</span>
+                      <div className="flex items-baseline mt-2">
+                        <span className="text-sm font-sans font-black text-[#b89547] uppercase tracking-wide">Contact for Custom Quote</span>
                       </div>
                     </div>
 
-                    <ul className="space-y-3.5 text-xs sm:text-sm text-gray-600 font-sans">
+                    <ul className="space-y-3.5 text-xs sm:text-sm text-gray-600 font-sans text-left">
                       {[
-                        "1 Premium Gravy + 1 Dry Veg",
-                        "Dal, Raita & Papad",
-                        "Rice + Paratha/Chapati",
-                        "Signature sweet of the day",
-                        "Green Salad, Jaggery, Pickle, Chutney"
+                        "1 Premium Gravy",
+                        "1 Dry Seasonal Veg",
+                        "Dal Makhni",
+                        "Boondi Raita / Veg Raita",
+                        "Jeera Rice",
+                        "Fresh Tawa Chapati & Laccha Paratha",
+                        "Papad",
+                        "Choice of Sweets (Mentioned in Menu)",
+                        "Green Salad, Jaggery, Pickle, Chutney",
+                        "Olive Oil upgrade (+₹20/person) available",
+                        "Taxes extra as applicable"
                       ].map((item, key) => (
                         <li key={key} className="flex items-start space-x-2.5">
                           <Check className="w-4 h-4 text-[#b89547] shrink-0 mt-0.5" />
-                          <span className={`leading-tight ${item === "Signature sweet of the day" ? "underline decoration-[#b89547] decoration-2 underline-offset-4 font-semibold text-[#052316]" : ""}`}>{item}</span>
+                          <span className={`leading-tight ${item === "Choice of Sweets (Mentioned in Menu)" ? "underline decoration-[#b89547] decoration-2 underline-offset-4 font-semibold text-[#052316]" : ""}`}>{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -1598,11 +1811,22 @@ export default function HomeClient() {
     </main>
 
       {/* ===================== BRAND LUXURY FOOTER ===================== */}
-      <footer id="primary-app-footer" className="bg-halwai-green-950 text-halwai-cream-50 border-t border-halwai-gold-500/25 py-12 px-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer id="primary-app-footer" className="bg-[#05140d] text-halwai-cream-50 border-t border-[#b89547]/30 py-16 px-4 relative overflow-hidden">
+        {/* Mughal monument silhouette in footer */}
+        <div className="absolute bottom-0 right-0 left-0 h-24 opacity-[0.04] pointer-events-none select-none">
+          <svg className="w-full h-full text-white" viewBox="0 0 1000 100" preserveAspectRatio="none" fill="currentColor">
+            <path d="M0,100 L1000,100 L1000,70 Q950,55 900,70 T800,70 Q750,50 700,70 T600,70 Q550,55 500,70 T400,70 Q350,50 300,70 T200,70 Q150,55 100,70 T0,70 Z" />
+            <path d="M150,70 L150,30 Q160,20 170,30 L170,70 Z M450,70 L450,20 Q465,5 480,20 L480,70 Z M750,70 L750,30 Q760,20 770,30 L770,70 Z" />
+            <circle cx="160" cy="20" r="2" />
+            <circle cx="465" cy="5" r="3" />
+            <circle cx="760" cy="20" r="2" />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10 text-left">
           
           {/* Col 1: Brand details */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-left">
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 flex items-center justify-center">
                 <TCHLogo className="w-full h-full" id="footer-tch-logo" />
@@ -1611,7 +1835,7 @@ export default function HomeClient() {
                 The Corporate Halwai
               </h2>
             </div>
-            <p className="text-xs text-halwai-cream-100/60 leading-relaxed">
+            <p className="text-xs text-halwai-cream-100/60 leading-relaxed font-sans">
               Premium corporate Indian gastronomy. Designed to deliver robust fuel, extreme health focus, and visual theater across office environments of modern teams.
             </p>
             <p className="text-[10px] font-mono text-halwai-gold-400">
@@ -1621,52 +1845,88 @@ export default function HomeClient() {
 
           {/* Col 2: Navigation Links */}
           <div className="space-y-3 text-left">
-            <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
+            <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[#b89547] select-none">
               Catering Tiers
             </h5>
             <div className="flex flex-col space-y-1.5 text-xs text-halwai-cream-100/60 font-sans">
               <button onClick={() => { setActiveTab(AppTab.HOME); window.scrollTo(0,0); }} className="hover:text-halwai-gold-300 text-left">The TCH Box Program</button>
               <button onClick={() => { setActiveTab(AppTab.HOME); window.scrollTo(0,0); }} className="hover:text-halwai-gold-300 text-left">Royal Buffet Setups</button>
               <button onClick={() => { setActiveTab(AppTab.HOME); window.scrollTo(0,0); }} className="hover:text-halwai-gold-300 text-left">Themed Street Food Carts</button>
-              <button onClick={() => { setActiveTab(AppTab.PRICING); window.scrollTo(0,0); }} className="hover:text-halwai-gold-300 text-left">Complimentary Tasting terms</button>
+              <button onClick={() => { setActiveTab(AppTab.MENU); window.scrollTo(0,0); }} className="hover:text-halwai-gold-300 text-left">Explore Menu & Selections</button>
             </div>
           </div>
 
           {/* Col 3: Operations Locations */}
           <div className="space-y-3 text-left">
-            <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
+            <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[#b89547] select-none">
               Sectors & Hubs
             </h5>
             <div className="space-y-2 text-xs text-halwai-cream-100/60 font-sans">
               <div className="flex items-start space-x-2">
                 <MapPin className="w-3.5 h-3.5 text-halwai-gold-400 shrink-0 mt-0.5" />
-                <span>Delhi, Noida, and Gurugram Service Area.</span>
+                <span>Gurugram & Delhi NCR Service Area.</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Timer className="w-3.5 h-3.5 text-halwai-gold-400 shrink-0" />
                 <span>Operating hours: 07:00 AM - 10:00 PM Daily</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Globe className="w-3.5 h-3.5 text-halwai-gold-400 shrink-0" />
+                <a href="https://www.thecorporatehalwai.com" target="_blank" rel="noopener noreferrer" className="hover:text-halwai-gold-300">www.thecorporatehalwai.com</a>
               </div>
             </div>
           </div>
 
           {/* Col 4: Contact details */}
           <div className="space-y-3 text-left">
-            <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
+            <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-[#b89547] select-none">
               Business Desks
             </h5>
-            <div className="space-y-2 text-xs text-halwai-cream-100/60 font-sans">
-              <p>For immediate custom thali configurations, get in touch our business desk directly:</p>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-3.5 h-3.5 text-halwai-gold-400" />
-                <a href="tel:+919289030016" className="hover:text-halwai-gold-300">9289030016</a>
+            <div className="space-y-2.5 text-xs text-halwai-cream-100/60 font-sans">
+              <div className="flex flex-col space-y-1.5">
+                <div className="flex items-center space-x-2">
+                  <Phone className="w-3.5 h-3.5 text-halwai-gold-400 shrink-0" />
+                  <a href="tel:+919289030016" className="hover:text-halwai-gold-300 font-mono">9289030016</a>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Phone className="w-3.5 h-3.5 text-halwai-gold-400 shrink-0" />
+                  <a href="tel:+919667314900" className="hover:text-halwai-gold-300 font-mono">9667314900 <span className="text-[10px] text-gray-400 font-sans">(Bulk Orders)</span></a>
+                </div>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="w-3.5 h-3.5 text-halwai-gold-400" />
-                <a href="mailto:info@thekp.co.in" className="hover:text-halwai-gold-300 font-bold">info@thekp.co.in</a>
+                <Mail className="w-3.5 h-3.5 text-halwai-gold-400 shrink-0" />
+                <a href="mailto:thecorporatehalwai@gmail.com" className="hover:text-halwai-gold-300 font-bold">thecorporatehalwai@gmail.com</a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MessageCircle className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
+                <a
+                  href="https://wa.me/919289030016?text=Hi%20The%20Corporate%20Halwai%2C%20I%27d%20like%20to%20enquire%20about%20your%20catering%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-halwai-gold-300"
+                >
+                  WhatsApp Support
+                </a>
               </div>
             </div>
           </div>
 
+        </div>
+
+        {/* Brand Statement + Quality Strip */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-[#ebd2a0]/15 relative z-10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-halwai-cream-100/60 font-serif italic text-center md:text-left">
+            "Food that Fuels Performance. Great meals. Happy teams. Better workplaces."
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 text-[10px] font-mono tracking-wider uppercase text-halwai-gold-400">
+            <span>Deals in Bulk Orders Only</span>
+            <span className="text-gray-600">•</span>
+            <span>Professional Service</span>
+            <span className="text-gray-600">•</span>
+            <span>Consistent Quality</span>
+            <span className="text-gray-600">•</span>
+            <span>Complete Satisfaction</span>
+          </div>
         </div>
       </footer>
 
@@ -1778,6 +2038,17 @@ export default function HomeClient() {
         </motion.div>
       )}
     </AnimatePresence>
+
+      {/* Floating WhatsApp Button */}
+      <a
+        href="https://wa.me/919289030016?text=Hi%20The%20Corporate%20Halwai%2C%20I%27d%20like%20to%20enquire%20about%20your%20catering%20services."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3.5 rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:bg-[#20ba5a] hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center border border-white/10"
+        title="WhatsApp Us"
+      >
+        <MessageCircle className="w-6.5 h-6.5 text-white" />
+      </a>
 
     </div>
   );

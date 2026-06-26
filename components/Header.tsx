@@ -1,6 +1,6 @@
 import React from "react";
 import { AppTab } from "../types";
-import { Utensils, CalendarDays, Menu, X } from "lucide-react";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import TCHLogo from "./TCHLogo";
 
 interface HeaderProps {
@@ -15,18 +15,19 @@ export default function Header({ activeTab, setActiveTab, openBookingModal, isSc
 
   const navLinks = [
     { label: "HOME", tab: AppTab.HOME },
-    // { label: "PRICING", tab: AppTab.PRICING },
+    { label: "MENU", tab: AppTab.MENU },
+    { label: "PRICING", tab: AppTab.PRICING },
     { label: "GALLERY", tab: AppTab.GALLERY }
   ];
 
   return (
     <header
       id="main-app-header"
-      className="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-[#FAF9F6] border-b border-[#e5dfd3]/65 py-4 shadow-sm"
+      className="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-[#FAF9F6] border-b border-[#e5dfd3]/65 py-3 shadow-sm"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          
+        <div className="flex items-center justify-between gap-4">
+
           {/* Logo Brand */}
           <div
             id="brand-logo-container"
@@ -34,7 +35,7 @@ export default function Header({ activeTab, setActiveTab, openBookingModal, isSc
               setActiveTab(AppTab.HOME);
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="flex items-center space-x-3 cursor-pointer group"
+            className="flex items-center space-x-3 cursor-pointer group shrink-0"
           >
             <div className="relative w-11 h-11 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <TCHLogo className="w-full h-full" />
@@ -50,7 +51,7 @@ export default function Header({ activeTab, setActiveTab, openBookingModal, isSc
           </div>
 
           {/* Desktop Navigation */}
-          <nav id="desktop-primary-navigation" className="hidden md:flex items-center space-x-8">
+          <nav id="desktop-primary-navigation" className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <button
                 key={link.tab}
@@ -73,12 +74,33 @@ export default function Header({ activeTab, setActiveTab, openBookingModal, isSc
             ))}
           </nav>
 
-          {/* Desktop Call to Action */}
-          <div className="hidden md:block">
+          {/* Desktop Contact + CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Phone numbers */}
+            <div className="flex items-center gap-2 text-[10px] font-mono font-bold text-[#052316]/70">
+              <Phone className="w-3 h-3 text-[#b89547] shrink-0" />
+              <div className="flex flex-col leading-tight">
+                <a href="tel:+919289030016" className="hover:text-[#b89547] transition-colors">9289030016</a>
+                <a href="tel:+919667314900" className="hover:text-[#b89547] transition-colors">9667314900</a>
+              </div>
+            </div>
+            {/* WhatsApp */}
+            <a
+              id="header-whatsapp-link"
+              href="https://wa.me/919289030016?text=Hi%20The%20Corporate%20Halwai%2C%20I%27d%20like%20to%20enquire%20about%20your%20catering%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-2 bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 text-[#128C7E] rounded-full text-[10px] font-bold tracking-wide transition-all duration-300"
+              title="WhatsApp us"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span className="hidden lg:inline">WhatsApp</span>
+            </a>
+            {/* Book Tasting CTA */}
             <button
               id="cta-book-tasting-header"
               onClick={openBookingModal}
-              className="flex items-center space-x-2 px-6 py-2.5 bg-[#052316] hover:bg-[#0b3825] text-white text-xs font-bold tracking-wider rounded-full shadow-sm hover:shadow-md transition-all duration-300"
+              className="flex items-center space-x-2 px-5 py-2.5 bg-[#052316] hover:bg-[#0b3825] text-white text-xs font-bold tracking-wider rounded-full shadow-sm hover:shadow-md transition-all duration-300"
             >
               <span>Book Tasting</span>
             </button>
@@ -123,6 +145,26 @@ export default function Header({ activeTab, setActiveTab, openBookingModal, isSc
                 {link.label}
               </button>
             ))}
+            {/* Mobile contact info */}
+            <div className="flex flex-col space-y-2 py-2 border-b border-gray-100">
+              <a href="tel:+919289030016" className="flex items-center gap-2 text-xs font-mono font-bold text-[#052316]/80 hover:text-[#b89547]">
+                <Phone className="w-3.5 h-3.5 text-[#b89547]" />
+                9289030016
+              </a>
+              <a href="tel:+919667314900" className="flex items-center gap-2 text-xs font-mono font-bold text-[#052316]/80 hover:text-[#b89547]">
+                <Phone className="w-3.5 h-3.5 text-[#b89547]" />
+                9667314900 (Bulk Orders)
+              </a>
+              <a
+                href="https://wa.me/919289030016?text=Hi%20The%20Corporate%20Halwai%2C%20I%27d%20like%20to%20enquire%20about%20your%20catering%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs font-bold text-[#128C7E] hover:text-[#075E54]"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                WhatsApp Us
+              </a>
+            </div>
             <button
               id="mobile-cta-bktasting-btn"
               onClick={() => {

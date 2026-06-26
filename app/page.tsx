@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import HomeClient from './HomeClient';
 
 export const metadata: Metadata = {
-  title: 'Premium PG & Co-living Spaces in Gurgaon, Bangalore | Comfort N Stays',
-  description: 'Premium corporate catering for modern workplaces across Gurugram, Delhi NCR and Bangalore. Verified food safety, customized menus, and professional hospitality.',
+  title: 'The Corporate Halwai | Desi Flavours. Corporate Standards. | Corporate Catering Gurugram & Delhi NCR',
+  description: 'Premium corporate catering in Gurugram & Delhi NCR. Authentic desi flavours with hygiene, professionalism and corporate standards. Serving Since 2015. The first corporate caterer to prepare food in olive oil. Office meals, events & cafeteria services.',
 };
 
 export default function HomePage() {

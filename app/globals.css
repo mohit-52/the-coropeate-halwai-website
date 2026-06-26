@@ -44,3 +44,13 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-halwai-gold-600);
 }
+
+/* Marquee Animation for Trust Ticker */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}

@@ -1,5 +1,6 @@
 export enum AppTab {
   HOME = "HOME",
+  MENU = "MENU",
   PRICING = "PRICING",
   GALLERY = "GALLERY"
 }
