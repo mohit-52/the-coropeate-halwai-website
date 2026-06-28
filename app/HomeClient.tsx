@@ -639,7 +639,7 @@ export default function HomeClient() {
                         {/* Food image: right-aligned, overlapping */}
                         <div className="absolute right-4 top-4 w-28 h-28 rounded-full overflow-hidden shadow-md border-4 border-white">
                           <img
-                            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=300"
+                            src="https://plus.unsplash.com/premium_photo-1667389723440-dbbde959df52?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="TCH Box food"
                             className="w-full h-full object-cover"
                           />
@@ -699,7 +699,7 @@ export default function HomeClient() {
                         {/* Food image */}
                         <div className="absolute right-4 top-4 w-28 h-28 rounded-[1.75rem] overflow-hidden shadow-md border-4 border-white">
                           <img
-                            src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=300"
+                            src="https://images.unsplash.com/photo-1691982800089-cb7a29c4596b?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="TCH Box + Live"
                             className="w-full h-full object-cover"
                           />
@@ -760,7 +760,7 @@ export default function HomeClient() {
                         {/* Food image */}
                         <div className="absolute right-4 top-4 w-28 h-28 rounded-[1.75rem] overflow-hidden shadow-md border-4 border-white">
                           <img
-                            src="https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&q=80&w=300"
+                            src="https://images.unsplash.com/photo-1727404679933-99daa2a7573a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Corporate Thali"
                             className="w-full h-full object-cover"
                           />
@@ -848,140 +848,187 @@ export default function HomeClient() {
                 </svg>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                  {/* Section header */}
+                  <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div className="flex items-center justify-center gap-3">
+                      <div className="w-6 h-[1px] bg-[#b89547]" />
+                      <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#b89547] uppercase">Ingredients We Trust</span>
+                      <div className="w-6 h-[1px] bg-[#b89547]" />
+                    </div>
+                    <h2 className="text-4xl md:text-5.5xl font-serif font-black text-white tracking-tight leading-tight select-none">
+                      Quality You Taste
+                    </h2>
+                    <p className="text-sm md:text-base text-gray-300 font-sans max-w-xl mx-auto leading-relaxed font-medium">
+                      We believe that exceptional food begins with exceptional ingredients. We never compromise on standard brands and fresh procurement.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-14">
 
                     {/* Left Column: Quality Promise Badge (4 cols) */}
-                    <div className="lg:col-span-4 flex flex-col items-center text-center p-6 border border-[#b89547]/25 rounded-[2.5rem] bg-[#03140d]/40 relative">
-                      <div className="absolute -top-4 bg-[#b89547] text-white text-[9px] font-mono font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                    <div className="lg:col-span-4 relative flex flex-col h-full pt-5 md:pt-0">
+                      {/* Absolute badge */}
+                      <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-20 bg-[#b89547] text-white text-[10px] font-sans font-bold uppercase tracking-widest pl-3.5 pr-5 py-2 rounded-full flex items-center gap-2 shadow-lg border border-[#ebd2a0]/25 min-w-max">
+                        <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center border border-white/20 shrink-0">
+                          <ChefHat className="w-3 h-3 text-white" />
+                        </div>
                         Catering Partner
                       </div>
-                      {/* Badge UI */}
-                      <div className="w-36 h-36 rounded-full border-4 border-double border-[#b89547]/45 flex items-center justify-center p-2 relative my-6">
-                        <div className="w-full h-full rounded-full bg-[#b89547]/10 flex flex-col items-center justify-center text-center p-3">
-                          <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-[#b89547]">Our Promise</span>
-                          <div className="w-12 h-[1px] bg-[#b89547]/30 my-1" />
-                          <span className="text-xs font-serif font-black text-white leading-tight">Your Confidence</span>
-                          <div className="w-12 h-[1px] bg-[#b89547]/30 my-1" />
-                          <span className="text-[8px] font-bold text-gray-300 uppercase tracking-tight">Quality • Hygiene • Taste</span>
+
+                      {/* Card with overflow-hidden */}
+                      <div className="bg-[#041f14] border border-[#b89547]/30 rounded-[2.5rem] p-8 flex flex-col items-center justify-between text-center relative shadow-xl overflow-hidden min-h-[460px] h-full flex-1">
+                        {/* Decorative leaf sketch absolute in background */}
+                        <svg className="absolute -left-2 bottom-6 w-32 h-64 opacity-25 pointer-events-none select-none text-[#b89547]" viewBox="0 0 100 200" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round">
+                          <path d="M10 190 Q 25 140 30 50" />
+                          <path d="M30 50 Q 12 40 10 25 Q 22 28 30 50" />
+                          <path d="M28 75 Q 8 68 5 53 Q 18 55 28 75" />
+                          <path d="M25 105 Q 4 100 2 85 Q 15 88 25 105" />
+                          <path d="M22 135 Q 2 132 0 117 Q 12 120 22 135" />
+                          <path d="M19 160 Q 3 158 2 143 Q 10 145 19 160" />
+                          {/* side branch leaves */}
+                          <path d="M16 140 Q 26 120 32 90" />
+                          <path d="M32 90 Q 42 75 40 68 Q 30 75 32 90" />
+                          <path d="M29 110 Q 42 100 45 93 Q 32 98 29 110" />
+                        </svg>
+
+                        {/* Circle Badge UI */}
+                        <div className="relative w-52 h-52 flex items-center justify-center my-6 shrink-0">
+                          {/* Outer circle line */}
+                          <div className="absolute inset-0 rounded-full border border-[#b89547]/30" />
+                          {/* Inner circle line */}
+                          <div className="absolute inset-2 rounded-full border-2 border-[#b89547]/50 flex flex-col items-center justify-center p-6 text-center bg-[#031d12]/20">
+                            <ShieldCheck className="w-7 h-7 text-[#b89547] stroke-[1.5] mb-2" />
+                            <span className="text-[9px] font-mono font-bold uppercase tracking-[0.25em] text-[#b89547]">Our Promise</span>
+                            <h4 className="text-2xl font-serif font-black text-white tracking-tight leading-tight mt-1 mb-2">
+                              Your<br />Confidence
+                            </h4>
+                            <span className="text-[8px] font-sans font-extrabold tracking-widest text-[#ebd2a0]/85 uppercase">
+                              Quality • Hygiene •<br />Taste
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="w-full flex flex-col items-center">
+                          {/* Divider */}
+                          <div className="flex items-center justify-center gap-3 py-1 w-full mt-4">
+                            <div className="w-16 h-[0.5px] bg-[#b89547]/40" />
+                            <span className="text-[#b89547] text-xs">✦</span>
+                            <div className="w-16 h-[0.5px] bg-[#b89547]/40" />
+                          </div>
+
+                          {/* Description */}
+                          <div className="mt-4 space-y-1">
+                            <h5 className="font-sans font-bold text-sm text-white">Our Promise, Your Confidence.</h5>
+                            <p className="text-xs text-gray-400 font-medium leading-relaxed max-w-[240px] mx-auto">
+                              The hallmark of premium corporate standards in every serving.
+                            </p>
+                          </div>
                         </div>
                       </div>
-                      <p className="text-xs text-gray-300 font-medium">
-                        Our Promise, Your Confidence. The hallmark of premium corporate standards in every serving.
-                      </p>
                     </div>
 
-                    {/* Right Column: Trusted Ingredients (8 cols) */}
-                    <div className="lg:col-span-8 space-y-8 text-left">
-                      <div className="space-y-3">
-                        <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#b89547] uppercase block">INGREDIENTS WE TRUST</span>
-                        <h3 className="text-3xl md:text-4.5xl font-serif text-white tracking-tight leading-none font-black">
-                          Quality You Taste
-                        </h3>
-                        <p className="text-sm text-gray-300 max-w-xl font-sans">
-                          We believe that exceptional food begins with exceptional ingredients. We never compromise on standard brands and fresh procurement.
-                        </p>
-                      </div>
-
-                      <div className="grid grid-cols-1 min-[480px]:grid-cols-2 sm:grid-cols-3 gap-6 pt-2">
-                        {/* Ingredient 1: Cooking Oil */}
-                        <div className="flex gap-4 items-start">
-                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
-                            <img
-                              src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=150"
-                              alt="Cooking Oil"
-                              className="w-full h-full object-cover"
-                            />
+                    {/* Right Column: 6 Ingredient Cards (8 cols) */}
+                    <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+                      {[
+                        {
+                          num: "01",
+                          cat: "COOKING OIL",
+                          title: "Olive Oil & Fortune Oil",
+                          desc: "We use premium Olive Oil & Fortune Oil for healthy and flavorful cooking.",
+                          image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=250"
+                        },
+                        {
+                          num: "02",
+                          cat: "FRESH FLOUR",
+                          title: "ITC Aashirvaad",
+                          desc: "Made with 100% whole wheat flour for soft, nutritious tawa chapatis.",
+                          image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=250"
+                        },
+                        {
+                          num: "03",
+                          cat: "PURE SPICES",
+                          title: "MDH Spices",
+                          desc: "Authentic recipes prepared using pure, certified raw spices from MDH.",
+                          image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=250"
+                        },
+                        {
+                          num: "04",
+                          cat: "LONG GRAIN RICE",
+                          title: "Premium Basmati",
+                          desc: "Long-grain, aromatic aged basmati rice for perfect texture and fragrance.",
+                          image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=250"
+                        },
+                        {
+                          num: "05",
+                          cat: "VEGETABLES",
+                          title: "Seasonal Fresh",
+                          desc: "Sourced daily from local farmers, strictly washed and hygienically chopped.",
+                          image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=250"
+                        },
+                        {
+                          num: "06",
+                          cat: "DESSERTS",
+                          title: "Freshly Day-Prepared",
+                          desc: "Authentic sweets prepared daily without artificial preservatives.",
+                          image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&q=80&w=250"
+                        }
+                      ].map((item, i) => (
+                        <div key={i} className="bg-white rounded-[1.75rem] border border-[#ebd2a0]/25 p-5 flex items-start gap-4 shadow-[0_4px_24px_rgba(5,35,22,0.02)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                          {/* Left image circle */}
+                          <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#b89547]/40 shrink-0 shadow-sm flex items-center justify-center">
+                            <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                           </div>
-                          <div className="space-y-1">
-                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">01. Cooking Oil</span>
-                            <h5 className="font-serif font-bold text-sm text-white">Olive Oil & Fortune Oil</h5>
-                            <p className="text-[11px] text-gray-400 leading-relaxed">First corporate caterer cooking in healthy Olive Oil or premium Fortune Oil.</p>
-                          </div>
-                        </div>
-
-                        {/* Ingredient 2: Flour */}
-                        <div className="flex gap-4 items-start">
-                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
-                            <img
-                              src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=150"
-                              alt="Fresh Flour"
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className="space-y-1">
-                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">02. Fresh Flour</span>
-                            <h5 className="font-serif font-bold text-sm text-white">ITC Aashirvaad</h5>
-                            <p className="text-[11px] text-gray-400 leading-relaxed">Using 100% whole wheat high-fibre flour for soft, nutritious tawa chapatis.</p>
-                          </div>
-                        </div>
-
-                        {/* Ingredient 3: Spices */}
-                        <div className="flex gap-4 items-start">
-                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
-                            <img
-                              src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=150"
-                              alt="Pure Spices"
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className="space-y-1">
-                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">03. Pure Spices</span>
-                            <h5 className="font-serif font-bold text-sm text-white">MDH Spices</h5>
-                            <p className="text-[11px] text-gray-400 leading-relaxed">Authentic recipes prepared using pure, certified raw spices from MDH.</p>
-                          </div>
-                        </div>
-
-                        {/* Ingredient 4: Rice */}
-                        <div className="flex gap-4 items-start">
-                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
-                            <img
-                              src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=150"
-                              alt="Long Grain Rice"
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className="space-y-1">
-                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">04. Long Grain Rice</span>
-                            <h5 className="font-serif font-bold text-sm text-white">Premium Basmati</h5>
-                            <p className="text-[11px] text-gray-400 leading-relaxed">Long-grain, aromatic aged basmati rice for perfect texture and fragrance.</p>
+                          {/* Right text content */}
+                          <div className="flex-1 min-w-0 space-y-1">
+                            <div className="flex items-center gap-1.5">
+                              <span className="w-5 h-5 rounded-full bg-[#b89547] text-white flex items-center justify-center font-bold text-[9px] shrink-0 leading-none">
+                                {item.num}
+                              </span>
+                              <span className="text-[9px] font-mono font-bold tracking-widest text-[#b89547] uppercase leading-none">
+                                {item.cat}
+                              </span>
+                            </div>
+                            <h4 className="text-sm font-serif font-bold text-[#052316] leading-snug">
+                              {item.title}
+                            </h4>
+                            <p className="text-[11px] text-gray-500 font-medium leading-normal">
+                              {item.desc}
+                            </p>
                           </div>
                         </div>
-
-                        {/* Ingredient 5: Vegetables */}
-                        <div className="flex gap-4 items-start">
-                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
-                            <img
-                              src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=150"
-                              alt="Vegetables"
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className="space-y-1">
-                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">05. Vegetables</span>
-                            <h5 className="font-serif font-bold text-sm text-white">Seasonal Fresh</h5>
-                            <p className="text-[11px] text-gray-400 leading-relaxed">Sourced daily from local farmers, strictly washed and hygienically chopped.</p>
-                          </div>
-                        </div>
-
-                        {/* Ingredient 6: Sweets */}
-                        <div className="flex gap-4 items-start">
-                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
-                            <img
-                              src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&q=80&w=150"
-                              alt="Sweets"
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className="space-y-1">
-                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">06. Desserts</span>
-                            <h5 className="font-serif font-bold text-sm text-white">Freshly Day-Prepared</h5>
-                            <p className="text-[11px] text-gray-400 leading-relaxed">Authentic sweets prepared fresh daily without artificial preservatives.</p>
-                          </div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
 
                   </div>
+
+                  {/* Bottom trust bar inside section */}
+                  <div className="bg-[#FAF8F5] rounded-[2.5rem] border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] p-6 mt-12 w-full">
+                    <div className="grid grid-cols-1 min-[480px]:grid-cols-2 md:grid-cols-5 gap-6 divide-y md:divide-y-0 md:divide-x divide-[#ebd2a0]/30">
+                      {[
+                        { icon: <Leaf className="w-5 h-5" />, title: "PREMIUM QUALITY\nINGREDIENTS", desc: "Carefully selected for\nthe best taste" },
+                        { icon: <ShieldCheck className="w-5 h-5" />, title: "HYGIENIC & SAFE\nPREPARATION", desc: "Maintaining highest\nstandards of hygiene" },
+                        { icon: <Users className="w-5 h-5" />, title: "TRUSTED BY\nCORPORATES", desc: "Delivering excellence\nevery single day" },
+                        { icon: <Clock className="w-5 h-5" />, title: "ON-TIME\nDELIVERY", desc: "Punctual delivery,\nevery time" },
+                        { icon: <Utensils className="w-5 h-5" />, title: "CUSTOMISED\nMENUS", desc: "Tailored to your needs\nand preferences" },
+                      ].map((item, i) => (
+                        <div key={i} className={`flex items-center gap-4 text-left ${i > 0 ? "pt-5 md:pt-0 md:pl-6" : ""}`}>
+                          <div className="w-10 h-10 rounded-full bg-[#052316] text-[#b89547] flex items-center justify-center shrink-0 shadow-sm">
+                            {item.icon}
+                          </div>
+                          <div className="space-y-0.5">
+                            <h4 className="text-[9px] font-sans font-extrabold tracking-wider text-[#052316] uppercase leading-tight whitespace-pre-line">
+                              {item.title}
+                            </h4>
+                            <p className="text-[10px] text-gray-500 font-medium leading-snug whitespace-pre-line">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                 </div>
               </motion.section>
 
