@@ -16,7 +16,7 @@ export default function Header({ activeTab, setActiveTab, openBookingModal, isSc
   const navLinks = [
     { label: "HOME", tab: AppTab.HOME },
     { label: "MENU", tab: AppTab.MENU },
-    { label: "PRICING", tab: AppTab.PRICING },
+    // { label: "PRICING", tab: AppTab.PRICING },
     { label: "GALLERY", tab: AppTab.GALLERY }
   ];
 
@@ -40,13 +40,13 @@ export default function Header({ activeTab, setActiveTab, openBookingModal, isSc
             <div className="relative w-11 h-11 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <TCHLogo className="w-full h-full" />
             </div>
-            <div className="text-left">
-              <h1 className="text-sm md:text-base font-serif font-black text-[#052316] leading-none tracking-wide">
+            <div className="text-left flex flex-col justify-center">
+              <span className="text-[13px] md:text-[15px] font-serif font-bold text-[#052316] leading-none">
                 The Corporate
-              </h1>
-              <p className="text-[10px] font-mono font-bold text-[#b89547] tracking-[0.2em] leading-none uppercase mt-0.5">
-                Halwai
-              </p>
+              </span>
+              <span className="text-[18px] md:text-[22px] font-sans font-black text-[#b89547] tracking-[0.04em] leading-none uppercase mt-0.5">
+                HALWAI
+              </span>
             </div>
           </div>
 
