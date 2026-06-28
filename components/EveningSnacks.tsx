@@ -271,11 +271,12 @@ export default function EveningSnacks() {
             
             {/* Pledge Item 1: Cooking Oil */}
             <div className="flex items-center space-x-3.5 min-w-[150px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <svg className="w-5 h-5 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z" />
-                  <path d="M12 18a3 3 0 0 0 3-3" strokeLinecap="round" />
-                </svg>
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
+                <img
+                  src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=150"
+                  alt="Cooking Oil"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="text-left">
                 <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">COOKING OIL</h4>
@@ -285,11 +286,12 @@ export default function EveningSnacks() {
 
             {/* Pledge Item 2: Vegetables */}
             <div className="flex items-center space-x-3.5 min-w-[170px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <svg className="w-5 h-5 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" strokeLinecap="round" />
-                  <path d="M12 7l-3-3M15 17l3 3" strokeLinecap="round" />
-                </svg>
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
+                <img
+                  src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=150"
+                  alt="Vegetables"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="text-left">
                 <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">VEGETABLES</h4>
@@ -299,11 +301,12 @@ export default function EveningSnacks() {
 
             {/* Pledge Item 3: Flour */}
             <div className="flex items-center space-x-3.5 min-w-[150px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <svg className="w-5 h-5 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 2v20M8 5c2 0 3 2 3 4M16 11c-2 0-3 2-3 4" strokeLinecap="round" />
-                  <path d="M8 15h8M8 9h8" strokeLinecap="round" />
-                </svg>
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
+                <img
+                  src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=150"
+                  alt="Flour"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="text-left">
                 <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">FLOUR</h4>
@@ -313,11 +316,12 @@ export default function EveningSnacks() {
 
             {/* Pledge Item 4: Rice */}
             <div className="flex items-center space-x-3.5 min-w-[120px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <svg className="w-5 h-5 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 3v3M12 18v3M3 12h3M18 12h3" strokeLinecap="round" />
-                  <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" />
-                </svg>
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
+                <img
+                  src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=150"
+                  alt="Rice"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="text-left">
                 <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">RICE</h4>
@@ -327,11 +331,12 @@ export default function EveningSnacks() {
 
             {/* Pledge Item 5: Spices */}
             <div className="flex items-center space-x-3.5 min-w-[120px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <svg className="w-5 h-5 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1.5-3-1.5 1.5-2 2-2 3a2.5 2.5 0 0 0 1 2.5Z" />
-                  <path d="M16 16c.4-.7.5-1.5.5-2.2 0-3.3-4.5-5.8-4.5-5.8s-2 2-2 3.5c0 1.5.8 2.5 1.5 3.2" strokeLinecap="round" />
-                </svg>
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
+                <img
+                  src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=150"
+                  alt="Spices"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="text-left">
                 <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">SPICES</h4>
@@ -341,11 +346,12 @@ export default function EveningSnacks() {
 
             {/* Pledge Item 6: Sweets */}
             <div className="flex items-center space-x-3.5 min-w-[150px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <svg className="w-5 h-5 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                </svg>
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
+                <img
+                  src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&q=80&w=150"
+                  alt="Sweets"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="text-left">
                 <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">SWEETS</h4>

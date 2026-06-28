@@ -882,47 +882,101 @@ export default function HomeClient() {
                         </p>
                       </div>
 
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-2">
+                      <div className="grid grid-cols-1 min-[480px]:grid-cols-2 sm:grid-cols-3 gap-6 pt-2">
                         {/* Ingredient 1: Cooking Oil */}
-                        <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
-                          <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">01. Cooking Oil</span>
-                          <h5 className="font-serif font-bold text-sm text-white">Olive Oil & Fortune Oil</h5>
-                          <p className="text-[11px] text-gray-400">First corporate caterer cooking in healthy Olive Oil or premium Fortune Oil.</p>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
+                            <img
+                              src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=150"
+                              alt="Cooking Oil"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="space-y-1">
+                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">01. Cooking Oil</span>
+                            <h5 className="font-serif font-bold text-sm text-white">Olive Oil & Fortune Oil</h5>
+                            <p className="text-[11px] text-gray-400 leading-relaxed">First corporate caterer cooking in healthy Olive Oil or premium Fortune Oil.</p>
+                          </div>
                         </div>
 
                         {/* Ingredient 2: Flour */}
-                        <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
-                          <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">02. Fresh Flour</span>
-                          <h5 className="font-serif font-bold text-sm text-white">ITC Aashirvaad</h5>
-                          <p className="text-[11px] text-gray-400">Using 100% whole wheat high-fibre flour for soft, nutritious tawa chapatis.</p>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
+                            <img
+                              src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=150"
+                              alt="Fresh Flour"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="space-y-1">
+                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">02. Fresh Flour</span>
+                            <h5 className="font-serif font-bold text-sm text-white">ITC Aashirvaad</h5>
+                            <p className="text-[11px] text-gray-400 leading-relaxed">Using 100% whole wheat high-fibre flour for soft, nutritious tawa chapatis.</p>
+                          </div>
                         </div>
 
                         {/* Ingredient 3: Spices */}
-                        <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
-                          <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">03. Pure Spices</span>
-                          <h5 className="font-serif font-bold text-sm text-white">MDH Spices</h5>
-                          <p className="text-[11px] text-gray-400">Authentic recipes prepared using pure, certified raw spices from MDH.</p>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
+                            <img
+                              src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=150"
+                              alt="Pure Spices"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="space-y-1">
+                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">03. Pure Spices</span>
+                            <h5 className="font-serif font-bold text-sm text-white">MDH Spices</h5>
+                            <p className="text-[11px] text-gray-400 leading-relaxed">Authentic recipes prepared using pure, certified raw spices from MDH.</p>
+                          </div>
                         </div>
 
                         {/* Ingredient 4: Rice */}
-                        <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
-                          <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">04. Long Grain Rice</span>
-                          <h5 className="font-serif font-bold text-sm text-white">Premium Basmati</h5>
-                          <p className="text-[11px] text-gray-400">Long-grain, aromatic aged basmati rice for perfect texture and fragrance.</p>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
+                            <img
+                              src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=150"
+                              alt="Long Grain Rice"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="space-y-1">
+                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">04. Long Grain Rice</span>
+                            <h5 className="font-serif font-bold text-sm text-white">Premium Basmati</h5>
+                            <p className="text-[11px] text-gray-400 leading-relaxed">Long-grain, aromatic aged basmati rice for perfect texture and fragrance.</p>
+                          </div>
                         </div>
 
                         {/* Ingredient 5: Vegetables */}
-                        <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
-                          <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">05. Vegetables</span>
-                          <h5 className="font-serif font-bold text-sm text-white">Seasonal Fresh</h5>
-                          <p className="text-[11px] text-gray-400">Sourced daily from local farmers, strictly washed and hygienically chopped.</p>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
+                            <img
+                              src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=150"
+                              alt="Vegetables"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="space-y-1">
+                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">05. Vegetables</span>
+                            <h5 className="font-serif font-bold text-sm text-white">Seasonal Fresh</h5>
+                            <p className="text-[11px] text-gray-400 leading-relaxed">Sourced daily from local farmers, strictly washed and hygienically chopped.</p>
+                          </div>
                         </div>
 
                         {/* Ingredient 6: Sweets */}
-                        <div className="space-y-2 border-l border-[#b89547]/30 pl-4">
-                          <span className="text-xs font-mono font-black text-[#b89547] block uppercase tracking-wider">06. Desserts</span>
-                          <h5 className="font-serif font-bold text-sm text-white">Freshly Day-Prepared</h5>
-                          <p className="text-[11px] text-gray-400">Authentic sweets prepared fresh daily without artificial preservatives.</p>
+                        <div className="flex gap-4 items-start">
+                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#b89547]/45 shrink-0 shadow-[0_4px_12px_rgba(184,149,71,0.15)] bg-white/5 flex items-center justify-center">
+                            <img
+                              src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&q=80&w=150"
+                              alt="Sweets"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="space-y-1">
+                            <span className="text-[10px] font-mono font-black text-[#b89547] block uppercase tracking-wider">06. Desserts</span>
+                            <h5 className="font-serif font-bold text-sm text-white">Freshly Day-Prepared</h5>
+                            <p className="text-[11px] text-gray-400 leading-relaxed">Authentic sweets prepared fresh daily without artificial preservatives.</p>
+                          </div>
                         </div>
                       </div>
                     </div>
