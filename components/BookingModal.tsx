@@ -223,21 +223,6 @@ export default function BookingModal({ isOpen, onClose, prefilledPlan, prefilled
                   />
                 </div>
 
-                {/* COMPANY NAME */}
-                <div id="form-group-cn">
-                  <label className="block text-[10px] font-bold tracking-widest text-[#ebd2a0]/90 uppercase mb-1.5">
-                    COMPANY NAME <span className="text-rose-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.companyName}
-                    onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                    placeholder="TechCorp Solutions"
-                    className="w-full bg-[#0d231c] border-2 border-[#1c4333] hover:border-[#214f3b] rounded-xl px-4 py-3 text-sm text-[#fcfaf7] focus:outline-none focus:border-[#ebd2a0] focus:ring-0 transition-all font-medium placeholder-[#2c5243]"
-                  />
-                </div>
-
                 {/* MOBILE NUMBER */}
                 <div id="form-group-tel">
                   <label className="block text-[10px] font-bold tracking-widest text-[#ebd2a0]/90 uppercase mb-1.5">
@@ -253,14 +238,27 @@ export default function BookingModal({ isOpen, onClose, prefilledPlan, prefilled
                   />
                 </div>
 
+                {/* COMPANY NAME */}
+                <div id="form-group-cn">
+                  <label className="block text-[10px] font-bold tracking-widest text-[#ebd2a0]/90 uppercase mb-1.5">
+                    COMPANY NAME <span className="text-white/40">(OPTIONAL)</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.companyName}
+                    onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
+                    placeholder="TechCorp Solutions"
+                    className="w-full bg-[#0d231c] border-2 border-[#1c4333] hover:border-[#214f3b] rounded-xl px-4 py-3 text-sm text-[#fcfaf7] focus:outline-none focus:border-[#ebd2a0] focus:ring-0 transition-all font-medium placeholder-[#2c5243]"
+                  />
+                </div>
+
                 {/* CORPORATE EMAIL */}
                 <div id="form-group-em">
                   <label className="block text-[10px] font-bold tracking-widest text-[#ebd2a0]/90 uppercase mb-1.5">
-                    CORPORATE EMAIL <span className="text-rose-500">*</span>
+                    CORPORATE EMAIL <span className="text-white/40">(OPTIONAL)</span>
                   </label>
                   <input
                     type="email"
-                    required
                     value={formData.corporateEmail}
                     onChange={(e) => setFormData({ ...formData, corporateEmail: e.target.value })}
                     placeholder="arjun@techcorp.com"
@@ -268,74 +266,6 @@ export default function BookingModal({ isOpen, onClose, prefilledPlan, prefilled
                   />
                 </div>
 
-                {/* EVENT DATE */}
-                <div id="form-group-dt">
-                  <label className="block text-[10px] font-bold tracking-widest text-[#ebd2a0]/90 uppercase mb-1.5">
-                    EVENT DATE <span className="text-rose-500">*</span>
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="date"
-                      required
-                      value={formData.eventDate}
-                      onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
-                      className="w-full bg-[#0d231c] border-2 border-[#1c4333] hover:border-[#214f3b] rounded-xl px-4 py-3 text-sm text-[#fcfaf7] focus:outline-none focus:border-[#ebd2a0] focus:ring-0 transition-all font-medium appearance-none [color-scheme:dark]"
-                    />
-                  </div>
-                </div>
-
-                {/* NUMBER OF GUESTS */}
-                <div id="form-group-hc">
-                  <label className="block text-[10px] font-bold tracking-widest text-[#ebd2a0]/90 uppercase mb-1.5">
-                    NUMBER OF GUESTS <span className="text-rose-500">*</span>
-                  </label>
-                  <input
-                    type="number"
-                    required
-                    min={10}
-                    max={10000}
-                    value={formData.headcount}
-                    onChange={(e) => setFormData({ ...formData, headcount: parseInt(e.target.value) || 10 })}
-                    placeholder="Select headcount"
-                    className="w-full bg-[#0d231c] border-2 border-[#1c4333] hover:border-[#214f3b] rounded-xl px-4 py-3 text-sm text-[#fcfaf7] focus:outline-none focus:border-[#ebd2a0] focus:ring-0 transition-all font-medium placeholder-[#2c5243]"
-                  />
-                </div>
-
-              </div>
-
-              {/* CATERING TYPE select field */}
-              <div id="form-group-plan" className="w-full">
-                <label className="block text-[10px] font-bold tracking-widest text-[#ebd2a0]/90 uppercase mb-1.5">
-                  CATERING TYPE <span className="text-rose-500">*</span>
-                </label>
-                <div className="relative">
-                  <select
-                    value={formData.plan}
-                    onChange={(e) => setFormData({ ...formData, plan: e.target.value as any })}
-                    className="w-full bg-[#0d231c] border-2 border-[#1c4333] hover:border-[#214f3b] rounded-xl px-4 py-3 text-sm text-[#fcfaf7] focus:outline-none focus:border-[#ebd2a0] focus:ring-0 transition-all font-medium appearance-none cursor-pointer"
-                  >
-                    <option value="Silver" className="bg-[#0c201a]">Silver (Essential Halwai Delights)</option>
-                    <option value="Gold" className="bg-[#0c201a]">Gold (Signature Traditional Banquet)</option>
-                    <option value="Platinum" className="bg-[#0c201a]">Platinum (Executive Bespoke Craft)</option>
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4">
-                    <ChevronDown className="w-5 h-5 text-[#ebd2a0]" />
-                  </div>
-                </div>
-              </div>
-
-              {/* SPECIAL INSTRUCTIONS */}
-              <div id="form-group-notes">
-                <label className="block text-[10px] font-bold tracking-widest text-[#ebd2a0]/90 uppercase mb-1.5">
-                  SPECIAL INSTRUCTIONS / DIETARY PREFERENCES
-                </label>
-                <textarea
-                  rows={2}
-                  value={formData.specialInstructions}
-                  onChange={(e) => setFormData({ ...formData, specialInstructions: e.target.value })}
-                  placeholder="e.g. Vegetarian workspace, live clayoven setup or sugar-free desserts..."
-                  className="w-full bg-[#0d231c] border-2 border-[#1c4333] hover:border-[#214f3b] rounded-xl px-4 py-2.5 text-sm text-[#fcfaf7] focus:outline-none focus:border-[#ebd2a0] focus:ring-0 transition-all font-medium resize-none placeholder-[#2c5243]"
-                />
               </div>
 
               {/* Golden Yellow rounded pill Submit Button with Glow */}

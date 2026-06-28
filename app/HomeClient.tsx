@@ -256,45 +256,46 @@ export default function HomeClient() {
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
                     {/* Left Column: Premium Brand Messaging */}
-                    <div className="lg:col-span-6 space-y-6 text-left max-w-2xl">
+                    <div className="lg:col-span-6 space-y-6 text-center lg:text-left max-w-2xl order-2 lg:order-1 flex flex-col items-center lg:items-start w-full">
 
-                      {/* Eyebrow Label with Custom Flower/Mandala Icon */}
+                      {/* Eyebrow Label with custom star separator */}
                       <motion.div
                         variants={{
                           hidden: { opacity: 0, y: 15 },
                           visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
                         }}
-                        className="space-y-3"
+                        className="space-y-2.5 w-full flex flex-col items-center lg:items-start"
                       >
-                        <div className="flex items-center gap-2">
-                          <svg className="w-5 h-5 text-[#b89547] shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2a1 1 0 0 1 1 1c0 1.25.75 2 2 2a1 1 0 1 1 0 2c-1.25 0-2 .75-2 2a1 1 0 1 1-2 0c0-1.25-.75-2-2-2a1 1 0 1 1 0-2c1.25 0 2-.75 2-2a1 1 0 0 1 1-1zM6 8a1 1 0 0 1 1 1c0 1.25.75 2 2 2a1 1 0 1 1 0 2c-1.25 0-2 .75-2 2a1 1 0 1 1-2 0c0-1.25-.75-2-2-2a1 1 0 1 1 0-2c1.25 0 2-.75 2-2a1 1 0 0 1 1-1zm12 0a1 1 0 0 1 1 1c0 1.25.75 2 2 2a1 1 0 1 1 0 2c-1.25 0-2 .75-2 2a1 1 0 1 1-2 0c0-1.25-.75-2-2-2a1 1 0 1 1 0-2c1.25 0 2-.75 2-2a1 1 0 0 1 1-1z" />
-                          </svg>
-                          <span className="text-sm font-mono font-black tracking-[0.22em] uppercase text-[#b89547]">Premium Corporate Catering</span>
+                        <div className="flex items-center justify-center lg:justify-start gap-1.5 w-full">
+                          <span className="text-[#b89547] text-xs">❖</span>
+                          <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.25em] uppercase text-[#b89547]">Premium Corporate Catering</span>
                         </div>
 
-                        <div className="flex items-center gap-2 text-[11px] font-mono font-black text-[#052316] uppercase tracking-[0.2em] select-none">
+                        <div className="text-xs font-sans font-bold text-[#052316] uppercase tracking-[0.15em] select-none flex flex-wrap items-center justify-center lg:justify-start gap-2 w-full">
                           <span>Office Meals</span>
-                          <span className="text-[#b89547]" aria-hidden="true">·</span>
+                          <span className="text-[#b89547] font-sans font-normal">·</span>
+                          <span>|</span>
+                          <span className="text-[#b89547] font-sans font-normal">·</span>
                           <span>Events</span>
-                          <span className="text-[#b89547]" aria-hidden="true">·</span>
+                          <span className="text-[#b89547] font-sans font-normal">·</span>
+                          <span>|</span>
+                          <span className="text-[#b89547] font-sans font-normal">·</span>
                           <span>Cafeteria Services</span>
                         </div>
                       </motion.div>
 
-                      {/* Headline: Clean Serif typography without italics matching screenshot */}
+                      {/* Headline: Clean Serif typography matching screenshot exactly */}
                       <motion.div
                         variants={{
                           hidden: { opacity: 0, y: 20 },
                           visible: { opacity: 1, y: 0, transition: { duration: 0.55 } }
                         }}
-                        className="space-y-1"
+                        className="space-y-0.5 w-full"
                       >
-                        <h1 className="text-5xl sm:text-6xl lg:text-[4.75rem] font-serif font-black text-[#052316] leading-[1.08] tracking-tight">
-                          Desi Flavours.
-                        </h1>
-                        <h1 className="text-5xl sm:text-6xl lg:text-[4.75rem] font-serif font-black text-[#b89547] leading-[1.08] tracking-tight">
-                          Corporate Standards.
+                        <h1 className="text-5xl sm:text-6xl lg:text-[4.75rem] font-serif font-black leading-[1.05] tracking-tight flex flex-col items-center lg:items-start text-center lg:text-left">
+                          <span className="text-[#052316]">Desi Flavours.</span>
+                          <span className="text-[#b89547] font-semibold">Corporate</span>
+                          <span className="text-[#b89547] font-semibold">Standards.</span>
                         </h1>
                       </motion.div>
 
@@ -304,72 +305,10 @@ export default function HomeClient() {
                           hidden: { opacity: 0, y: 15 },
                           visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
                         }}
-                        className="text-sm sm:text-base text-gray-500 font-sans font-medium leading-relaxed max-w-lg"
+                        className="text-xs sm:text-sm text-gray-500 font-sans font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-center lg:text-left"
                       >
-                        Elevating everyday meals with authentic flavours,<br className="hidden sm:inline" />
-                        hygienic preparation, and seamless service.
+                        Elevating everyday meals with authentic flavours, hygienic preparation, and seamless service.
                       </motion.p>
-
-                      {/* Inclusions / Badges list exactly matching screenshot */}
-                      <motion.div
-                        variants={{
-                          hidden: { opacity: 0, y: 15 },
-                          visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-                        }}
-                        className="flex flex-wrap lg:flex-nowrap items-center gap-3 pt-2"
-                      >
-                        {/* Badge 1: Fresh & Hygienic */}
-                        <div className="flex items-center gap-3 bg-white/40 border border-[#e5dfd3]/50 rounded-full py-1.5 pl-1.5 pr-4 shadow-3xs shrink-0">
-                          <div className="w-9 h-9 rounded-full bg-[#FAF9F6] border border-[#e5dfd3]/60 flex items-center justify-center text-[#b89547] shadow-inner shrink-0">
-                            <Leaf className="w-4 h-4 text-[#b89547]" />
-                          </div>
-                          <div className="text-left leading-none font-sans">
-                            <span className="block text-xs font-black text-[#052316]">Fresh & Hygienic</span>
-                            <span className="block text-[9px] text-gray-400 font-bold mt-0.5">Quality you can trust</span>
-                          </div>
-                        </div>
-
-                        {/* Badge 2: On-time Delivery */}
-                        <div className="flex items-center gap-3 bg-white/40 border border-[#e5dfd3]/50 rounded-full py-1.5 pl-1.5 pr-4 shadow-3xs shrink-0">
-                          <div className="w-9 h-9 rounded-full bg-[#FAF9F6] border border-[#e5dfd3]/60 flex items-center justify-center text-[#b89547] shadow-inner shrink-0">
-                            <svg className="w-4 h-4 text-[#b89547]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                              <path d="M2 17h20" />
-                              <path d="M20 17a8 8 0 0 0-16 0" />
-                              <circle cx="12" cy="7" r="1.5" fill="currentColor" />
-                              <path d="M12 9V7" />
-                            </svg>
-                          </div>
-                          <div className="text-left leading-none font-sans">
-                            <span className="block text-xs font-black text-[#052316]">On-time Delivery</span>
-                            <span className="block text-[9px] text-gray-400 font-bold mt-0.5">Always on schedule</span>
-                          </div>
-                        </div>
-
-                        {/* Badge 3: Trusted by 500+ */}
-                        <div className="flex items-center gap-3 bg-white/40 border border-[#e5dfd3]/50 rounded-full py-1.5 pl-1.5 pr-4 shadow-3xs shrink-0">
-                          <div className="w-9 h-9 rounded-full bg-[#FAF9F6] border border-[#e5dfd3]/60 flex items-center justify-center text-[#b89547] shadow-inner shrink-0">
-                            <Building2 className="w-4 h-4 text-[#b89547]" />
-                          </div>
-                          <div className="text-left leading-none font-sans">
-                            <span className="block text-xs font-black text-[#052316]">Trusted by 500+</span>
-                            <span className="block text-[9px] text-gray-400 font-bold mt-0.5">Businesses across India</span>
-                          </div>
-                        </div>
-
-                      </motion.div>
-
-                      {/* Gold Divider with Diamond separator matching screenshot */}
-                      <motion.div
-                        variants={{
-                          hidden: { opacity: 0 },
-                          visible: { opacity: 1 }
-                        }}
-                        className="flex items-center gap-3 w-56 pt-2 select-none"
-                      >
-                        <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent to-[#b89547]/40" />
-                        <div className="w-1.5 h-1.5 rotate-45 bg-[#b89547]" />
-                        <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent to-[#b89547]/40" />
-                      </motion.div>
 
                       {/* Action buttons row */}
                       <motion.div
@@ -377,44 +316,33 @@ export default function HomeClient() {
                           hidden: { opacity: 0, y: 15 },
                           visible: { opacity: 1, y: 0, transition: { duration: 0.55 } }
                         }}
-                        className="space-y-4 pt-1"
+                        className="space-y-4 pt-1 w-full"
                       >
-                        <div className="flex flex-wrap items-center gap-4">
+                        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 w-full">
                           <button
                             id="hero-book-tasting-btn"
                             onClick={() => setIsBookingOpen(true)}
-                            className="px-6 py-4.5 bg-[#052316] hover:bg-[#0b3c27] text-white font-sans font-bold text-xs tracking-wider uppercase rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-3 cursor-pointer"
+                            className="px-6 py-3.5 bg-[#052316] hover:bg-[#0b3c27] text-white font-mono font-bold text-[10px] tracking-wider uppercase rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer border border-transparent w-full sm:w-auto"
                           >
-                            <svg className="w-4 h-4 text-[#b89547]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <svg className="w-3.5 h-3.5 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                               <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                               <line x1="16" y1="2" x2="16" y2="6" />
                               <line x1="8" y1="2" x2="8" y2="6" />
                               <line x1="3" y1="10" x2="21" y2="10" />
                             </svg>
                             <span>Book a Tasting Session</span>
-                            <ArrowRight className="w-4 h-4 text-white" />
+                            <ArrowRight className="w-3.5 h-3.5 text-white" />
                           </button>
 
                           <a
                             href="https://wa.me/919289030016?text=Hi%20The%20Corporate%20Halwai%2C%20I%27d%20like%20to%20book%20a%20tasting%20session."
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-6 py-4.5 bg-[#25D366]/5 hover:bg-[#25D366]/12 border border-[#25D366]/30 text-[#128C7E] hover:text-[#075E54] font-sans font-bold text-xs tracking-wider uppercase rounded-full transition-all duration-300 flex items-center gap-2"
+                            className="px-6 py-3.5 bg-[#f0f5f2] border border-[#052316]/10 hover:bg-[#e4ece8] text-[#052316] font-mono font-bold text-[10px] tracking-wider uppercase rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto"
                           >
-                            <MessageCircle className="w-4 h-4 text-[#128C7E]" />
+                            <MessageCircle className="w-3.5 h-3.5 text-[#052316]" />
                             <span>WhatsApp Us</span>
                           </a>
-                        </div>
-
-                        {/* Sub-features: serving since 2015 & tagline */}
-                        <div className="space-y-2.5">
-                          <div className="flex items-center gap-2 text-[#b89547] font-bold">
-                            <Award className="w-4.5 h-4.5 text-[#b89547]" />
-                            <span className="text-[10px] font-mono font-bold tracking-[0.2em] uppercase select-none">Serving Since 2015</span>
-                          </div>
-                          <p className="text-[11px] text-[#052316]/55 font-sans italic">
-                            Let us serve your team the experience they deserve.
-                          </p>
                         </div>
                       </motion.div>
 
@@ -426,7 +354,7 @@ export default function HomeClient() {
                         hidden: { opacity: 0, scale: 0.97, x: 20 },
                         visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.65 } }
                       }}
-                      className="lg:col-span-6 relative flex justify-center lg:justify-end w-full"
+                      className="lg:col-span-6 relative flex justify-center lg:justify-end w-full order-1 lg:order-2"
                     >
                       <div className="relative w-full aspect-[3/2] rounded-[2.5rem] overflow-hidden border border-[#e5dfd3]/50 shadow-[0_24px_54px_rgba(5,35,22,0.08)] bg-[#041d12]">
                         {/* High-quality backup fallback image */}
@@ -453,7 +381,7 @@ export default function HomeClient() {
 
                         {/* Top Right: Cooked in Olive Oil Badge */}
                         <div className="absolute top-5 right-5 flex items-center space-x-2 bg-white rounded-full px-4 py-2 shadow-md z-20 select-none">
-                          <span className="w-2.5 h-2.5 rounded-full bg-[#128C7E]" />
+                          <span className="w-2 h-2 rounded-full bg-[#0bb385]" />
                           <span className="text-[9.5px] font-mono font-black text-[#052316] uppercase tracking-wider">Cooked in Olive Oil</span>
                         </div>
 
@@ -461,12 +389,12 @@ export default function HomeClient() {
                         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#052316]/95 via-[#052316]/60 to-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 z-20">
                           {/* Since 2015 Trusted Caterer White Badge */}
                           <div className="flex items-center space-x-3 bg-white rounded-2xl px-4 py-2.5 shadow-lg select-none">
-                            <div className="w-8 h-8 rounded-full bg-[#052316] flex items-center justify-center text-[#b89547] shadow-sm shrink-0">
+                            <div className="w-7 h-7 rounded-full bg-[#052316] flex items-center justify-center text-[#ebd2a0] shrink-0">
                               <span className="text-xs">★</span>
                             </div>
                             <div className="text-left leading-tight font-sans">
                               <span className="block text-xs font-black text-[#052316]">Since 2015</span>
-                              <span className="block text-[8px] font-mono font-bold uppercase text-gray-400 tracking-wider">Trusted Caterer</span>
+                              <span className="block text-[8px] font-mono font-bold uppercase text-[#b89547] tracking-wider mt-0.5">Trusted Caterer</span>
                             </div>
                           </div>
 
@@ -480,6 +408,52 @@ export default function HomeClient() {
                     </motion.div>
 
                   </div>
+
+                  {/* Bottom Trust Grid Row matching screenshot */}
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.25 } }
+                    }}
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 items-center justify-center w-full py-8 mt-14 bg-white/40 border border-[#e5dfd3]/50 rounded-[2.5rem] shadow-xs backdrop-blur-3xs"
+                  >
+                    {/* Fresh & Hygienic */}
+                    <div className="flex flex-col items-center justify-center text-center px-6 md:border-r border-[#e5dfd3]/60">
+                      <div className="relative w-16 h-16 rounded-full border-2 border-[#ebd2a0]/60 flex items-center justify-center bg-white shadow-xs shrink-0 mb-3.5">
+                        <Leaf className="w-6 h-6 text-[#052316]" />
+                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-[#b89547] text-white w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white shadow-xs">
+                          <Check className="w-2.5 h-2.5 text-white stroke-[3.5]" />
+                        </div>
+                      </div>
+                      <h4 className="text-xs font-mono font-extrabold uppercase tracking-widest text-[#052316]">Fresh & Hygienic</h4>
+                      <p className="text-[11px] text-gray-500 font-medium mt-1">Quality you can trust</p>
+                    </div>
+
+                    {/* On-Time Delivery */}
+                    <div className="flex flex-col items-center justify-center text-center px-6 md:border-r border-[#e5dfd3]/60">
+                      <div className="relative w-16 h-16 rounded-full border-2 border-[#ebd2a0]/60 flex items-center justify-center bg-white shadow-xs shrink-0 mb-3.5">
+                        <Clock className="w-6 h-6 text-[#052316]" />
+                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-[#b89547] text-white w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white shadow-xs">
+                          <Check className="w-2.5 h-2.5 text-white stroke-[3.5]" />
+                        </div>
+                      </div>
+                      <h4 className="text-xs font-mono font-extrabold uppercase tracking-widest text-[#052316]">On-time Delivery</h4>
+                      <p className="text-[11px] text-gray-500 font-medium mt-1">Always on schedule</p>
+                    </div>
+
+                    {/* Trusted by 500+ */}
+                    <div className="flex flex-col items-center justify-center text-center px-6">
+                      <div className="relative w-16 h-16 rounded-full border-2 border-[#ebd2a0]/60 flex items-center justify-center bg-white shadow-xs shrink-0 mb-3.5">
+                        <ShieldCheck className="w-6 h-6 text-[#052316]" />
+                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-[#b89547] text-white w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white shadow-xs">
+                          <Check className="w-2.5 h-2.5 text-white stroke-[3.5]" />
+                        </div>
+                      </div>
+                      <h4 className="text-xs font-mono font-extrabold uppercase tracking-widest text-[#052316]">Trusted by 500+</h4>
+                      <p className="text-[11px] text-gray-500 font-medium mt-1">Businesses across India</p>
+                    </div>
+                  </motion.div>
+
                 </motion.div>
               </section>
 
