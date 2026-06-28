@@ -19,7 +19,7 @@ export default function EveningSnacks() {
       name: "Spring Roll",
       subtitle: "CRISPY & SPICED",
       description: "Crispy golden golden wrappers stuffed with seasoned julienned veggies and ginger-garlic sauce. Served hot with spicy dip.",
-      imageUrl: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://images.unsplash.com/photo-1571951498979-cefeaf57476e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       calories: "140 kcal",
       category: "Crispy & Zesty Bites"
     },
@@ -28,7 +28,7 @@ export default function EveningSnacks() {
       name: "Manchurian",
       subtitle: "WOK-TOSSED INDO-CHINESE",
       description: "Crispy-fried vegetable dumplings tossed in a thick, savory chili-garlic and dark soy-carlic reduction sauce.",
-      imageUrl: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://www.mygingergarlickitchen.com/wp-content/rich-markup-images/4x3/4x3-veg-manchurian-recipe.jpg",
       calories: "195 kcal",
       category: "Wok-Tossed Spiced Balls"
     },
@@ -37,7 +37,7 @@ export default function EveningSnacks() {
       name: "Noodles / Chowmein",
       subtitle: "HIGH-FLAME WOK STYLE",
       description: "Stir-fried noodles loaded with raw-crisp cabbage, carrots, onion juliennes, bell peppers, soy sauce and white pepper.",
-      imageUrl: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://images.unsplash.com/photo-1565976469782-7c92daebc42e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       calories: "230 kcal",
       category: "High-Flame Street Style"
     },
@@ -46,7 +46,7 @@ export default function EveningSnacks() {
       name: "Veg Puff",
       subtitle: "BAKED FLAKY SAVORY",
       description: "Golden puff pastry leaves folded over a delicious seasoned potato, sweet green pea, and garden carrot mash stuffing.",
-      imageUrl: "https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://www.yummytummyaarthi.com/wp-content/uploads/2021/12/1-1.jpg",
       calories: "185 kcal",
       category: "Baked Savory Flaky"
     },
@@ -55,7 +55,7 @@ export default function EveningSnacks() {
       name: "French Fries",
       subtitle: "CLASSIC CRISP SIDES",
       description: "Golden double-crisped potato batons seasoned with rock salt, served with tangy tomato ketchup and cheese drizzle.",
-      imageUrl: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://plus.unsplash.com/premium_photo-1683121324545-196a903297f4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       calories: "155 kcal",
       category: "Classic Crispy potato"
     },
@@ -64,7 +64,7 @@ export default function EveningSnacks() {
       name: "Paneer Pakoda's",
       subtitle: "ELITE SPICED FRITTERS",
       description: "Creamy fresh paneer blocks layered with aromatic coriander-mint chutney, encased in seasoned bean batter and golden fried.",
-      imageUrl: "https://images.unsplash.com/photo-1599307767316-776533aa74bc?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://tastedilli6.com/cdn/shop/files/paneer-pakora.jpg?v=1750662976",
       calories: "210 kcal",
       category: "Elite Fritters"
     },
@@ -73,7 +73,7 @@ export default function EveningSnacks() {
       name: "Chilli Paneer",
       subtitle: "SPICY COTTAGE CHEESE",
       description: "Wok-tossed battered cottage cheese blocks, glazed with sweet dark soy, chili oil paste, diced capsicum and green chilies.",
-      imageUrl: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://images.unsplash.com/photo-1690401767645-595de0e0e5f8?q=80&w=2513&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       calories: "245 kcal",
       category: "Indo-Chinese"
     },
@@ -82,7 +82,7 @@ export default function EveningSnacks() {
       name: "Mini Samosa",
       subtitle: "COCKTAIL TEA PASTRY",
       description: "Flaky bite-sized cocktail samosas filled with sweet green peas and potatoes seasoned with authentic Indian garam masala.",
-      imageUrl: "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?q=80&w=2571&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       calories: "120 kcal",
       category: "High Tea Classic"
     },
@@ -91,7 +91,7 @@ export default function EveningSnacks() {
       name: "Dahi Bhalla",
       subtitle: "STREET SIDE AMBIENT CHAAT",
       description: "Fluffy, melted-lentil dumplings steeped in cold high-fat whipped curd, seasoned with roasted cumin and dry mango chutney.",
-      imageUrl: "https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://images.unsplash.com/photo-1559561723-bcb9e0db1d66?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       calories: "170 kcal",
       category: "Cooling Chaat"
     },
@@ -100,7 +100,7 @@ export default function EveningSnacks() {
       name: "Fried Rice",
       subtitle: "PARSMATI INDO-CHINESE",
       description: "Finely sliced carrots, green beans, and capsicums tossed in seasoned sesame-oil and premium long grain basmati rice.",
-      imageUrl: "https://images.unsplash.com/photo-1603133872878-68550a5e7b64?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=2525&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       calories: "215 kcal",
       category: "Basmati Specalities"
     },
@@ -109,7 +109,7 @@ export default function EveningSnacks() {
       name: "Hara Bhara Kebab",
       subtitle: "GREENS & SPINACH MEDALLIONS",
       description: "Pan-fried spinach, sweet green pea, and potato medallions mixed with aromatic herbs and garnished with roasted cashews.",
-      imageUrl: "https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://img.global.news.samsung.com/in/wp-content/uploads/2020/06/Hara-Bhara-Kebab-June-26.jpg",
       calories: "135 kcal",
       category: "Iron-Rich Spinach"
     },
@@ -118,7 +118,7 @@ export default function EveningSnacks() {
       name: "Chilli Potato",
       subtitle: "GLAZED POTATO BATONS",
       description: "Crisp-fried finger potatoes coated with a tangy, sweet garlic-chili fusion sauce, finished with spring onions.",
-      imageUrl: "https://images.unsplash.com/photo-1518013041235-0133b2894867?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_960,w_960//InstamartAssets/1/honey_chilli_potato.webp",
       calories: "220 kcal",
       category: "Hot Crispy Potato"
     },
@@ -127,7 +127,7 @@ export default function EveningSnacks() {
       name: "Honey Chilli Potato",
       subtitle: "SESAME & HONEY SHINE",
       description: "Deep-fried crispy potato batons glazed with warm sweet golden honey, dry chili, and sesame seeds.",
-      imageUrl: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://c.ndtvimg.com/2020-01/cve6o05_chilli-potato_625x300_21_January_20.jpg",
       calories: "235 kcal",
       category: "Sesame Glaze"
     },
@@ -136,7 +136,7 @@ export default function EveningSnacks() {
       name: "Pav Bhaji",
       subtitle: "BUTTERY STREET DELICACY",
       description: "Thick slow-cooked mashed vegetable curry cooked with signature spices, served with golden-toasted soft buttered brioche buns.",
-      imageUrl: "https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Instant-Pot-Mumbai-Pav-Bhaji-Recipe.jpg",
       calories: "295 kcal",
       category: "Warm Desi Treat"
     },
@@ -145,7 +145,7 @@ export default function EveningSnacks() {
       name: "Assorted Fruits Bowl",
       subtitle: "NUTRITIOUS & FRESH CUT",
       description: "Vibrant combination of exotic hand-picked kiwi, sweet pomegranate drops, apples, green grapes, and oranges.",
-      imageUrl: "https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://images.unsplash.com/photo-1641642400143-6be68f1a0918?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       calories: "85 kcal",
       category: "Seasonal Wellness"
     },
@@ -154,7 +154,7 @@ export default function EveningSnacks() {
       name: "Sprouts",
       subtitle: "HIGH-PROTEIN CRUNCH",
       description: "Wholesome green gram sprouts tossed with finely chopped English cucumbers, fresh lime juice, tomatoes and chaat masala.",
-      imageUrl: "https://images.unsplash.com/photo-1505252585461-04db1ebb846d?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://images.unsplash.com/photo-1622732777601-e744c3401d44?q=80&w=2526&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       calories: "95 kcal",
       category: "Daily Health"
     },
@@ -163,7 +163,7 @@ export default function EveningSnacks() {
       name: "Black Chana Chaat",
       subtitle: "PROTEIN-RICH FIBER",
       description: "Tender boiled black chickpeas tossed with crunchy red onions, minced green chilies, coriander leaves, and rock salt spices.",
-      imageUrl: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://i.ytimg.com/vi/LH2sbTbl6F8/maxresdefault.jpg",
       calories: "145 kcal",
       category: "Organic Grains"
     },
@@ -172,7 +172,7 @@ export default function EveningSnacks() {
       name: "Boiled Eggs",
       subtitle: "PERFECT HIGH-PROTEIN",
       description: "Fresh farm eggs boiled to perfection, sliced cleanly, and lightly dusted with crushed black pepper flakes and sea salt.",
-      imageUrl: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://cdn.jwplayer.com/v2/media/0vSmxpH0/thumbnails/GuxLvjgp.jpg?width=1280",
       calories: "155 kcal",
       category: "Fitness Fuels"
     },
@@ -181,7 +181,7 @@ export default function EveningSnacks() {
       name: "Sandwich",
       subtitle: "TEA TIME TRIANGLES",
       description: "Trifecta club triangles made of wholesome brown bread with refreshing hand-sliced cucumber, tomato and fresh green mint spread.",
-      imageUrl: "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       calories: "180 kcal",
       category: "Gourmet Fingers"
     },
@@ -190,7 +190,7 @@ export default function EveningSnacks() {
       name: "Chhole Kulche",
       subtitle: "SIGNATURE PUNJABI PLATES",
       description: "Aromatic spicy white pea curry infused with dry ginger-garlic extracts, served with hand-rolled baked Butter Kulchas.",
-      imageUrl: "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://b.zmtcdn.com/data/pictures/chains/0/21618500/17348640205f7034ba-7c47-4f82-92f6-046bbeea91fc.jpg?fit=around|960:500&crop=960:500;*,*",
       calories: "320 kcal",
       category: "Traditional Delicacy"
     }
@@ -214,6 +214,21 @@ export default function EveningSnacks() {
 
   const nextSlide = () => {
     setActiveIdx((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
+  };
+
+  const lastWheelTime = React.useRef(0);
+  const handleWheel = (e: React.WheelEvent) => {
+    if (Math.abs(e.deltaX) > 12) {
+      const now = Date.now();
+      if (now - lastWheelTime.current > 750) {
+        if (e.deltaX > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+        lastWheelTime.current = now;
+      }
+    }
   };
 
   // Helper to determine the circular index for carousel positioning
@@ -242,7 +257,7 @@ export default function EveningSnacks() {
         {/* UPPER TITLE HEADER */}
         <div className="text-center space-y-3">
           <span className="text-[10px] md:text-xs font-mono font-bold tracking-[0.25em] text-[#ebd2a0] block uppercase">
-            EVENING SNACKS MENU
+            Curated Delights
           </span>
           <div className="flex justify-center items-center py-1">
             <svg className="w-6 h-6 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -251,7 +266,7 @@ export default function EveningSnacks() {
             </svg>
           </div>
           <h2 className="text-4xl md:text-6xl font-serif tracking-tight font-light text-white">
-            Curated <span className="font-serif font-black text-[#ebd2a0]">Evening Delights</span>
+            Evening <span className="font-serif font-black text-[#ebd2a0]"> Snacks</span>
           </h2>
           <p className="text-xs md:text-sm text-[#e5dfd3]/70 max-w-xl mx-auto font-sans font-medium tracking-wide leading-relaxed">
             Elevate your team's break time with our high-end, freshly prepared signature corporate snacks.
@@ -263,106 +278,11 @@ export default function EveningSnacks() {
           </div>
         </div>
 
-        {/* MAIN BODY GRID LAYOUT MATCHING IMAGE */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[460px] md:min-h-[500px]">
+        {/* MAIN BODY LAYOUT */}
+        <div className="flex flex-col items-center justify-center min-h-[460px] md:min-h-[500px] w-full">
           
-          {/* COLUMN 1: LEFT INGREDIENT/ pledge LIST */}
-          <div className="lg:col-span-3 flex flex-row lg:flex-col justify-between lg:justify-start lg:space-y-6 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 gap-6 lg:gap-0 scrollbar-none border-b lg:border-b-0 border-[#ebd2a0]/10">
-            
-            {/* Pledge Item 1: Cooking Oil */}
-            <div className="flex items-center space-x-3.5 min-w-[150px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <img
-                  src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=150"
-                  alt="Cooking Oil"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="text-left">
-                <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">COOKING OIL</h4>
-                <p className="text-[11px] text-white/60 font-sans font-medium mt-0.5 leading-tight">Olive / Fortune</p>
-              </div>
-            </div>
-
-            {/* Pledge Item 2: Vegetables */}
-            <div className="flex items-center space-x-3.5 min-w-[170px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <img
-                  src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=150"
-                  alt="Vegetables"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="text-left">
-                <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">VEGETABLES</h4>
-                <p className="text-[11px] text-white/60 font-sans font-medium mt-0.5 leading-tight">Seasonal Fresh – Daily Orders best in quality</p>
-              </div>
-            </div>
-
-            {/* Pledge Item 3: Flour */}
-            <div className="flex items-center space-x-3.5 min-w-[150px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <img
-                  src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=150"
-                  alt="Flour"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="text-left">
-                <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">FLOUR</h4>
-                <p className="text-[11px] text-white/60 font-sans font-medium mt-0.5 leading-tight">ITC - Aashirwad</p>
-              </div>
-            </div>
-
-            {/* Pledge Item 4: Rice */}
-            <div className="flex items-center space-x-3.5 min-w-[120px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <img
-                  src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=150"
-                  alt="Rice"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="text-left">
-                <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">RICE</h4>
-                <p className="text-[11px] text-white/60 font-sans font-medium mt-0.5 leading-tight">Basmati rice</p>
-              </div>
-            </div>
-
-            {/* Pledge Item 5: Spices */}
-            <div className="flex items-center space-x-3.5 min-w-[120px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <img
-                  src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=150"
-                  alt="Spices"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="text-left">
-                <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">SPICES</h4>
-                <p className="text-[11px] text-white/60 font-sans font-medium mt-0.5 leading-tight">MDH</p>
-              </div>
-            </div>
-
-            {/* Pledge Item 6: Sweets */}
-            <div className="flex items-center space-x-3.5 min-w-[150px] lg:min-w-0 group">
-              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#ebd2a0]/30 bg-[#02140c] flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-transform duration-300 group-hover:scale-105">
-                <img
-                  src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&q=80&w=150"
-                  alt="Sweets"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="text-left">
-                <h4 className="text-[10px] font-mono font-extrabold tracking-widest text-[#ebd2a0] uppercase leading-none">SWEETS</h4>
-                <p className="text-[11px] text-white/60 font-sans font-medium mt-0.5 leading-tight">Freshly Day Prepared</p>
-              </div>
-            </div>
-
-          </div>
-
-          {/* COLUMN 2: ELEGANT PORTRAIT SLIDER CAROUSEL */}
-          <div className="lg:col-span-9 flex items-center justify-center relative py-6">
+          {/* ELEGANT PORTRAIT SLIDER CAROUSEL */}
+          <div className="w-full flex items-center justify-center relative py-6">
             
             {/* Left Circular Arrow button */}
             <button
@@ -375,7 +295,10 @@ export default function EveningSnacks() {
             </button>
 
             {/* Center Carousel Frame */}
-            <div className="relative w-full max-w-5xl h-[460px] md:h-[510px] flex items-center justify-center overflow-hidden">
+            <div 
+              onWheel={handleWheel}
+              className="relative w-full max-w-5xl h-[460px] md:h-[510px] flex items-center justify-center overflow-hidden"
+            >
               <AnimatePresence initial={false}>
                 {cards.map((card, i) => {
                   const distance = getCardIndexInfo(i);
@@ -385,20 +308,17 @@ export default function EveningSnacks() {
                   let scale = 1.08; 
                   let opacity = 1;
                   let zIndex = 30;
-                  let filterVal = "brightness(1.02) contrast(1.02)";
 
                   if (distance === -1) {
                     translateX = isMobile ? "-74%" : "calc(-66% - 14px)";
                     scale = isMobile ? 0.8 : 0.86;
                     opacity = 0.45; // 45% visible context as defined in previous conversations & mockup
                     zIndex = 10;
-                    filterVal = "brightness(0.65) contrast(0.95)";
                   } else if (distance === 1) {
                     translateX = isMobile ? "74%" : "calc(66% + 14px)";
                     scale = isMobile ? 0.8 : 0.86;
                     opacity = 0.45; // 45% visible context as defined in previous conversations & mockup
                     zIndex = 10;
-                    filterVal = "brightness(0.65) contrast(0.95)";
                   } else if (distance !== 0) {
                     opacity = 0;
                     zIndex = 0;
@@ -414,8 +334,7 @@ export default function EveningSnacks() {
                         position: "absolute",
                         width: "100%",
                         maxWidth: isMobile ? "275px" : "360px",
-                        display: isVisible ? "block" : "none",
-                        filter: filterVal
+                        display: isVisible ? "block" : "none"
                       }}
                       initial={{ opacity: 0, scale: 0.6 }}
                       animate={{
@@ -424,22 +343,35 @@ export default function EveningSnacks() {
                         opacity: opacity,
                         zIndex: zIndex
                       }}
+                      drag={distance === 0 ? "x" : false}
+                      dragConstraints={{ left: 0, right: 0 }}
+                      dragElastic={0.3}
+                      onDragEnd={(event, info) => {
+                        const swipeThreshold = 50;
+                        if (info.offset.x < -swipeThreshold) {
+                          nextSlide();
+                        } else if (info.offset.x > swipeThreshold) {
+                          prevSlide();
+                        }
+                      }}
                       transition={{
-                        type: "spring",
-                        stiffness: 280,
-                        damping: 26
+                        duration: 0.25,
+                        ease: "easeOut"
                       }}
                       onClick={() => {
                         if (distance !== 0) {
                           setActiveIdx(i);
                         }
                       }}
-                      className={`bg-[#02130b] rounded-[2rem] border overflow-hidden shadow-2xl transition-all duration-300 ${
+                      className={`bg-[#02130b] rounded-[2rem] border overflow-hidden shadow-2xl transition-all duration-300 relative ${
                         distance === 0
                           ? "border-[#ebd2a0] cursor-default ring-1 ring-[#ebd2a0]/40"
                           : "border-[#e5dfd3]/10 hover:border-white/25 cursor-pointer"
                       }`}
                     >
+                      {distance !== 0 && (
+                        <div className="absolute inset-0 bg-[#02130b]/60 z-40 pointer-events-none transition-opacity duration-300" />
+                      )}
                       {/* Image Frame */}
                       <div className="aspect-[16/11] w-full overflow-hidden relative bg-[#010b06]">
                         <img
@@ -456,10 +388,10 @@ export default function EveningSnacks() {
                         </span>
 
                         {/* Beautiful Kcal circle-pill badge */}
-                        <div className="absolute top-4 right-4 bg-black/60 border border-[#ebd2a0]/20 text-[10px] font-semibold font-mono text-[#ebd2a0] px-3 py-2 rounded-xl flex flex-col items-center justify-center leading-none min-w-[50px]">
-                          <span className="text-sm font-bold text-white">{card.calories.split(" ")[0]}</span>
-                          <span className="text-[7px] text-[#ebd2a0]/70 uppercase tracking-widest mt-0.5">kcal</span>
-                        </div>
+                        {/* <div className="absolute top-4 right-4 bg-black/60 border border-[#ebd2a0]/20 text-[10px] font-semibold font-mono text-[#ebd2a0] px-3 py-2 rounded-xl flex flex-col items-center justify-center leading-none min-w-[50px]"> */}
+                          {/* <span className="text-sm font-bold text-white">{card.calories.split(" ")[0]}</span> */}
+                          {/* <span className="text-[7px] text-[#ebd2a0]/70 uppercase tracking-widest mt-0.5">kcal</span> */}
+                        {/* </div> */}
                       </div>
 
                       {/* Content Card Panel */}
@@ -531,47 +463,7 @@ export default function EveningSnacks() {
         </div>
 
         {/* HORIZONTAL GLASS SHELF OF COMMITMENT AND QUALITY */}
-        <div className="pt-6">
-          <div className="bg-[#02130b]/60 border border-[#ebd2a0]/15 rounded-[1.75rem] py-4 px-6 md:px-10 flex flex-wrap justify-center md:justify-between items-center gap-6 text-[10px] md:text-xs font-mono font-bold tracking-wider text-[#ebd2a0]/95 backdrop-blur-md">
-            
-            <div className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z" />
-              </svg>
-              <span>PREMIUM OIL</span>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
-              <span>FRESH INGREDIENTS</span>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1.5-3-1.5 1.5-2 2-2 3a2.5 2.5 0 0 0 1 2.5Z" />
-              </svg>
-              <span>AUTHENTIC SPICES</span>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
-              <span>QUALITY RICE</span>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M17 8h1a4 4 0 1 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8Z" />
-              </svg>
-              <span>FRESHLY PREPARED</span>
-            </div>
-
-          </div>
-        </div>
+       
 
       </div>
     </section>

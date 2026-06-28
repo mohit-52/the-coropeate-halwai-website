@@ -14,7 +14,7 @@ import {
   ThumbsUp, CalendarClock, ChevronDown, ChefHat, Phone, Mail, MapPin, Search,
   Expand, PlusCircle, Check, HelpCircle, X, Utensils, UtensilsCrossed, Building2, Clock,
   Briefcase, Crown, Star, MessageCircle, Globe, Leaf, Flame, Users, TrendingUp,
-  Sprout, Package, Truck, Droplet, ClipboardList
+  Sprout, Package, Truck, Droplet, ClipboardList, FileText
 } from "lucide-react";
 
 export default function HomeClient() {
@@ -593,7 +593,7 @@ export default function HomeClient() {
                   <div className="text-center mb-14 space-y-3">
                     <div className="flex items-center justify-center gap-3 mb-2">
                       <div className="w-6 h-[1px] bg-[#b89547]" />
-                      <span className="text-[10px] font-mono font-bold tracking-[0.35em] text-[#b89547] uppercase">Our Services</span>
+                      <span className="text-[28px] font-mono font-bold tracking-[0.35em] text-[#b89547] uppercase">Our Services</span>
                       <div className="w-6 h-[1px] bg-[#b89547]" />
                     </div>
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#052316] tracking-tight leading-tight">
@@ -877,9 +877,9 @@ export default function HomeClient() {
                       </div>
 
                       {/* Card with overflow-hidden */}
-                      <div className="bg-[#041f14] border border-[#b89547]/30 rounded-[2.5rem] p-8 flex flex-col items-center justify-between text-center relative shadow-xl overflow-hidden min-h-[460px] h-full flex-1">
+                      <div className="bg-white border border-[#b89547]/30 rounded-[2.5rem] p-8 flex flex-col items-center justify-between text-center relative shadow-xl overflow-hidden min-h-[460px] h-full flex-1">
                         {/* Decorative leaf sketch absolute in background */}
-                        <svg className="absolute -left-2 bottom-6 w-32 h-64 opacity-25 pointer-events-none select-none text-[#b89547]" viewBox="0 0 100 200" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round">
+                        <svg className="absolute -left-2 bottom-6 w-32 h-64 opacity-20 pointer-events-none select-none text-[#052316]" viewBox="0 0 100 200" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round">
                           <path d="M10 190 Q 25 140 30 50" />
                           <path d="M30 50 Q 12 40 10 25 Q 22 28 30 50" />
                           <path d="M28 75 Q 8 68 5 53 Q 18 55 28 75" />
@@ -897,13 +897,13 @@ export default function HomeClient() {
                           {/* Outer circle line */}
                           <div className="absolute inset-0 rounded-full border border-[#b89547]/30" />
                           {/* Inner circle line */}
-                          <div className="absolute inset-2 rounded-full border-2 border-[#b89547]/50 flex flex-col items-center justify-center p-6 text-center bg-[#031d12]/20">
+                          <div className="absolute inset-2 rounded-full border-2 border-[#b89547]/50 flex flex-col items-center justify-center p-6 text-center bg-[#052316]/5">
                             <ShieldCheck className="w-7 h-7 text-[#b89547] stroke-[1.5] mb-2" />
                             <span className="text-[9px] font-mono font-bold uppercase tracking-[0.25em] text-[#b89547]">Our Promise</span>
-                            <h4 className="text-2xl font-serif font-black text-white tracking-tight leading-tight mt-1 mb-2">
+                            <h4 className="text-2xl font-serif font-black text-[#052316] tracking-tight leading-tight mt-1 mb-2">
                               Your<br />Confidence
                             </h4>
-                            <span className="text-[8px] font-sans font-extrabold tracking-widest text-[#ebd2a0]/85 uppercase">
+                            <span className="text-[8px] font-sans font-extrabold tracking-widest text-[#b89547] uppercase">
                               Quality • Hygiene •<br />Taste
                             </span>
                           </div>
@@ -919,8 +919,8 @@ export default function HomeClient() {
 
                           {/* Description */}
                           <div className="mt-4 space-y-1">
-                            <h5 className="font-sans font-bold text-sm text-white">Our Promise, Your Confidence.</h5>
-                            <p className="text-xs text-gray-400 font-medium leading-relaxed max-w-[240px] mx-auto">
+                            <h5 className="font-sans font-bold text-sm text-[#052316]">Our Promise, Your Confidence.</h5>
+                            <p className="text-xs text-gray-600 font-medium leading-relaxed max-w-[240px] mx-auto">
                               The hallmark of premium corporate standards in every serving.
                             </p>
                           </div>
@@ -2213,6 +2213,17 @@ export default function HomeClient() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Floating Brochure Button */}
+      <a
+        href="/corporate-catering-brochure.pdf"
+        download
+        className="fixed bottom-[88px] right-6 z-50 bg-gradient-to-r from-[#052316] to-[#093521] text-[#ebd2a0] border border-[#ebd2a0]/30 p-3.5 md:px-5 md:py-3.5 rounded-full flex items-center justify-center gap-2 shadow-[0_8px_25px_rgba(0,0,0,0.45)] hover:bg-[#ebd2a0] hover:text-[#052316] hover:border-[#ebd2a0] hover:scale-105 active:scale-95 transition-all duration-300"
+        title="Download Brochure"
+      >
+        <FileText className="w-5 h-5 md:w-4.5 md:h-4.5" />
+        <span className="text-[10px] font-mono font-bold uppercase tracking-wider hidden md:inline">Detailed Brochure</span>
+      </a>
 
       {/* Floating WhatsApp Button */}
       <a
