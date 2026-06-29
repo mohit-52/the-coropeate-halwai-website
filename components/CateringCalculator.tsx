@@ -349,7 +349,7 @@ export default function CateringCalculator({ onQuoteRequested }: CateringCalcula
               </div>
 
               {/* Grid with 4 beautiful columns inside border */}
-              <div className="grid grid-cols-4 border border-[#f2ece0] rounded-2.5xl divide-x divide-[#f2ece0] bg-[#fdfcf9] py-5 shadow-xs select-none">
+              <div className="grid grid-cols-2 sm:grid-cols-4 border border-[#f2ece0] rounded-2.5xl sm:divide-x divide-[#f2ece0] bg-[#fdfcf9] py-4 sm:py-5 shadow-xs select-none gap-y-4 sm:gap-y-0">
                 
                 {/* Prop 1 */}
                 <div className="flex flex-col items-center justify-center px-1">

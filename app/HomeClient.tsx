@@ -1,6 +1,7 @@
 'use client';
 
 import React from "react";
+import { remoteConfig, fetchAndActivate, getValue } from "../lib/firebase";
 import { AppTab, GalleryItem, SavedInquiry } from "../types";
 import Header from "../components/Header";
 import BookingModal from "../components/BookingModal";
@@ -18,6 +19,7 @@ import {
 } from "lucide-react";
 
 export default function HomeClient() {
+  const [isActive, setIsActive] = React.useState<boolean | null>(null);
   const [activeTab, setActiveTab] = React.useState<AppTab>(AppTab.HOME);
   const [isBookingOpen, setIsBookingOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -44,6 +46,25 @@ export default function HomeClient() {
       setInquiries(list);
     }
   };
+
+  // Check feature flag
+  React.useEffect(() => {
+    const checkActiveStatus = async () => {
+      try {
+        if (!remoteConfig) {
+          setIsActive(true);
+          return;
+        }
+        await fetchAndActivate(remoteConfig);
+        const activeFlag = getValue(remoteConfig, "is_active").asBoolean();
+        setIsActive(activeFlag);
+      } catch (err) {
+        console.error("Error fetching feature flag:", err);
+        setIsActive(true); // Default to true on error so we don't break the app
+      }
+    };
+    checkActiveStatus();
+  }, []);
 
   // Listen to scrolls to shadow header
   React.useEffect(() => {
@@ -171,6 +192,24 @@ export default function HomeClient() {
     item => galleryFilter === "all" || item.category === galleryFilter
   );
 
+  if (isActive === null) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#FAF9F6]">
+        <TCHLogo className="w-32 h-32 animate-pulse text-[#b89547]" />
+      </div>
+    );
+  }
+
+  if (isActive === false) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[#FAF9F6] px-4 text-center">
+        <TCHLogo className="w-24 h-24 mb-6 text-[#b89547] opacity-60" />
+        <h1 className="text-3xl font-serif font-bold text-[#052316] mb-2">We'll be right back</h1>
+        <p className="text-[#052316]/70 font-sans max-w-md">Our website is currently undergoing maintenance. Please check back later.</p>
+      </div>
+    );
+  }
+
   return (
     <div id="app-root-layout" className="min-h-screen flex flex-col bg-halwai-cream-50 font-sans selection:bg-halwai-gold-300 selection:text-halwai-green-950">
 
@@ -201,7 +240,7 @@ export default function HomeClient() {
               {/* 1. HERO SECTION */}
               <section
                 id="home-hero-billboard"
-                className="relative min-h-[90vh] flex items-center justify-center bg-[#FAF9F6] overflow-hidden pt-20 md:pt-28 pb-16 px-2 md:px-4 border-b border-[#e5dfd3]/60"
+                className="relative min-h-[90vh] flex items-center justify-center bg-[#FAF9F6] overflow-hidden pt-20 md:pt-28 pb-16 px-4 sm:px-6 lg:px-8 border-b border-[#e5dfd3]/60"
               >
                 {/* Mandala corner decorations — top-left */}
                 <svg className="absolute top-0 left-0 w-64 h-64 pointer-events-none select-none opacity-[0.06]" viewBox="0 0 200 200" fill="none">
@@ -978,7 +1017,7 @@ export default function HomeClient() {
 
                   {/* Bottom trust bar inside section */}
                   <div className="bg-[#FAF8F5] rounded-[2.5rem] border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] p-6 mt-12 w-full">
-                    <div className="grid grid-cols-1 min-[480px]:grid-cols-2 md:grid-cols-5 gap-6 divide-y md:divide-y-0 md:divide-x divide-[#ebd2a0]/30">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-6 divide-y md:divide-y-0 md:divide-x divide-[#ebd2a0]/30">
                       {[
                         { icon: <Leaf className="w-5 h-5" />, title: "PREMIUM QUALITY\nINGREDIENTS", desc: "Carefully selected for\nthe best taste" },
                         { icon: <ShieldCheck className="w-5 h-5" />, title: "HYGIENIC & SAFE\nPREPARATION", desc: "Maintaining highest\nstandards of hygiene" },
@@ -1946,7 +1985,7 @@ export default function HomeClient() {
                     <button
                       id="gallery-schedule-call-btn"
                       onClick={() => setIsBookingOpen(true)}
-                      className="px-8 py-3 bg-gradient-to-r from-halwai-gold-500 to-halwai-gold-300 text-halwai-green-950 font-bold text-xs uppercase tracking-widest rounded shadow-md hover:shadow-lg transition-all"
+                      className="px-8 py-3 bg-gradient-to-r from-halwai-gold-500 to-halwai-gold-300 text-halwai-green-950 font-bold text-xs uppercase tracking-widest rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer active:scale-98"
                     >
                       Reserve complimentary Tasting Session
                     </button>
@@ -2207,7 +2246,9 @@ export default function HomeClient() {
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3.5 rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:bg-[#20ba5a] hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center border border-white/10"
         title="WhatsApp Us"
       >
-        <MessageCircle className="w-6.5 h-6.5 text-white" />
+        <svg className="w-[26px] h-[26px] text-white fill-current" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.417 9.86-9.86 0-2.637-1.026-5.114-2.89-6.98C16.576 1.897 14.1 1.87 11.992 1.87c-5.435 0-9.856 4.417-9.86 9.861-.001 1.709.453 3.376 1.315 4.887l-.99 3.618 3.71-.973zm13.125-6.666c-.11-.18-.403-.288-.846-.508-.443-.22-2.62-1.294-3.027-1.442-.407-.148-.705-.222-.998.22-.293.442-1.135 1.442-1.39 1.734-.256.292-.513.328-.956.108-.444-.22-1.873-.69-3.568-2.203-1.319-1.176-2.207-2.63-2.466-3.07-.258-.443-.027-.683.195-.903.2-.197.443-.518.665-.777.223-.258.297-.442.443-.737.147-.295.074-.553-.037-.772-.11-.22-.998-2.404-1.366-3.29-.359-.863-.726-.746-.998-.746-.256-.001-.55-.001-.846-.001-.295 0-.777.11-1.18.552-.404.443-1.543 1.507-1.543 3.673s1.58 4.26 1.8 4.554c.222.294 3.11 4.75 7.533 6.66 1.052.454 1.873.725 2.514.93.122.04 1.054.453 1.455.395.4-.06 1.233-.504 1.406-.99.172-.486.172-.903.12-1.047-.052-.143-.197-.22-.64-.443z"/>
+        </svg>
       </a>
 
     </div>

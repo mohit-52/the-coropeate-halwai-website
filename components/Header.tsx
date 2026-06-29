@@ -84,18 +84,6 @@ export default function Header({ activeTab, setActiveTab, openBookingModal, isSc
                 <a href="tel:+919667314900" className="hover:text-[#b89547] transition-colors">9667314900</a>
               </div>
             </div>
-            {/* WhatsApp */}
-            <a
-              id="header-whatsapp-link"
-              href="https://wa.me/919289030016?text=Hi%20The%20Corporate%20Halwai%2C%20I%27d%20like%20to%20enquire%20about%20your%20catering%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-2 bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 text-[#128C7E] rounded-full text-[10px] font-bold tracking-wide transition-all duration-300"
-              title="WhatsApp us"
-            >
-              <MessageCircle className="w-3.5 h-3.5" />
-              <span className="hidden lg:inline">WhatsApp</span>
-            </a>
             {/* Book Tasting CTA */}
             <button
               id="cta-book-tasting-header"
@@ -154,15 +142,6 @@ export default function Header({ activeTab, setActiveTab, openBookingModal, isSc
               <a href="tel:+919667314900" className="flex items-center gap-2 text-xs font-mono font-bold text-[#052316]/80 hover:text-[#b89547]">
                 <Phone className="w-3.5 h-3.5 text-[#b89547]" />
                 9667314900 (Bulk Orders)
-              </a>
-              <a
-                href="https://wa.me/919289030016?text=Hi%20The%20Corporate%20Halwai%2C%20I%27d%20like%20to%20enquire%20about%20your%20catering%20services."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-bold text-[#128C7E] hover:text-[#075E54]"
-              >
-                <MessageCircle className="w-3.5 h-3.5" />
-                WhatsApp Us
               </a>
             </div>
             <button
