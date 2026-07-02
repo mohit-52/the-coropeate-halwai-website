@@ -6,16 +6,16 @@ import { motion } from "motion/react";
 function PartnerItem({ partner }: { partner: { name: string; logoUrl: string } }) {
   const [error, setError] = React.useState(false);
   return (
-    <div className="flex items-center justify-center transition-all duration-300 h-16 min-w-max px-4">
+    <div className="flex items-center justify-center h-16 min-w-max px-4">
       {!error && partner.logoUrl ? (
         <img
           src={partner.logoUrl}
           alt={partner.name}
-          className="max-h-10 max-w-[140px] object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+          className="max-h-10 max-w-[140px] object-contain"
           onError={() => setError(true)}
         />
       ) : (
-        <span className="text-[#052316]/40 font-sans font-bold text-xl md:text-2xl uppercase tracking-wider transition-colors duration-300 hover:text-[#b89547] whitespace-nowrap">
+        <span className="text-[#052316]/40 font-sans font-bold text-xl md:text-2xl uppercase tracking-wider whitespace-nowrap">
           {partner.name}
         </span>
       )}
@@ -25,16 +25,16 @@ function PartnerItem({ partner }: { partner: { name: string; logoUrl: string } }
 
 export default function OurPartners() {
   const partners = [
-    { name: "Reliance Retail", logoUrl: "https://logo.clearbit.com/relianceretail.com" },
-    { name: "Google Cloud", logoUrl: "https://logo.clearbit.com/cloud.google.com" },
-    { name: "Inmobi", logoUrl: "https://logo.clearbit.com/inmobi.com" },
-    { name: "Razorpay", logoUrl: "https://logo.clearbit.com/razorpay.com" },
-    { name: "Amazon", logoUrl: "https://logo.clearbit.com/amazon.in" },
-    { name: "Deloitte", logoUrl: "https://logo.clearbit.com/deloitte.com" },
-    { name: "Accenture", logoUrl: "https://logo.clearbit.com/accenture.com" },
-    { name: "Microsoft", logoUrl: "https://logo.clearbit.com/microsoft.com" },
-    { name: "Tata Consultancy Services", logoUrl: "https://logo.clearbit.com/tcs.com" },
-    { name: "Infosys", logoUrl: "https://logo.clearbit.com/infosys.com" }
+    { name: "Reliance Retail", logoUrl: "https://www.google.com/s2/favicons?domain=relianceretail.com&sz=128" },
+    { name: "Google Cloud", logoUrl: "https://www.google.com/s2/favicons?domain=cloud.google.com&sz=128" },
+    { name: "InMobi", logoUrl: "https://www.google.com/s2/favicons?domain=inmobi.com&sz=128" },
+    { name: "Razorpay", logoUrl: "https://www.google.com/s2/favicons?domain=razorpay.com&sz=128" },
+    { name: "Amazon", logoUrl: "https://www.google.com/s2/favicons?domain=amazon.com&sz=128" },
+    { name: "Deloitte", logoUrl: "https://www.google.com/s2/favicons?domain=deloitte.com&sz=128" },
+    { name: "Accenture", logoUrl: "https://www.google.com/s2/favicons?domain=accenture.com&sz=128" },
+    { name: "Microsoft", logoUrl: "https://www.google.com/s2/favicons?domain=microsoft.com&sz=128" },
+    { name: "Tata Consultancy Services", logoUrl: "https://www.google.com/s2/favicons?domain=tcs.com&sz=128" },
+    { name: "Infosys", logoUrl: "https://www.google.com/s2/favicons?domain=infosys.com&sz=128" }
   ];
 
   return (
@@ -62,17 +62,17 @@ export default function OurPartners() {
         {/* Gradient overlays for smooth fading edges */}
         <div className="absolute top-0 bottom-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute top-0 bottom-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-        
+
         {/* Marquee container */}
-        <div className="flex w-max animate-marquee space-x-12 md:space-x-20 px-6">
+        <div className="flex w-max animate-marquee">
           {/* First set of partners */}
-          <div className="flex items-center space-x-12 md:space-x-20">
+          <div className="flex items-center space-x-12 md:space-x-20 pr-12 md:pr-20">
             {partners.map((partner, index) => (
               <PartnerItem key={index} partner={partner} />
             ))}
           </div>
           {/* Second set of partners for seamless looping */}
-          <div className="flex items-center space-x-12 md:space-x-20" aria-hidden="true">
+          <div className="flex items-center space-x-12 md:space-x-20 pr-12 md:pr-20" aria-hidden="true">
             {partners.map((partner, index) => (
               <PartnerItem key={index} partner={partner} />
             ))}
