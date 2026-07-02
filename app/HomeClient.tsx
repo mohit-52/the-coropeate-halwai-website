@@ -40,6 +40,7 @@ export default function HomeClient() {
   // State for Strategic Solutions
   const [activeSolutionIdx, setActiveSolutionIdx] = React.useState(0);
   const [servicesTab, setServicesTab] = React.useState<"corporate" | "private">("corporate");
+  const [brochureUrl, setBrochureUrl] = React.useState<string>("/corporate-catering-brochure.pdf");
 
   // Load inquiries from local storage
   const loadInquiries = () => {
@@ -60,6 +61,12 @@ export default function HomeClient() {
         await fetchAndActivate(remoteConfig);
         const activeFlag = getValue(remoteConfig, "is_active").asBoolean();
         setIsActive(activeFlag);
+        
+        // Fetch dynamic brochure URL
+        const remoteBrochureUrl = getValue(remoteConfig, "brochure_asset_url").asString();
+        if (remoteBrochureUrl) {
+          setBrochureUrl(remoteBrochureUrl);
+        }
       } catch (err) {
         console.error("Error fetching feature flag:", err);
         setIsActive(true); // Default to true on error so we don't break the app
@@ -422,7 +429,9 @@ export default function HomeClient() {
                             rel="noopener noreferrer"
                             className="px-6 py-3.5 bg-white border border-[#e5dfd3]/80 hover:bg-[#f8f6f0] text-[#052316] font-sans font-bold text-[10px] sm:text-[11px] tracking-[0.15em] uppercase rounded-full shadow-sm hover:shadow transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto"
                           >
-                            <MessageCircle className="w-4 h-4 text-[#052316]" />
+                            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
                             <span>WhatsApp Us</span>
                           </a>
                         </div>
@@ -2460,8 +2469,10 @@ export default function HomeClient() {
 
       {/* Floating Brochure Button */}
       <a
-        href="/corporate-catering-brochure.pdf"
-        download
+        href={brochureUrl}
+        download={!brochureUrl.startsWith("http")}
+        target={brochureUrl.startsWith("http") ? "_blank" : undefined}
+        rel={brochureUrl.startsWith("http") ? "noopener noreferrer" : undefined}
         className="fixed bottom-[88px] right-6 z-50 bg-gradient-to-r from-[#052316] to-[#093521] text-[#ebd2a0] border border-[#ebd2a0]/30 p-3.5 md:px-5 md:py-3.5 rounded-full flex items-center justify-center gap-2 shadow-[0_8px_25px_rgba(0,0,0,0.45)] hover:bg-[#ebd2a0] hover:text-[#052316] hover:border-[#ebd2a0] hover:scale-105 active:scale-95 transition-all duration-300"
         title="Download Brochure"
       >
@@ -2478,7 +2489,7 @@ export default function HomeClient() {
         title="WhatsApp Us"
       >
         <svg className="w-[26px] h-[26px] text-white fill-current" viewBox="0 0 24 24">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.417 9.86-9.86 0-2.637-1.026-5.114-2.89-6.98C16.576 1.897 14.1 1.87 11.992 1.87c-5.435 0-9.856 4.417-9.86 9.861-.001 1.709.453 3.376 1.315 4.887l-.99 3.618 3.71-.973zm13.125-6.666c-.11-.18-.403-.288-.846-.508-.443-.22-2.62-1.294-3.027-1.442-.407-.148-.705-.222-.998.22-.293.442-1.135 1.442-1.39 1.734-.256.292-.513.328-.956.108-.444-.22-1.873-.69-3.568-2.203-1.319-1.176-2.207-2.63-2.466-3.07-.258-.443-.027-.683.195-.903.2-.197.443-.518.665-.777.223-.258.297-.442.443-.737.147-.295.074-.553-.037-.772-.11-.22-.998-2.404-1.366-3.29-.359-.863-.726-.746-.998-.746-.256-.001-.55-.001-.846-.001-.295 0-.777.11-1.18.552-.404.443-1.543 1.507-1.543 3.673s1.58 4.26 1.8 4.554c.222.294 3.11 4.75 7.533 6.66 1.052.454 1.873.725 2.514.93.122.04 1.054.453 1.455.395.4-.06 1.233-.504 1.406-.99.172-.486.172-.903.12-1.047-.052-.143-.197-.22-.64-.443z" />
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
       </a>
 
