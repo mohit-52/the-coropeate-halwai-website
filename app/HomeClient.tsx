@@ -9,6 +9,7 @@ import EveningSnacks from "../components/EveningSnacks";
 import CateringCalculator from "../components/CateringCalculator";
 import AiMenuDesigner from "../components/AiMenuDesigner";
 import TCHLogo from "../components/TCHLogo";
+import OurPartners from "../components/OurPartners";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowRight, ArrowDown, ShieldCheck, Timer, Award, Scale, RefreshCw, Layers, Sparkles,
@@ -38,6 +39,7 @@ export default function HomeClient() {
 
   // State for Strategic Solutions
   const [activeSolutionIdx, setActiveSolutionIdx] = React.useState(0);
+  const [servicesTab, setServicesTab] = React.useState<"corporate" | "private">("corporate");
 
   // Load inquiries from local storage
   const loadInquiries = () => {
@@ -295,7 +297,7 @@ export default function HomeClient() {
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
                     {/* Left Column: Premium Brand Messaging */}
-                    <div className="lg:col-span-6 space-y-6 text-center lg:text-left max-w-2xl order-2 lg:order-1 flex flex-col items-center lg:items-start w-full">
+                    <div className="lg:col-span-6 space-y-7 text-center lg:text-left max-w-2xl order-2 lg:order-1 flex flex-col items-center lg:items-start w-full">
 
                       {/* Eyebrow Label with custom star separator */}
                       <motion.div
@@ -303,24 +305,10 @@ export default function HomeClient() {
                           hidden: { opacity: 0, y: 15 },
                           visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
                         }}
-                        className="space-y-2.5 w-full flex flex-col items-center lg:items-start"
+                        className="flex items-center justify-center lg:justify-start gap-2 w-full"
                       >
-                        <div className="flex items-center justify-center lg:justify-start gap-1.5 w-full">
-                          <span className="text-[#b89547] text-xs">❖</span>
-                          <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.25em] uppercase text-[#b89547]">Premium Corporate Catering</span>
-                        </div>
-
-                        <div className="text-xs font-sans font-bold text-[#052316] uppercase tracking-[0.15em] select-none flex flex-wrap items-center justify-center lg:justify-start gap-2 w-full">
-                          <span>Office Meals</span>
-                          <span className="text-[#b89547] font-sans font-normal">·</span>
-                          <span>|</span>
-                          <span className="text-[#b89547] font-sans font-normal">·</span>
-                          <span>Events</span>
-                          <span className="text-[#b89547] font-sans font-normal">·</span>
-                          <span>|</span>
-                          <span className="text-[#b89547] font-sans font-normal">·</span>
-                          <span>Cafeteria Services</span>
-                        </div>
+                        <span className="text-[#b89547] text-sm">❖</span>
+                        <span className="text-xs font-sans font-bold tracking-[0.15em] uppercase text-[#b89547]">Premium Corporate Catering</span>
                       </motion.div>
 
                       {/* Headline: Clean Serif typography matching screenshot exactly */}
@@ -329,12 +317,11 @@ export default function HomeClient() {
                           hidden: { opacity: 0, y: 20 },
                           visible: { opacity: 1, y: 0, transition: { duration: 0.55 } }
                         }}
-                        className="space-y-0.5 w-full"
+                        className="w-full"
                       >
                         <h1 className="text-5xl sm:text-6xl lg:text-[4.75rem] font-serif font-black leading-[1.05] tracking-tight flex flex-col items-center lg:items-start text-center lg:text-left">
                           <span className="text-[#052316]">Desi Flavours.</span>
-                          <span className="text-[#b89547] font-semibold">Corporate</span>
-                          <span className="text-[#b89547] font-semibold">Standards.</span>
+                          <span className="text-[#b89547] font-normal">Corporate Standards.</span>
                         </h1>
                       </motion.div>
 
@@ -344,10 +331,72 @@ export default function HomeClient() {
                           hidden: { opacity: 0, y: 15 },
                           visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
                         }}
-                        className="text-xs sm:text-sm text-gray-500 font-sans font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-center lg:text-left"
+                        className="text-[13px] sm:text-[15px] text-[#6b7280] font-sans font-medium leading-relaxed max-w-[90%] mx-auto lg:mx-0 text-center lg:text-left"
                       >
-                        Elevating everyday meals with authentic flavours, hygienic preparation, and seamless service.
+                        Authentic flavours. Hygienic preparation. Seamless service.<br />
+                        Proudly serving events of all sizes,<br />
+                        from <span className="font-bold text-[#052316]">10 to 10,000 people</span>.
                       </motion.p>
+
+                      {/* We Cater To Block */}
+                      <motion.div
+                        variants={{
+                          hidden: { opacity: 0, y: 15 },
+                          visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                        }}
+                        className="w-full max-w-[90%] mt-4"
+                      >
+                        <div className="relative pt-3">
+                          <div className="absolute inset-0 flex items-start justify-center">
+                            <div className="w-full border-t border-[#b89547]/30 mt-[9px]" />
+                          </div>
+                          <div className="relative flex justify-center text-[9px] sm:text-[10px] font-sans font-bold tracking-[0.2em] uppercase text-[#052316]">
+                            <span className="bg-[#FAF9F6] px-3">We Cater To</span>
+                          </div>
+                        </div>
+
+                        <div className="bg-white rounded-[1.25rem] border border-[#e5dfd3]/80 p-4 sm:p-5 mt-4 flex items-center justify-between shadow-sm">
+                          {/* Weddings */}
+                          <div className="flex flex-col items-center gap-1.5 flex-1 border-r border-[#e5dfd3]/60 last:border-0">
+                            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#052316]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                              <circle cx="9" cy="10" r="3" />
+                              <circle cx="15" cy="10" r="3" />
+                              <path d="M11 12.8A4.5 4.5 0 1 0 13 12.8" />
+                            </svg>
+                            <span className="text-[9px] sm:text-[10px] font-sans font-medium text-[#052316]">Weddings</span>
+                          </div>
+                          {/* Corporate Events */}
+                          <div className="flex flex-col items-center gap-1.5 flex-1 border-r border-[#e5dfd3]/60 last:border-0">
+                            <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-[#052316]" strokeWidth={1.5} />
+                            <span className="text-[9px] sm:text-[10px] font-sans font-medium text-[#052316]">Corporate Events</span>
+                          </div>
+                          {/* Birthday Parties */}
+                          <div className="flex flex-col items-center gap-1.5 flex-1 border-r border-[#e5dfd3]/60 last:border-0">
+                            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#052316]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                              <path d="M20 21H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2z" />
+                              <path d="M12 12v-2" />
+                              <path d="M8 12v-2" />
+                              <path d="M16 12v-2" />
+                              <path d="M12 7v-1" />
+                              <path d="M8 7v-1" />
+                              <path d="M16 7v-1" />
+                            </svg>
+                            <span className="text-[9px] sm:text-[10px] font-sans font-medium text-[#052316]">Birthday Parties</span>
+                          </div>
+                          {/* Family Gatherings */}
+                          <div className="flex flex-col items-center gap-1.5 flex-1 border-r border-[#e5dfd3]/60 last:border-0">
+                            <Users className="w-5 h-5 sm:w-6 sm:h-6 text-[#052316]" strokeWidth={1.5} />
+                            <span className="text-[9px] sm:text-[10px] font-sans font-medium text-[#052316]">Family Gatherings</span>
+                          </div>
+                          {/* & More */}
+                          <div className="flex flex-col items-center gap-1.5 flex-1">
+                            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-[#052316] flex items-center justify-center">
+                              <span className="text-[#052316] text-xs font-bold leading-none tracking-widest -mt-1">...</span>
+                            </div>
+                            <span className="text-[9px] sm:text-[10px] font-sans font-medium text-[#052316]">& More</span>
+                          </div>
+                        </div>
+                      </motion.div>
 
                       {/* Action buttons row */}
                       <motion.div
@@ -355,20 +404,14 @@ export default function HomeClient() {
                           hidden: { opacity: 0, y: 15 },
                           visible: { opacity: 1, y: 0, transition: { duration: 0.55 } }
                         }}
-                        className="space-y-4 pt-1 w-full"
+                        className="pt-2 w-full"
                       >
                         <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 w-full">
                           <button
                             id="hero-book-tasting-btn"
                             onClick={() => setIsBookingOpen(true)}
-                            className="px-6 py-3.5 bg-[#052316] hover:bg-[#0b3c27] text-white font-mono font-bold text-[10px] tracking-wider uppercase rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer border border-transparent w-full sm:w-auto"
+                            className="px-6 py-3.5 bg-[#052316] hover:bg-[#0b3c27] text-white font-sans font-bold text-[10px] sm:text-[11px] tracking-[0.15em] uppercase rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
                           >
-                            <svg className="w-3.5 h-3.5 text-[#ebd2a0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                              <line x1="16" y1="2" x2="16" y2="6" />
-                              <line x1="8" y1="2" x2="8" y2="6" />
-                              <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>
                             <span>Book a Tasting Session</span>
                             <ArrowRight className="w-3.5 h-3.5 text-white" />
                           </button>
@@ -377,9 +420,9 @@ export default function HomeClient() {
                             href="https://wa.me/919289030016?text=Hi%20The%20Corporate%20Halwai%2C%20I%27d%20like%20to%20book%20a%20tasting%20session."
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-6 py-3.5 bg-[#f0f5f2] border border-[#052316]/10 hover:bg-[#e4ece8] text-[#052316] font-mono font-bold text-[10px] tracking-wider uppercase rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto"
+                            className="px-6 py-3.5 bg-white border border-[#e5dfd3]/80 hover:bg-[#f8f6f0] text-[#052316] font-sans font-bold text-[10px] sm:text-[11px] tracking-[0.15em] uppercase rounded-full shadow-sm hover:shadow transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto"
                           >
-                            <MessageCircle className="w-3.5 h-3.5 text-[#052316]" />
+                            <MessageCircle className="w-4 h-4 text-[#052316]" />
                             <span>WhatsApp Us</span>
                           </a>
                         </div>
@@ -393,9 +436,12 @@ export default function HomeClient() {
                         hidden: { opacity: 0, scale: 0.97, x: 20 },
                         visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.65 } }
                       }}
-                      className="lg:col-span-6 relative flex justify-center lg:justify-end w-full order-1 lg:order-2"
+                      className="lg:col-span-6 relative flex justify-center lg:justify-end w-full order-1 lg:order-2 lg:pl-10"
                     >
-                      <div className="relative w-full aspect-[3/2] rounded-[2.5rem] overflow-hidden border border-[#e5dfd3]/50 shadow-[0_24px_54px_rgba(5,35,22,0.08)] bg-[#041d12]">
+                      {/* Gold outline accent behind video */}
+                      <div className="absolute top-[-2%] right-[-3%] bottom-[3%] left-[12%] border border-[#b89547] rounded-[2.5rem] pointer-events-none hidden lg:block" />
+
+                      <div className="relative w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-[0_24px_54px_rgba(5,35,22,0.1)] bg-[#041d12] z-10 lg:ml-6">
                         {/* High-quality backup fallback image */}
                         <img
                           src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=800"
@@ -411,39 +457,37 @@ export default function HomeClient() {
                           loop
                           muted
                           playsInline
-                          className="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-700"
-                          style={{ filter: "brightness(1.02) contrast(1.05)" }}
+                          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+                          style={{ filter: "brightness(1.0) contrast(1.0)" }}
                         >
                           <source src="https://videos.pexels.com/video-files/3015488/3015488-sd_640_360_24fps.mp4" type="video/mp4" />
                           <source src="https://videos.pexels.com/video-files/3015488/3015488-hd_1280_720_24fps.mp4" type="video/mp4" />
                         </video>
-
-                        {/* Top Right: Cooked in Olive Oil Badge */}
-                        <div className="absolute top-5 right-5 flex items-center space-x-2 bg-white rounded-full px-4 py-2 shadow-md z-20 select-none">
-                          <span className="w-2 h-2 rounded-full bg-[#0bb385]" />
-                          <span className="text-[9.5px] font-mono font-black text-[#052316] uppercase tracking-wider">Cooked in Olive Oil</span>
-                        </div>
-
-                        {/* Bottom row overlay gradient container */}
-                        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#052316]/95 via-[#052316]/60 to-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 z-20">
-                          {/* Since 2015 Trusted Caterer White Badge */}
-                          <div className="flex items-center space-x-3 bg-white rounded-2xl px-4 py-2.5 shadow-lg select-none">
-                            <div className="w-7 h-7 rounded-full bg-[#052316] flex items-center justify-center text-[#ebd2a0] shrink-0">
-                              <span className="text-xs">★</span>
-                            </div>
-                            <div className="text-left leading-tight font-sans">
-                              <span className="block text-xs font-black text-[#052316]">Since 2015</span>
-                              <span className="block text-[8px] font-mono font-bold uppercase text-[#b89547] tracking-wider mt-0.5">Trusted Caterer</span>
-                            </div>
-                          </div>
-
-                          {/* White italic quotation next to badge */}
-                          <p className="text-white text-xs sm:text-sm font-serif italic text-left max-w-xs leading-relaxed opacity-95">
-                            "Bringing flavours to modern workplaces."
-                          </p>
-                        </div>
-
                       </div>
+
+                      {/* Floating Dark Green Card (Serving Events) */}
+                      <div className="absolute top-[10%] left-[-2%] lg:left-0 bg-[#052316] rounded-2xl p-5 shadow-2xl flex flex-col items-center justify-center text-center w-36 sm:w-44 z-20 border border-white/10">
+                        <Users className="w-6 h-6 text-[#b89547] mb-2" />
+                        <span className="text-[9px] sm:text-[10px] text-white/80 font-sans tracking-wide">Serving Events</span>
+                        <span className="text-sm sm:text-[18px] font-sans font-bold text-[#b89547] mt-1 leading-tight">10 to 10,000</span>
+                        <span className="text-[9px] sm:text-[10px] text-white/80 font-sans mt-0.5">People</span>
+                        <div className="w-8 h-[1px] bg-white/20 my-3" />
+                        <span className="text-[9px] text-white/70 font-sans leading-snug px-2">Small get-togethers<br />to grand celebrations</span>
+                      </div>
+
+                      {/* Floating Trust Badge (Bottom Left) */}
+                      <div className="absolute bottom-[-5%] lg:bottom-[5%] left-[5%] lg:left-[-5%] bg-white rounded-2xl p-4 shadow-xl flex items-center gap-4 z-20 border border-[#e5dfd3]/80">
+                        <div className="w-10 h-10 rounded bg-[#f7eedd] flex items-center justify-center shrink-0">
+                          <svg className="w-6 h-6 text-[#b89547]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-[11px] sm:text-xs font-sans font-bold text-[#b89547] tracking-wide">Hygienic <span className="mx-1">•</span> Reliable <span className="mx-1">•</span> Trusted</span>
+                          <span className="text-[10px] text-gray-500 font-sans mt-0.5">Loved by 500+ businesses</span>
+                        </div>
+                      </div>
+
                     </motion.div>
 
                   </div>
@@ -454,42 +498,39 @@ export default function HomeClient() {
                       hidden: { opacity: 0, y: 20 },
                       visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.25 } }
                     }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 items-center justify-center w-full py-8 mt-14 bg-white/40 border border-[#e5dfd3]/50 rounded-[2.5rem] shadow-xs backdrop-blur-3xs"
+                    className="flex flex-col md:flex-row items-center justify-between w-full py-5 px-6 sm:px-10 mt-16 sm:mt-24 bg-[#FAF9F6]/80 border border-[#e5dfd3]/60 rounded-[1.5rem] shadow-sm backdrop-blur-md max-w-[95%] mx-auto lg:max-w-none"
                   >
                     {/* Fresh & Hygienic */}
-                    <div className="flex flex-col items-center justify-center text-center px-6 md:border-r border-[#e5dfd3]/60">
-                      <div className="relative w-16 h-16 rounded-full border-2 border-[#ebd2a0]/60 flex items-center justify-center bg-white shadow-xs shrink-0 mb-3.5">
-                        <Leaf className="w-6 h-6 text-[#052316]" />
-                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-[#b89547] text-white w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white shadow-xs">
-                          <Check className="w-2.5 h-2.5 text-white stroke-[3.5]" />
-                        </div>
+                    <div className="flex items-center gap-4 w-full md:w-1/3 md:border-r border-[#e5dfd3]/60 py-3 md:py-0 px-2 sm:px-4">
+                      <div className="w-10 h-10 rounded-full bg-[#f7eedd] flex items-center justify-center shrink-0 border border-[#b89547]/20">
+                        <Leaf className="w-5 h-5 text-[#052316]" strokeWidth={1.5} />
                       </div>
-                      <h4 className="text-xs font-mono font-extrabold uppercase tracking-widest text-[#052316]">Fresh & Hygienic</h4>
-                      <p className="text-[11px] text-gray-500 font-medium mt-1">Quality you can trust</p>
+                      <div className="flex flex-col">
+                        <h4 className="text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-widest text-[#052316]">Fresh & Hygienic</h4>
+                        <p className="text-[10px] text-gray-500 font-medium mt-0.5">Quality ingredients,<br />prepared with care</p>
+                      </div>
                     </div>
 
                     {/* On-Time Delivery */}
-                    <div className="flex flex-col items-center justify-center text-center px-6 md:border-r border-[#e5dfd3]/60">
-                      <div className="relative w-16 h-16 rounded-full border-2 border-[#ebd2a0]/60 flex items-center justify-center bg-white shadow-xs shrink-0 mb-3.5">
-                        <Clock className="w-6 h-6 text-[#052316]" />
-                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-[#b89547] text-white w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white shadow-xs">
-                          <Check className="w-2.5 h-2.5 text-white stroke-[3.5]" />
-                        </div>
+                    <div className="flex items-center gap-4 w-full md:w-1/3 md:border-r border-[#e5dfd3]/60 py-3 md:py-0 px-2 sm:px-6">
+                      <div className="w-10 h-10 rounded-full bg-[#f7eedd] flex items-center justify-center shrink-0 border border-[#b89547]/20">
+                        <Clock className="w-5 h-5 text-[#052316]" strokeWidth={1.5} />
                       </div>
-                      <h4 className="text-xs font-mono font-extrabold uppercase tracking-widest text-[#052316]">On-time Delivery</h4>
-                      <p className="text-[11px] text-gray-500 font-medium mt-1">Always on schedule</p>
+                      <div className="flex flex-col">
+                        <h4 className="text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-widest text-[#052316]">On-time Delivery</h4>
+                        <p className="text-[10px] text-gray-500 font-medium mt-0.5">Always on schedule,<br />every time</p>
+                      </div>
                     </div>
 
                     {/* Trusted by 500+ */}
-                    <div className="flex flex-col items-center justify-center text-center px-6">
-                      <div className="relative w-16 h-16 rounded-full border-2 border-[#ebd2a0]/60 flex items-center justify-center bg-white shadow-xs shrink-0 mb-3.5">
-                        <ShieldCheck className="w-6 h-6 text-[#052316]" />
-                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-[#b89547] text-white w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white shadow-xs">
-                          <Check className="w-2.5 h-2.5 text-white stroke-[3.5]" />
-                        </div>
+                    <div className="flex items-center gap-4 w-full md:w-1/3 py-3 md:py-0 px-2 sm:px-6">
+                      <div className="w-10 h-10 rounded-full bg-[#f7eedd] flex items-center justify-center shrink-0 border border-[#b89547]/20">
+                        <ShieldCheck className="w-5 h-5 text-[#052316]" strokeWidth={1.5} />
                       </div>
-                      <h4 className="text-xs font-mono font-extrabold uppercase tracking-widest text-[#052316]">Trusted by 500+</h4>
-                      <p className="text-[11px] text-gray-500 font-medium mt-1">Businesses across India</p>
+                      <div className="flex flex-col">
+                        <h4 className="text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-widest text-[#052316]">Trusted by 500+ Businesses</h4>
+                        <p className="text-[10px] text-gray-500 font-medium mt-0.5">Consistency that<br />builds trust</p>
+                      </div>
                     </div>
                   </motion.div>
 
@@ -517,6 +558,9 @@ export default function HomeClient() {
                   </div>
                 </div>
               </section>
+
+              {/* NEW: OUR PARTNERS */}
+              <OurPartners />
 
               {/* NEW: CURATED FOR MODERN WORKPLACES */}
               <motion.section
@@ -625,197 +669,384 @@ export default function HomeClient() {
                     </p>
                   </div>
 
-                  {/* 3-column card grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7 mb-10">
-
-                    {/* Card 01 — TCH Box */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 24 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0 }}
-                      className="bg-white rounded-[2rem] overflow-hidden border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] hover:shadow-[0_16px_48px_rgba(5,35,22,0.06)] hover:-translate-y-1 transition-all duration-400 flex flex-col relative"
-                    >
-                      {/* Top: number + title + image */}
-                      <div className="flex items-start gap-4 p-8 pb-4 relative">
-                        <div className="shrink-0 w-12 h-12 bg-[#052316] rounded-full flex items-center justify-center shadow-md">
-                          <span className="text-lg font-serif font-black text-white leading-none">01</span>
-                        </div>
-                        <div className="flex-1 min-w-0 pr-24">
-                          <h3 className="text-base font-serif font-bold text-[#052316] leading-snug uppercase tracking-wide">
-                            The Corporate<br />Halwai Box
-                          </h3>
-                          <span className="inline-block mt-1 bg-[#d99a1f] text-white text-[8px] font-bold font-sans uppercase tracking-widest px-3 py-0.5 rounded-full leading-relaxed">
-                            Minimum 10 Persons
-                          </span>
-                        </div>
-                        {/* Food image: right-aligned, overlapping */}
-                        <div className="absolute right-4 top-4 w-28 h-28 rounded-full overflow-hidden shadow-md border-4 border-white">
-                          <img
-                            src="https://plus.unsplash.com/premium_photo-1667389723440-dbbde959df52?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="TCH Box food"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Description */}
-                      <div className="px-8 pb-4 pr-32">
-                        <p className="text-xs text-gray-500 font-medium leading-relaxed">
-                          A premium food box that brings great taste and convenience to your corporate meetings, events and celebrations.
-                        </p>
-                      </div>
-
-                      {/* Feature icons row */}
-                      <div className="bg-[#f0f5f2] mt-auto px-6 py-6 rounded-[1.75rem] mx-4 mb-4 flex flex-col gap-5 border border-[#e8dfc8]/30">
-                        <div className="grid grid-cols-4 gap-1">
-                          {[
-                            { icon: <Droplet className="w-4 h-4" />, label: "Hygienically packed" },
-                            { icon: <Sparkles className="w-4 h-4" />, label: "Complete multi-course" },
-                            { icon: <Leaf className="w-4 h-4" />, label: "Balanced nutrition" },
-                            { icon: <Users className="w-4 h-4" />, label: "Minimum 10 persons" },
-                          ].map((f, i) => (
-                            <div key={i} className="flex flex-col items-center text-center gap-1.5">
-                              <div className="text-[#052316]">{f.icon}</div>
-                              <span className="text-[8px] text-[#052316]/75 font-sans font-bold leading-tight">{f.label}</span>
-                            </div>
-                          ))}
-                        </div>
-                        <button
-                          onClick={() => { setActiveTab(AppTab.MENU); window.scrollTo({ top: 400, behavior: "smooth" }); }}
-                          className="w-full flex items-center justify-center gap-2 bg-[#052316] hover:bg-[#b89547] text-white hover:text-[#052316] text-[10px] font-mono font-bold uppercase tracking-[0.2em] py-3.5 rounded-full transition-all duration-300 cursor-pointer group/cta shadow-sm"
-                        >
-                          Explore TCH Box
-                          <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform duration-300" />
-                        </button>
-                      </div>
-                    </motion.div>
-
-                    {/* Card 02 — TCH Box + Live */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 24 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.1 }}
-                      className="bg-white rounded-[2rem] overflow-hidden border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] hover:shadow-[0_16px_48px_rgba(5,35,22,0.06)] hover:-translate-y-1 transition-all duration-400 flex flex-col relative"
-                    >
-                      {/* Top: number + title */}
-                      <div className="flex items-start gap-4 p-8 pb-4 relative">
-                        <div className="shrink-0 w-12 h-12 bg-[#052316] rounded-full flex items-center justify-center shadow-md">
-                          <span className="text-lg font-serif font-black text-white leading-none">02</span>
-                        </div>
-                        <div className="flex-1 min-w-0 pr-24">
-                          <h3 className="text-base font-serif font-bold text-[#052316] leading-snug uppercase tracking-wide">
-                            TCH Box<br />+ Live
-                          </h3>
-                        </div>
-                        {/* Food image */}
-                        <div className="absolute right-4 top-4 w-28 h-28 rounded-[1.75rem] overflow-hidden shadow-md border-4 border-white">
-                          <img
-                            src="https://images.unsplash.com/photo-1691982800089-cb7a29c4596b?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="TCH Box + Live"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Description */}
-                      <div className="px-8 pb-4 pr-32">
-                        <p className="text-xs text-gray-500 font-medium leading-relaxed">
-                          Enhance your event with our food boxes and live food counters for an engaging and memorable dining experience.
-                        </p>
-                      </div>
-
-                      {/* Feature icons */}
-                      <div className="bg-[#f0f5f2] mt-auto px-6 py-6 rounded-[1.75rem] mx-4 mb-4 flex flex-col gap-5 border border-[#e8dfc8]/30">
-                        <div className="grid grid-cols-5 gap-0.5">
-                          {[
-                            { icon: <Star className="w-4 h-4" />, label: "Live food stations" },
-                            { icon: <Sparkles className="w-4 h-4" />, label: "Premium presentation" },
-                            { icon: <Utensils className="w-4 h-4" />, label: "Custom menu" },
-                            { icon: <ChefHat className="w-4 h-4" />, label: "Professional staff" },
-                            { icon: <TrendingUp className="w-4 h-4" />, label: "Scalable crowds" },
-                          ].map((f, i) => (
-                            <div key={i} className="flex flex-col items-center text-center gap-1.5">
-                              <div className="text-[#052316]">{f.icon}</div>
-                              <span className="text-[7.5px] text-[#052316]/75 font-sans font-bold leading-tight">{f.label}</span>
-                            </div>
-                          ))}
-                        </div>
-                        <button
-                          onClick={() => { setActiveTab(AppTab.MENU); window.scrollTo({ top: 400, behavior: "smooth" }); }}
-                          className="w-full flex items-center justify-center gap-2 bg-[#052316] hover:bg-[#b89547] text-white hover:text-[#052316] text-[10px] font-mono font-bold uppercase tracking-[0.2em] py-3.5 rounded-full transition-all duration-300 cursor-pointer group/cta shadow-sm"
-                        >
-                          Explore Live Service
-                          <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform duration-300" />
-                        </button>
-                      </div>
-                    </motion.div>
-
-                    {/* Card 03 — Corporate Thali */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 24 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                      className="bg-white rounded-[2rem] overflow-hidden border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] hover:shadow-[0_16px_48px_rgba(5,35,22,0.06)] hover:-translate-y-1 transition-all duration-400 flex flex-col relative"
-                    >
-                      {/* Top: number + title */}
-                      <div className="flex items-start gap-4 p-8 pb-4 relative">
-                        <div className="shrink-0 w-12 h-12 bg-[#052316] rounded-full flex items-center justify-center shadow-md">
-                          <span className="text-lg font-serif font-black text-white leading-none">03</span>
-                        </div>
-                        <div className="flex-1 min-w-0 pr-24">
-                          <h3 className="text-base font-serif font-bold text-[#052316] leading-snug uppercase tracking-wide">
-                            Corporate Thali<br /><span className="text-sm normal-case font-normal">(Meal Box)</span>
-                          </h3>
-                        </div>
-                        {/* Food image */}
-                        <div className="absolute right-4 top-4 w-28 h-28 rounded-[1.75rem] overflow-hidden shadow-md border-4 border-white">
-                          <img
-                            src="https://images.unsplash.com/photo-1727404679933-99daa2a7573a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="Corporate Thali"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Description */}
-                      <div className="px-8 pb-4 pr-32">
-                        <p className="text-xs text-gray-500 font-medium leading-relaxed">
-                          A complete single-serve meal solution for daily office meals, training programs, conferences and employee dining.
-                        </p>
-                      </div>
-
-                      {/* Feature icons */}
-                      <div className="bg-[#f0f5f2] mt-auto px-6 py-6 rounded-[1.75rem] mx-4 mb-4 flex flex-col gap-5 border border-[#e8dfc8]/30">
-                        <div className="grid grid-cols-4 gap-1">
-                          {[
-                            { icon: <Leaf className="w-4 h-4" />, label: "Complete balanced meal" },
-                            { icon: <ShieldCheck className="w-4 h-4" />, label: "Fresh & hygienic" },
-                            { icon: <Package className="w-4 h-4" />, label: "Single convenience" },
-                            { icon: <Truck className="w-4 h-4" />, label: "Easy distribution" },
-                          ].map((f, i) => (
-                            <div key={i} className="flex flex-col items-center text-center gap-1.5">
-                              <div className="text-[#052316]">{f.icon}</div>
-                              <span className="text-[8px] text-[#052316]/75 font-sans font-bold leading-tight">{f.label}</span>
-                            </div>
-                          ))}
-                        </div>
-                        <button
-                          onClick={() => { setActiveTab(AppTab.MENU); window.scrollTo({ top: 400, behavior: "smooth" }); }}
-                          className="w-full flex items-center justify-center gap-2 bg-[#052316] hover:bg-[#b89547] text-white hover:text-[#052316] text-[10px] font-mono font-bold uppercase tracking-[0.2em] py-3.5 rounded-full transition-all duration-300 cursor-pointer group/cta shadow-sm"
-                        >
-                          Explore Thali
-                          <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform duration-300" />
-                        </button>
-                      </div>
-                    </motion.div>
-
+                  {/* Tab Switcher */}
+                  <div className="flex justify-center mb-10">
+                    <div className="inline-flex bg-white rounded-full p-1 border border-[#ebd2a0]/40 shadow-sm">
+                      <button
+                        onClick={() => setServicesTab("corporate")}
+                        className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${servicesTab === "corporate"
+                          ? "bg-[#052316] text-white shadow-md"
+                          : "text-[#052316]/60 hover:text-[#052316] hover:bg-[#052316]/5"
+                          }`}
+                      >
+                        Corporate Events
+                      </button>
+                      <button
+                        onClick={() => setServicesTab("private")}
+                        className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${servicesTab === "private"
+                          ? "bg-[#052316] text-white shadow-md"
+                          : "text-[#052316]/60 hover:text-[#052316] hover:bg-[#052316]/5"
+                          }`}
+                      >
+                        Private Events
+                      </button>
+                    </div>
                   </div>
 
+                  {servicesTab === "corporate" ? (
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7 mb-10">
+
+                      {/* Card 01 — TCH Box */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0 }}
+                        className="bg-white rounded-[2rem] overflow-hidden border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] hover:shadow-[0_16px_48px_rgba(5,35,22,0.06)] hover:-translate-y-1 transition-all duration-400 flex flex-col relative"
+                      >
+                        {/* Top: number + title + image */}
+                        <div className="flex items-start gap-4 p-8 pb-4 relative">
+                          <div className="shrink-0 w-12 h-12 bg-[#052316] rounded-full flex items-center justify-center shadow-md">
+                            <span className="text-lg font-serif font-black text-white leading-none">01</span>
+                          </div>
+                          <div className="flex-1 min-w-0 pr-24">
+                            <h3 className="text-base font-serif font-bold text-[#052316] leading-snug uppercase tracking-wide">
+                              The Corporate<br />Halwai Box
+                            </h3>
+                            <span className="inline-block mt-1 bg-[#d99a1f] text-white text-[8px] font-bold font-sans uppercase tracking-widest px-3 py-0.5 rounded-full leading-relaxed">
+                              Minimum 10 Persons
+                            </span>
+                          </div>
+                          {/* Food image: right-aligned, overlapping */}
+                          <div className="absolute right-4 top-4 w-28 h-28 rounded-full overflow-hidden shadow-md border-4 border-white">
+                            <img
+                              src="https://plus.unsplash.com/premium_photo-1667389723440-dbbde959df52?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                              alt="TCH Box food"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Description */}
+                        <div className="px-8 pb-4 pr-32">
+                          <p className="text-xs text-gray-500 font-medium leading-relaxed">
+                            A premium food box that brings great taste and convenience to your corporate meetings, events and celebrations.
+                          </p>
+                        </div>
+
+                        {/* Feature icons row */}
+                        <div className="bg-[#f0f5f2] mt-auto px-6 py-6 rounded-[1.75rem] mx-4 mb-4 flex flex-col gap-5 border border-[#e8dfc8]/30">
+                          <div className="grid grid-cols-4 gap-1">
+                            {[
+                              { icon: <Droplet className="w-4 h-4" />, label: "Hygienically packed" },
+                              { icon: <Sparkles className="w-4 h-4" />, label: "Complete multi-course" },
+                              { icon: <Leaf className="w-4 h-4" />, label: "Balanced nutrition" },
+                              { icon: <Users className="w-4 h-4" />, label: "Minimum 10 persons" },
+                            ].map((f, i) => (
+                              <div key={i} className="flex flex-col items-center text-center gap-1.5">
+                                <div className="text-[#052316]">{f.icon}</div>
+                                <span className="text-[8px] text-[#052316]/75 font-sans font-bold leading-tight">{f.label}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <button
+                            onClick={() => { setActiveTab(AppTab.MENU); window.scrollTo({ top: 400, behavior: "smooth" }); }}
+                            className="w-full flex items-center justify-center gap-2 bg-[#052316] hover:bg-[#b89547] text-white hover:text-[#052316] text-[10px] font-mono font-bold uppercase tracking-[0.2em] py-3.5 rounded-full transition-all duration-300 cursor-pointer group/cta shadow-sm"
+                          >
+                            Explore TCH Box
+                            <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform duration-300" />
+                          </button>
+                        </div>
+                      </motion.div>
+
+                      {/* Card 02 — TCH Box + Live */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="bg-white rounded-[2rem] overflow-hidden border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] hover:shadow-[0_16px_48px_rgba(5,35,22,0.06)] hover:-translate-y-1 transition-all duration-400 flex flex-col relative"
+                      >
+                        {/* Top: number + title */}
+                        <div className="flex items-start gap-4 p-8 pb-4 relative">
+                          <div className="shrink-0 w-12 h-12 bg-[#052316] rounded-full flex items-center justify-center shadow-md">
+                            <span className="text-lg font-serif font-black text-white leading-none">02</span>
+                          </div>
+                          <div className="flex-1 min-w-0 pr-24">
+                            <h3 className="text-base font-serif font-bold text-[#052316] leading-snug uppercase tracking-wide">
+                              TCH Box<br />+ Live
+                            </h3>
+                          </div>
+                          {/* Food image */}
+                          <div className="absolute right-4 top-4 w-28 h-28 rounded-[1.75rem] overflow-hidden shadow-md border-4 border-white">
+                            <img
+                              src="https://images.unsplash.com/photo-1691982800089-cb7a29c4596b?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                              alt="TCH Box + Live"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Description */}
+                        <div className="px-8 pb-4 pr-32">
+                          <p className="text-xs text-gray-500 font-medium leading-relaxed">
+                            Enhance your event with our food boxes and live food counters for an engaging and memorable dining experience.
+                          </p>
+                        </div>
+
+                        {/* Feature icons */}
+                        <div className="bg-[#f0f5f2] mt-auto px-6 py-6 rounded-[1.75rem] mx-4 mb-4 flex flex-col gap-5 border border-[#e8dfc8]/30">
+                          <div className="grid grid-cols-5 gap-0.5">
+                            {[
+                              { icon: <Star className="w-4 h-4" />, label: "Live food stations" },
+                              { icon: <Sparkles className="w-4 h-4" />, label: "Premium presentation" },
+                              { icon: <Utensils className="w-4 h-4" />, label: "Custom menu" },
+                              { icon: <ChefHat className="w-4 h-4" />, label: "Professional staff" },
+                              { icon: <TrendingUp className="w-4 h-4" />, label: "Scalable crowds" },
+                            ].map((f, i) => (
+                              <div key={i} className="flex flex-col items-center text-center gap-1.5">
+                                <div className="text-[#052316]">{f.icon}</div>
+                                <span className="text-[7.5px] text-[#052316]/75 font-sans font-bold leading-tight">{f.label}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <button
+                            onClick={() => { setActiveTab(AppTab.MENU); window.scrollTo({ top: 400, behavior: "smooth" }); }}
+                            className="w-full flex items-center justify-center gap-2 bg-[#052316] hover:bg-[#b89547] text-white hover:text-[#052316] text-[10px] font-mono font-bold uppercase tracking-[0.2em] py-3.5 rounded-full transition-all duration-300 cursor-pointer group/cta shadow-sm"
+                          >
+                            Explore Live Service
+                            <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform duration-300" />
+                          </button>
+                        </div>
+                      </motion.div>
+
+                      {/* Card 03 — Corporate Thali */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="bg-white rounded-[2rem] overflow-hidden border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] hover:shadow-[0_16px_48px_rgba(5,35,22,0.06)] hover:-translate-y-1 transition-all duration-400 flex flex-col relative"
+                      >
+                        {/* Top: number + title */}
+                        <div className="flex items-start gap-4 p-8 pb-4 relative">
+                          <div className="shrink-0 w-12 h-12 bg-[#052316] rounded-full flex items-center justify-center shadow-md">
+                            <span className="text-lg font-serif font-black text-white leading-none">03</span>
+                          </div>
+                          <div className="flex-1 min-w-0 pr-24">
+                            <h3 className="text-base font-serif font-bold text-[#052316] leading-snug uppercase tracking-wide">
+                              Corporate Thali<br /><span className="text-sm normal-case font-normal">(Meal Box)</span>
+                            </h3>
+                          </div>
+                          {/* Food image */}
+                          <div className="absolute right-4 top-4 w-28 h-28 rounded-[1.75rem] overflow-hidden shadow-md border-4 border-white">
+                            <img
+                              src="https://images.unsplash.com/photo-1727404679933-99daa2a7573a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                              alt="Corporate Thali"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Description */}
+                        <div className="px-8 pb-4 pr-32">
+                          <p className="text-xs text-gray-500 font-medium leading-relaxed">
+                            A complete single-serve meal solution for daily office meals, training programs, conferences and employee dining.
+                          </p>
+                        </div>
+
+                        {/* Feature icons */}
+                        <div className="bg-[#f0f5f2] mt-auto px-6 py-6 rounded-[1.75rem] mx-4 mb-4 flex flex-col gap-5 border border-[#e8dfc8]/30">
+                          <div className="grid grid-cols-4 gap-1">
+                            {[
+                              { icon: <Leaf className="w-4 h-4" />, label: "Complete balanced meal" },
+                              { icon: <ShieldCheck className="w-4 h-4" />, label: "Fresh & hygienic" },
+                              { icon: <Package className="w-4 h-4" />, label: "Single convenience" },
+                              { icon: <Truck className="w-4 h-4" />, label: "Easy distribution" },
+                            ].map((f, i) => (
+                              <div key={i} className="flex flex-col items-center text-center gap-1.5">
+                                <div className="text-[#052316]">{f.icon}</div>
+                                <span className="text-[8px] text-[#052316]/75 font-sans font-bold leading-tight">{f.label}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <button
+                            onClick={() => { setActiveTab(AppTab.MENU); window.scrollTo({ top: 400, behavior: "smooth" }); }}
+                            className="w-full flex items-center justify-center gap-2 bg-[#052316] hover:bg-[#b89547] text-white hover:text-[#052316] text-[10px] font-mono font-bold uppercase tracking-[0.2em] py-3.5 rounded-full transition-all duration-300 cursor-pointer group/cta shadow-sm"
+                          >
+                            Explore Thali
+                            <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform duration-300" />
+                          </button>
+                        </div>
+                      </motion.div>
+
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7 mb-10">
+                      {/* Private Card 01 — Wedding */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0 }}
+                        className="bg-white rounded-[2rem] overflow-hidden border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] hover:shadow-[0_16px_48px_rgba(5,35,22,0.06)] hover:-translate-y-1 transition-all duration-400 flex flex-col relative"
+                      >
+                        <div className="flex items-start gap-4 p-8 pb-4 relative">
+                          <div className="shrink-0 w-12 h-12 bg-[#052316] rounded-full flex items-center justify-center shadow-md">
+                            <span className="text-lg font-serif font-black text-white leading-none">01</span>
+                          </div>
+                          <div className="flex-1 min-w-0 pr-24">
+                            <h3 className="text-base font-serif font-bold text-[#052316] leading-snug uppercase tracking-wide">
+                              Weddings
+                            </h3>
+                          </div>
+                          <div className="absolute right-4 top-4 w-28 h-28 rounded-full overflow-hidden shadow-md border-4 border-white">
+                            <img
+                              src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                              alt="Wedding catering"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <div className="px-8 pb-4 pr-32">
+                          <p className="text-xs text-gray-500 font-medium leading-relaxed">
+                            Elegant and exquisite catering services to make your special day truly memorable.
+                          </p>
+                        </div>
+                        <div className="bg-[#f0f5f2] mt-auto px-6 py-6 rounded-[1.75rem] mx-4 mb-4 flex flex-col gap-5 border border-[#e8dfc8]/30">
+                          <div className="grid grid-cols-3 gap-1">
+                            {[
+                              { icon: <Sparkles className="w-4 h-4" />, label: "Premium Menu" },
+                              { icon: <Crown className="w-4 h-4" />, label: "Luxury Setup" },
+                              { icon: <Users className="w-4 h-4" />, label: "Large Crowds" },
+                            ].map((f, i) => (
+                              <div key={i} className="flex flex-col items-center text-center gap-1.5">
+                                <div className="text-[#052316]">{f.icon}</div>
+                                <span className="text-[8px] text-[#052316]/75 font-sans font-bold leading-tight">{f.label}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <button
+                            onClick={() => { setIsBookingOpen(true); }}
+                            className="w-full flex items-center justify-center gap-2 bg-[#052316] hover:bg-[#b89547] text-white hover:text-[#052316] text-[10px] font-mono font-bold uppercase tracking-[0.2em] py-3.5 rounded-full transition-all duration-300 cursor-pointer group/cta shadow-sm"
+                          >
+                            Inquire Now
+                            <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform duration-300" />
+                          </button>
+                        </div>
+                      </motion.div>
+
+                      {/* Private Card 02 — Birthday / Private Party */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="bg-white rounded-[2rem] overflow-hidden border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] hover:shadow-[0_16px_48px_rgba(5,35,22,0.06)] hover:-translate-y-1 transition-all duration-400 flex flex-col relative"
+                      >
+                        <div className="flex items-start gap-4 p-8 pb-4 relative">
+                          <div className="shrink-0 w-12 h-12 bg-[#052316] rounded-full flex items-center justify-center shadow-md">
+                            <span className="text-lg font-serif font-black text-white leading-none">02</span>
+                          </div>
+                          <div className="flex-1 min-w-0 pr-24">
+                            <h3 className="text-base font-serif font-bold text-[#052316] leading-snug uppercase tracking-wide">
+                              Private Parties
+                            </h3>
+                          </div>
+                          <div className="absolute right-4 top-4 w-28 h-28 rounded-[1.75rem] overflow-hidden shadow-md border-4 border-white">
+                            <img
+                              src="https://images.unsplash.com/photo-1530103862676-de8892b0b144?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                              alt="Private Party"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <div className="px-8 pb-4 pr-32">
+                          <p className="text-xs text-gray-500 font-medium leading-relaxed">
+                            Personalized menus and intimate service for your exclusive celebrations.
+                          </p>
+                        </div>
+                        <div className="bg-[#f0f5f2] mt-auto px-6 py-6 rounded-[1.75rem] mx-4 mb-4 flex flex-col gap-5 border border-[#e8dfc8]/30">
+                          <div className="grid grid-cols-3 gap-1">
+                            {[
+                              { icon: <Star className="w-4 h-4" />, label: "Custom Menu" },
+                              { icon: <Flame className="w-4 h-4" />, label: "Live Counters" },
+                              { icon: <Check className="w-4 h-4" />, label: "Hassle-free" },
+                            ].map((f, i) => (
+                              <div key={i} className="flex flex-col items-center text-center gap-1.5">
+                                <div className="text-[#052316]">{f.icon}</div>
+                                <span className="text-[8px] text-[#052316]/75 font-sans font-bold leading-tight">{f.label}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <button
+                            onClick={() => { setIsBookingOpen(true); }}
+                            className="w-full flex items-center justify-center gap-2 bg-[#052316] hover:bg-[#b89547] text-white hover:text-[#052316] text-[10px] font-mono font-bold uppercase tracking-[0.2em] py-3.5 rounded-full transition-all duration-300 cursor-pointer group/cta shadow-sm"
+                          >
+                            Inquire Now
+                            <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform duration-300" />
+                          </button>
+                        </div>
+                      </motion.div>
+
+                      {/* Private Card 03 — Family / Social Gathering */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="bg-white rounded-[2rem] overflow-hidden border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] hover:shadow-[0_16px_48px_rgba(5,35,22,0.06)] hover:-translate-y-1 transition-all duration-400 flex flex-col relative"
+                      >
+                        <div className="flex items-start gap-4 p-8 pb-4 relative">
+                          <div className="shrink-0 w-12 h-12 bg-[#052316] rounded-full flex items-center justify-center shadow-md">
+                            <span className="text-lg font-serif font-black text-white leading-none">03</span>
+                          </div>
+                          <div className="flex-1 min-w-0 pr-24">
+                            <h3 className="text-base font-serif font-bold text-[#052316] leading-snug uppercase tracking-wide">
+                              Social Gatherings
+                            </h3>
+                          </div>
+                          <div className="absolute right-4 top-4 w-28 h-28 rounded-[1.75rem] overflow-hidden shadow-md border-4 border-white">
+                            <img
+                              src="https://images.unsplash.com/photo-1543362906-acfc16c67564?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                              alt="Social Gathering"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <div className="px-8 pb-4 pr-32">
+                          <p className="text-xs text-gray-500 font-medium leading-relaxed">
+                            Bringing families and friends together with authentic Indian flavors and warmth.
+                          </p>
+                        </div>
+                        <div className="bg-[#f0f5f2] mt-auto px-6 py-6 rounded-[1.75rem] mx-4 mb-4 flex flex-col gap-5 border border-[#e8dfc8]/30">
+                          <div className="grid grid-cols-3 gap-1">
+                            {[
+                              { icon: <Leaf className="w-4 h-4" />, label: "Traditional Recipes" },
+                              { icon: <ShieldCheck className="w-4 h-4" />, label: "Safe & Hygienic" },
+                              { icon: <Utensils className="w-4 h-4" />, label: "Generous Portions" },
+                            ].map((f, i) => (
+                              <div key={i} className="flex flex-col items-center text-center gap-1.5">
+                                <div className="text-[#052316]">{f.icon}</div>
+                                <span className="text-[8px] text-[#052316]/75 font-sans font-bold leading-tight">{f.label}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <button
+                            onClick={() => { setIsBookingOpen(true); }}
+                            className="w-full flex items-center justify-center gap-2 bg-[#052316] hover:bg-[#b89547] text-white hover:text-[#052316] text-[10px] font-mono font-bold uppercase tracking-[0.2em] py-3.5 rounded-full transition-all duration-300 cursor-pointer group/cta shadow-sm"
+                          >
+                            Inquire Now
+                            <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform duration-300" />
+                          </button>
+                        </div>
+                      </motion.div>
+
+                    </div>
+                  )}
+
                   {/* Trust bar — 5 items */}
-                  <div className="bg-white rounded-[2rem] border border-[#ebd2a0]/40 shadow-[0_8px_32px_rgba(5,35,22,0.03)] px-8 py-8 mt-12">
+                  {/* <div className="bg-white rounded-[2rem] border border-[#ebd2a0]/40 shadow-[0_8px_32px_rgba(5,35,22,0.03)] px-8 py-8 mt-12">
                     <div className="grid grid-cols-1 min-[480px]:grid-cols-2 sm:grid-cols-5 gap-8 sm:gap-4">
                       {[
                         { icon: <Leaf className="w-6 h-6 stroke-[1.5] text-[#b89547]" />, title: "Authentic\nIndian Flavours", desc: "Traditional recipes,\nexceptional taste" },
@@ -837,7 +1068,7 @@ export default function HomeClient() {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
 
                 </div>
               </motion.section>
@@ -1016,7 +1247,7 @@ export default function HomeClient() {
                   </div>
 
                   {/* Bottom trust bar inside section */}
-                  <div className="bg-[#FAF8F5] rounded-[2.5rem] border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] p-6 mt-12 w-full">
+                  {/* <div className="bg-[#FAF8F5] rounded-[2.5rem] border border-[#ebd2a0]/30 shadow-[0_8px_32px_rgba(5,35,22,0.03)] p-6 mt-12 w-full">
                     <div className="grid grid-cols-1 md:grid-cols-5 gap-6 divide-y md:divide-y-0 md:divide-x divide-[#ebd2a0]/30">
                       {[
                         { icon: <Leaf className="w-5 h-5" />, title: "PREMIUM QUALITY\nINGREDIENTS", desc: "Carefully selected for\nthe best taste" },
@@ -1040,7 +1271,7 @@ export default function HomeClient() {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
 
                 </div>
               </motion.section>
@@ -1824,8 +2055,8 @@ export default function HomeClient() {
                       id={`gallery-filter-pill-${tab.category}`}
                       onClick={() => setGalleryFilter(tab.category)}
                       className={`px-5 py-2.5 text-xs sm:text-sm font-sans font-medium rounded-full border transition-all duration-300 cursor-pointer ${isActive
-                          ? "bg-[#052316] border-[#052316] text-white shadow-sm"
-                          : "bg-white border-[#e5dfd3]/60 text-gray-700 hover:text-[#052316] hover:bg-gray-50/50"
+                        ? "bg-[#052316] border-[#052316] text-white shadow-sm"
+                        : "bg-white border-[#e5dfd3]/60 text-gray-700 hover:text-[#052316] hover:bg-gray-50/50"
                         }`}
                     >
                       {tab.label}
@@ -2247,7 +2478,7 @@ export default function HomeClient() {
         title="WhatsApp Us"
       >
         <svg className="w-[26px] h-[26px] text-white fill-current" viewBox="0 0 24 24">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.417 9.86-9.86 0-2.637-1.026-5.114-2.89-6.98C16.576 1.897 14.1 1.87 11.992 1.87c-5.435 0-9.856 4.417-9.86 9.861-.001 1.709.453 3.376 1.315 4.887l-.99 3.618 3.71-.973zm13.125-6.666c-.11-.18-.403-.288-.846-.508-.443-.22-2.62-1.294-3.027-1.442-.407-.148-.705-.222-.998.22-.293.442-1.135 1.442-1.39 1.734-.256.292-.513.328-.956.108-.444-.22-1.873-.69-3.568-2.203-1.319-1.176-2.207-2.63-2.466-3.07-.258-.443-.027-.683.195-.903.2-.197.443-.518.665-.777.223-.258.297-.442.443-.737.147-.295.074-.553-.037-.772-.11-.22-.998-2.404-1.366-3.29-.359-.863-.726-.746-.998-.746-.256-.001-.55-.001-.846-.001-.295 0-.777.11-1.18.552-.404.443-1.543 1.507-1.543 3.673s1.58 4.26 1.8 4.554c.222.294 3.11 4.75 7.533 6.66 1.052.454 1.873.725 2.514.93.122.04 1.054.453 1.455.395.4-.06 1.233-.504 1.406-.99.172-.486.172-.903.12-1.047-.052-.143-.197-.22-.64-.443z"/>
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.417 9.86-9.86 0-2.637-1.026-5.114-2.89-6.98C16.576 1.897 14.1 1.87 11.992 1.87c-5.435 0-9.856 4.417-9.86 9.861-.001 1.709.453 3.376 1.315 4.887l-.99 3.618 3.71-.973zm13.125-6.666c-.11-.18-.403-.288-.846-.508-.443-.22-2.62-1.294-3.027-1.442-.407-.148-.705-.222-.998.22-.293.442-1.135 1.442-1.39 1.734-.256.292-.513.328-.956.108-.444-.22-1.873-.69-3.568-2.203-1.319-1.176-2.207-2.63-2.466-3.07-.258-.443-.027-.683.195-.903.2-.197.443-.518.665-.777.223-.258.297-.442.443-.737.147-.295.074-.553-.037-.772-.11-.22-.998-2.404-1.366-3.29-.359-.863-.726-.746-.998-.746-.256-.001-.55-.001-.846-.001-.295 0-.777.11-1.18.552-.404.443-1.543 1.507-1.543 3.673s1.58 4.26 1.8 4.554c.222.294 3.11 4.75 7.533 6.66 1.052.454 1.873.725 2.514.93.122.04 1.054.453 1.455.395.4-.06 1.233-.504 1.406-.99.172-.486.172-.903.12-1.047-.052-.143-.197-.22-.64-.443z" />
         </svg>
       </a>
 

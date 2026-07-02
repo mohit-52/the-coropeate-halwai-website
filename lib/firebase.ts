@@ -30,7 +30,7 @@ if (typeof window !== "undefined") {
   remoteConfig = getRemoteConfig(app);
   
   // Set fetch interval to 1 hour (3600000ms) for production, or 0 for dev (if needed)
-  remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
+  remoteConfig.settings.minimumFetchIntervalMillis = 0;
 }
 
 export { app, analytics, remoteConfig, fetchAndActivate, getValue };
